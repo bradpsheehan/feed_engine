@@ -25,10 +25,12 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'bullet'
+  gem 'sqlite3'
   gem 'guard-rspec'
   gem 'rb-fsevent', '~> 0.9'
   gem 'cane'
   gem 'reek'
+
 end
 
 group :development do
