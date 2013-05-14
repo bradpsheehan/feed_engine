@@ -1,4 +1,13 @@
 FeedEngine::Application.routes.draw do
+
+  root :to => "application#landing_page"
+  match 'auth/:provider/callback', to: 'sessions#create'
+  match 'signout', to: 'sessions#destroy', as: 'signout'
+  match 'auth/failure', to: redirect('/')
+  match 'post_to_twitter', to: "application#post_to_twitter"
+
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
