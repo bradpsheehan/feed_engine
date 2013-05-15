@@ -3,10 +3,7 @@ class ApplicationController < ActionController::Base
 
   def landing_page
     if current_user
-      @timeline = current_user.timeline
-      @friends = current_user.friends
-      #@friends_tweets = current_user.friends_tweets
-      @mentions = current_user.mentions
+      #@friends = current_user.friends
     end
   end
 

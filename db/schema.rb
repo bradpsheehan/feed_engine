@@ -11,7 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130514012747) do
+ActiveRecord::Schema.define(:version => 20130514215423) do
+
+  create_table "runs", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "provider"
@@ -21,6 +26,7 @@ ActiveRecord::Schema.define(:version => 20130514012747) do
     t.string   "oauth_secret"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+    t.string   "status"
   end
 
 end

@@ -7,9 +7,9 @@ class User < ActiveRecord::Base
   def friends_tweets
     @friends_tweets = []
     friends.each do |friend|
-      @friends_tweets << twitter.search("derp", :count => 1).results
+      @friends_tweets << twitter.search("from:#{friend.screen_name}").results
     end
-    @friends_tweets
+    @friends_tweets = @friends_tweets.flatten
   end
 
   def timeline
@@ -18,6 +18,11 @@ class User < ActiveRecord::Base
 
   def friends
     @friends ||= twitter.friends
+  end
+
+  def twitter
+    @twitter ||= Twitter::Client.new(oauth_token: oauth_token,
+                                     oauth_token_secret: oauth_secret)
   end
 
   def self.from_omniauth(auth)
@@ -31,12 +36,8 @@ class User < ActiveRecord::Base
       user.name = auth["info"]["nickname"]
       user.oauth_token = auth["credentials"]["token"]
       user.oauth_secret = auth["credentials"]["secret"]
+      user.status = "live"
     end
-  end
-
-  def twitter
-    @twitter ||= Twitter::Client.new(oauth_token: oauth_token,
-                                     oauth_token_secret: oauth_secret)
   end
 end
 
