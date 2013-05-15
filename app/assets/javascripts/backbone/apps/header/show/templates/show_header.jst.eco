@@ -1,0 +1,7 @@
+<h1 class="span7">RunLine</h1>
+<nav id="main-nav" class="span12">
+<ul>
+  <li><a href="#">Bradley's Account</a></li>  |  
+  <li><a href="#">Logout</a></li>
+</ul>
+</nav>
