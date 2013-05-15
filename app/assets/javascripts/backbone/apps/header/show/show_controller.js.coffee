@@ -1,5 +1,5 @@
 @RunLine.module "HeaderApp.Show", (Show, App, Backbone, Marionette, $, _) ->
-  Show.Controller = 
+  Show.Controller =
     showHeader: ->
       links = App.request "header:entities"
       headerView = @getHeaderView(links)

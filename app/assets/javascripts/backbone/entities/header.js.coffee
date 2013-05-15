@@ -7,8 +7,6 @@
 
   API =
     getHeaders: ->
-      console.log "WUD UP!"
-
       new Entities.HeaderCollection [
         { name: "Bradley's Account" }
         { name: "Logout" }
