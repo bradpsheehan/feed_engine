@@ -28,4 +28,22 @@
   display: block;
   width: 80%;
 }
+#header-nav-content h1 {
+  color: white;
+}
+#user-info {
+  margin-right: auto;
+  display: block;
+  width: 25%;
+  height: 100em;
+  background-color: lightblue;
+  border-radius: 6px;
+}
+#main-cont {
+  background-color: #dee4e8;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
 

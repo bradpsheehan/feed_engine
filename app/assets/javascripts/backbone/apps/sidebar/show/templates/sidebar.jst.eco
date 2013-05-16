@@ -1,3 +1,5 @@
-<div id="user-info">
-User profile image here
+<div id="main-cont">
+  <div id="user-info">
+    User profile image here
+  </div>
 </div>
