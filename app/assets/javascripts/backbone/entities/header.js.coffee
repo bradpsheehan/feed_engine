@@ -21,18 +21,11 @@
 
     getCurrentUser: ->
       name = "test"
-      console.log "1"
       $.get '/user',
         (userInfo) ->
-          console.log "2"
           name = userInfo['name']
           $('#blah').html(name)
-      console.log "3"
       name
-
-      # userInfo = eval($.get('/user'))
-      # userInfo['name']
-      # console.log userInfo
 
 
   App.reqres.setHandler "header:entities", ->
