@@ -1,5 +1,12 @@
 <h1>Welcome to the Homepage</h1>
 
+<% if current_user %>
+  Signed in as <%= current_user.name %>
+  <%= link_to "Sign out", signout_path %>
+<% else %>
+  <%= link_to "Sign in with Twitter", "/auth/twitter" %>
+<% end %>
+
 <h2>Create Run</h2>
 <%= form_tag do %>
   <%= label_tag "Run name" %>

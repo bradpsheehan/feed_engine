@@ -2,7 +2,8 @@ class SessionsController < ActionController::Base
   def create
     runner = User.from_omniauth(env['omniauth.auth'])
     session[:user_id] = runner.id
-    redirect_to root_url, notice: "Signed in."
+    cookies[:thesesh] = "woohoo"
+    redirect_to dashboard_path, notice: "Signed in."
   end
 
   def destroy

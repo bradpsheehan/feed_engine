@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
+  respond_to :json, only: :request_user
+
   def index
   end
 
@@ -15,7 +17,12 @@ class ApplicationController < ActionController::Base
     redirect_to "/"
   end
 
+  def request_user
+    respond_with(current_user)
+  end
+
   private
+
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end

@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require lib/jquery.cookie
 //= require lib/underscore
 //= require lib/backbone
 //= require lib/marionette
