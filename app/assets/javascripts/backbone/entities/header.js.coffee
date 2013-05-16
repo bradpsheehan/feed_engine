@@ -30,8 +30,6 @@
       console.log "3"
       name
 
-      
-      
       # userInfo = eval($.get('/user'))
       # userInfo['name']
       # console.log userInfo
