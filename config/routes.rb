@@ -5,7 +5,7 @@ FeedEngine::Application.routes.draw do
   match 'signout', to: 'sessions#destroy', as: 'signout'
   match 'auth/failure', to: redirect('/')
   match 'post_to_twitter', to: "application#post_to_twitter"
-
+  match 'create_run', to: "runs#create_run", as: "create_run"
 
 
   # The priority is based upon order of creation:

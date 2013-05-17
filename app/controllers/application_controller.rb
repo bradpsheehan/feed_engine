@@ -7,11 +7,6 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def post_to_twitter
-    current_user.twitter.update("Tweetie2 from Twweeter.")
-    redirect_to "/"
-  end
-
   private
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]

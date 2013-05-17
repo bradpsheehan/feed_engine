@@ -1,0 +1,72 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.twitter.com/1.1/statuses/mentions_timeline.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - Twitter Ruby Gem 4.5.0
+      Authorization:
+      - OAuth oauth_consumer_key="SQXPKncl9wOlvvKwf1T5w", oauth_nonce="d69ff5afc49698d271152ac76f952188",
+        oauth_signature="xHTO8D2qjKTHEDzqqUCJAJ8Cr0I%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1368661338", oauth_token="1428947773-5kMogR0HQWkeEM5ZisRNrvkG2EGgcuLlfOVVD4K",
+        oauth_version="1.0"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store, must-revalidate, pre-check=0, post-check=0
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '28'
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 15 May 2013 23:42:12 GMT
+      Expires:
+      - Tue, 31 Mar 1981 05:00:00 GMT
+      Last-Modified:
+      - Wed, 15 May 2013 23:42:12 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - tfe
+      Set-Cookie:
+      - guest_id=v1%3A136866133248882979; Domain=.twitter.com; Path=/; Expires=Fri,
+        15-May-2015 23:42:12 UTC
+      - lang=en
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=631138519
+      X-Access-Level:
+      - read-write-directmessages
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Rate-Limit-Limit:
+      - '15'
+      X-Rate-Limit-Remaining:
+      - '14'
+      X-Rate-Limit-Reset:
+      - '1368662232'
+      X-Transaction:
+      - 3ffea0b2fe5c6d6c
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAAIqOBQAAAP//AwApu0wNAgAAAA==
+    http_version: 
+  recorded_at: Wed, 15 May 2013 23:42:18 GMT
+recorded_with: VCR 2.4.0

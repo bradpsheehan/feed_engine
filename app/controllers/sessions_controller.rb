@@ -1,4 +1,4 @@
-class SessionsController < ActionController::Base
+class SessionsController < ApplicationController
   def create
     runner = User.from_omniauth(env['omniauth.auth'])
     session[:user_id] = runner.id

@@ -1,0 +1,359 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.twitter.com/1.1/account/verify_credentials.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - Twitter Ruby Gem 4.5.0
+      Authorization:
+      - OAuth oauth_consumer_key="SQXPKncl9wOlvvKwf1T5w", oauth_nonce="28a0af632966fff8d93607415ee68d52",
+        oauth_signature="jnpivUFwj%2BEJDucW9wv22bJR0bk%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1368667829", oauth_token="1428947773-5kMogR0HQWkeEM5ZisRNrvkG2EGgcuLlfOVVD4K",
+        oauth_version="1.0"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store, must-revalidate, pre-check=0, post-check=0
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '671'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Thu, 16 May 2013 01:30:30 GMT
+      Etag:
+      - ! '"a6a246eb0b851734e472829f40481360"'
+      Expires:
+      - Tue, 31 Mar 1981 05:00:00 GMT
+      Last-Modified:
+      - Thu, 16 May 2013 01:30:30 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - tfe
+      Set-Cookie:
+      - _twitter_sess=BAh7CDoMY3NyZl9pZCIlZGU0ZTUwNjNmYmEyZTUxZTA2NmEwYzgwZTE3NzM4%250ANjM6B2lkIiUwZDViZjQ5MmFjMzJkNDdkNDg1OGExYzYyOWFjODM5YjoPY3Jl%250AYXRlZF9hdGwrCHe49ao%252BAQ%253D%253D--0e06fd259a646659288ab6e2c0ef9d52da8035a6;
+        domain=.twitter.com; path=/; HttpOnly
+      - dnt=1; domain=.twitter.com; path=/; expires=Tue, 16-May-2023 13:30:30 GMT
+      - guest_id=v1%3A136866783037395868; Domain=.twitter.com; Path=/; Expires=Sat,
+        16-May-2015 01:30:30 UTC
+      - lang=en; path=/
+      - lang=en; path=/
+      - lang=en; path=/
+      - pid=; domain=.twitter.com; path=/; expires=Thu, 01-Jan-1970 00:00:00 GMT
+      - twid=u%3D1428947773%7CGj9Dm0IJMsaWrih0AoIlH%2BsYe2w%3D; domain=.twitter.com;
+        path=/; secure
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=631138519
+      Vary:
+      - Accept-Encoding
+      X-Access-Level:
+      - read-write-directmessages
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Mid:
+      - 021eaeb971a78c74ad74b1a96dd5b0a04cf390ff
+      X-Rate-Limit-Limit:
+      - '15'
+      X-Rate-Limit-Remaining:
+      - '14'
+      X-Rate-Limit-Reset:
+      - '1368668730'
+      X-Runtime:
+      - '0.07489'
+      X-Transaction:
+      - 040711785e00e748
+      X-Transaction-Mask:
+      - a6183ffa5f8ca943ff1b53b5644ef114aa8f7cb7
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA6VUTZPaMAz9K4yvpRBCCkuOLdtbb72VjsdJlODBsamtLKU7
+        /PfKgZgQ6E6nzUzGH5Is6elJr6yAUjQK+d6aUirgshYVsBRtA2OmRU17Zhut
+        pIZRzMasFC+msRLB8dw0GlkajVlnnIl8V1m6LjjSmaWlUA4eyls/vLGKbxH3
+        jry0a7qZbqZ4kHUVvRcTsRO1kNtiogE309bEkXgLdVhnm2lWTfa6othcbgE0
+        v406IQFolCiBvLxSwqQm9yiN9keKgK6/fT+drmE6WUAmLKeDoiyVsfTcev38
+        /HnBrlr/kIFDme+Om+lD0N39/YxrY2uhLvlJx9EK7ZRAH9IFXIcCG3etx4wU
+        C1qS+GmVLJfLeafi06W66lwgFMFcam5hr44cDT/rcVnQjhzoRqkxy42xhdRk
+        5LqrhzYPhf2K3IspbDvw1p3YfJ5QBouIlvlqlSziYSFb49rfGN2WcMy2wm1R
+        VJdTKC0BQJzNPSkOkDGfkkYrs4ZgDDntlchDkJ7lnuQ9mGh7HxI9ZcHDyQUh
+        z742MPoijqNZMorjNIrTZDl6F9E3iqPZnD1MvnNpAQ8A2OsqhJ/+UeGKsvfT
+        KxWYgVUI9HSbHActMtVLgzDpTLVBWUoiwxm/iwLKGvgvowMUD3q3a4lPEfXE
+        mgJSgviZUnVoP+BwN0qUOXsKCBulzAFsoG1Md1aCLvpEbjDnpiwd4BvhhEa8
+        tGDbgSKatE04yU39F6Oje5Ymxi7kF0VPycfkLEXI+3RQ0vmqX4t1M1bOoVKZ
+        7vAP9L62J+vAkB7EwcQkktyl2kHa6XiehJjn7UdvvoCl8vZcn50Q/3404JA7
+        8JFfZG+xeJbGH25ZfDcB/wz8f0684UTOaBRR1wwIePoNeOgaH8cGAAA=
+    http_version: 
+  recorded_at: Thu, 16 May 2013 01:30:30 GMT
+- request:
+    method: get
+    uri: https://api.twitter.com/1.1/friends/list.json?cursor=-1&screen_name=runline4
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - Twitter Ruby Gem 4.5.0
+      Authorization:
+      - OAuth oauth_consumer_key="SQXPKncl9wOlvvKwf1T5w", oauth_nonce="db6b58a735735fb0039e97ea33a75182",
+        oauth_signature="AYSkiCv9XhI9sHHgWuA4N1IAM1Q%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1368667830", oauth_token="1428947773-5kMogR0HQWkeEM5ZisRNrvkG2EGgcuLlfOVVD4K",
+        oauth_version="1.0"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store, must-revalidate, pre-check=0, post-check=0
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '751'
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Thu, 16 May 2013 01:30:31 GMT
+      Expires:
+      - Tue, 31 Mar 1981 05:00:00 GMT
+      Last-Modified:
+      - Thu, 16 May 2013 01:30:31 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - tfe
+      Set-Cookie:
+      - guest_id=v1%3A136866783101216497; Domain=.twitter.com; Path=/; Expires=Sat,
+        16-May-2015 01:30:31 UTC
+      - lang=en
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=631138519
+      X-Access-Level:
+      - read-write-directmessages
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Rate-Limit-Limit:
+      - '15'
+      X-Rate-Limit-Remaining:
+      - '14'
+      X-Rate-Limit-Reset:
+      - '1368668731'
+      X-Transaction:
+      - a2cd6857311b8075
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAAKxVTXObMBD9K4yuZWJsCHY4ddqkp+bSSw91RiNgwZoIyZVE
+        XNfDf+8K8xnHnXZaLva+fVrefokTqQ1oQ5JvJ8JzkiyjVRwHURDHPtrUWE0S
+        MoLEJ5JVgNiXWnqfuQRETKYBJB0dDg/RIVTGLFcSUbRyQCLfj0CtBUlkLYRP
+        QFpuOaCO05x3ciwn76lpfLLXykJmAYUWTBjwSaGEUAfMgGaqlhYTQExzkPmA
+        YCaCGzzUA4FPUDFzCEOTPCrpPbKjtwy9VZiEQbK69d4F+HirYOnyKNiLqjW3
+        YCYhaptRVRQGbJ+E5RXQnwpr0gElKAqSpWIi+AU0L/gEMJZZ7MGYAMYWTJYo
+        DCTp/a4SM9FfIT+LvnWio3USRnPRrpthGG2W6zAO47s4Wm7w/6Srl048ZeGH
+        i/5e11JgFyNvB0cnAvPPXHcPkDoWujM27QOXVMNeHKlV9KyYOgHnOrzpPKu4
+        JLh5pN0obu6i9XodvkkYZ7NjkVcvmk1lnw9pu9K/N1NK51xiJqaH9oJlMPql
+        1TytrdIDQYM9ANjJJLjxcNMxgabzvGNmZ1nZDjFW8lilSnRGP9t+u4W0cseU
+        PG/jVf1zxFt1vZ6V60p1cp45Td8C/+6peWpG6WMju/QmSDeMtcxJMy/JxXBz
+        Q61m0giG7gHFrS24AJqy7LnUWCO3icIRyMfg/uHhnrzJ4RUrgbaXBNlZu0+2
+        i+2CBTf2wKvyJlPVdtFSzHZhd1ANv8vtIi1v9ij692GpC2q64KaNbvg/h7do
+        X2T+B6kYy7Pn43aRQ8FqYensqLnEYyqVrph4peQvsvtPb8QhfB76GQSb6EM0
+        8RqeQ8o0TXHRcMKv9r3noSEG1j2SPsUTlrudBm/YPhMv7tBFo0mCdxW4j88s
+        mSvw/Mz528Ld9E8BvGK+12AsNeC2vWu1VBbv9fP3znRog4stW8m1Nk5zMLO7
+        HQ3aFOCFK7wXJ8xX2MBufgEAAP//AwCt0hUFtAcAAA==
+    http_version: 
+  recorded_at: Thu, 16 May 2013 01:30:30 GMT
+- request:
+    method: get
+    uri: https://api.twitter.com/1.1/friends/list.json?cursor=0&screen_name=runline4
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - Twitter Ruby Gem 4.5.0
+      Authorization:
+      - OAuth oauth_consumer_key="SQXPKncl9wOlvvKwf1T5w", oauth_nonce="a9656c8e4d84cbecec2588b9d9f81da8",
+        oauth_signature="fkuAmGkyOgesSJNYhVcZBmImgrw%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1368667830", oauth_token="1428947773-5kMogR0HQWkeEM5ZisRNrvkG2EGgcuLlfOVVD4K",
+        oauth_version="1.0"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store, must-revalidate, pre-check=0, post-check=0
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '85'
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Thu, 16 May 2013 01:30:31 GMT
+      Expires:
+      - Tue, 31 Mar 1981 05:00:00 GMT
+      Last-Modified:
+      - Thu, 16 May 2013 01:30:31 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - tfe
+      Set-Cookie:
+      - guest_id=v1%3A136866783137511539; Domain=.twitter.com; Path=/; Expires=Sat,
+        16-May-2015 01:30:31 UTC
+      - lang=en
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=631138519
+      X-Access-Level:
+      - read-write-directmessages
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Rate-Limit-Limit:
+      - '15'
+      X-Rate-Limit-Remaining:
+      - '13'
+      X-Rate-Limit-Reset:
+      - '1368668731'
+      X-Transaction:
+      - 31d93179249b181e
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAAKpWKi1OLSpWsoqO1VHKS60oiU8uLSrOL1KyMkDhxxeXAMWU
+        DJR0lAqKUssy80uL4Sp1DTEEocp1DZVqAQAAAP//AwDzTsPoYgAAAA==
+    http_version: 
+  recorded_at: Thu, 16 May 2013 01:30:31 GMT
+- request:
+    method: get
+    uri: https://api.twitter.com/1.1/search/tweets.json?q=from:RunLine3
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - Twitter Ruby Gem 4.5.0
+      Authorization:
+      - OAuth oauth_consumer_key="SQXPKncl9wOlvvKwf1T5w", oauth_nonce="977e66ad5c16929df1da22e096e22dbd",
+        oauth_signature="5jHaDo5IoT8Hm8GAAE4Vbw0nS80%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1368667831", oauth_token="1428947773-5kMogR0HQWkeEM5ZisRNrvkG2EGgcuLlfOVVD4K",
+        oauth_version="1.0"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store, must-revalidate, pre-check=0, post-check=0
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Thu, 16 May 2013 01:30:31 GMT
+      Expires:
+      - Tue, 31 Mar 1981 05:00:00 GMT
+      Last-Modified:
+      - Thu, 16 May 2013 01:30:31 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - tfe
+      Set-Cookie:
+      - guest_id=v1%3A136866783172060991; Domain=.twitter.com; Path=/; Expires=Sat,
+        16-May-2015 01:30:31 UTC
+      - lang=en
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=631138519
+      X-Access-Level:
+      - read-write-directmessages
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Rate-Limit-Limit:
+      - '180'
+      X-Rate-Limit-Remaining:
+      - '179'
+      X-Rate-Limit-Reset:
+      - '1368668731'
+      X-Transaction:
+      - ac3de1b97b06ce98
+      X-Xss-Protection:
+      - 1; mode=block
+      Transfer-Encoding:
+      - chunked
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAAOyYS2/jNhCA/4qgHhvEpN4SUKBosz11L0WAHupAoKWxzUYS
+        XZLarGvkv3eohyXZUbC76e5l5YvNmeGQQ87MB/NkK810rUDZyV8nuwTNcqaZ
+        nZxsCaoudKqPB7ATHGVQafvG5kqkBat2NdtBmoncKOsqt59v7EwC05CnTKPs
+        T8it9+xoUd9y3MQLE9ezfiT4sRxCXeMotxPX9SIauoEbxIFHI/xt5KnSEj1c
+        K3GWho/G+8+yrgpegWft4YhiJWqZma08wcZYoToze7GTLSsUoNcqlXAojqkW
+        aRtyajZQ1UUxo2x3cW2AhyWbudRzotgLw9B90aCLYrCyLxbC44IqrVjZnG8X
+        DxqZ+eYCujWCgHgkCEYHMwjRupv/R11Zv6MDcxYTx6gwcrN6IfBMuKhQiqMc
+        0JAfBkEtiz5evGquuUmK09TuZKxMrjw844UfpNCQjY95K4pCPIFUmBo15ktC
+        USY5VPlZgpEUXJk86QTkInPei6rNHNdkjksSx59mzpZ9wOvmGtTIRa2zVGy3
+        CnQfhOYlpP8KPJNOsAORQsU2xWjDH0DyLR8J+no4B4C+Tb7jxqDCxTNRack3
+        tRYY5KU3rlItWaUKhuqzFI9pywtINyx73El0a0IvjIH9K7l79+7OftGGl6bE
+        mlux91ofkvVqvWLkVj/xcnebiXK9akzUeqX3UJ6/6Xq12d0ecMuvu02NU9U5
+        V413xd/sXuP4KvJPCEVpnj0e16sctsz0nclUdS0P0krIkhUXO/mM6P6nFbFs
+        H8/3SUjk/eKNtIrnsGEy3QiZY1uYvffeDgfF2eoOjX4LRlam+521bvMZaTFt
+        ry7aTrAXgqn2STAz4umctpi5yf22gFoBtrB/alA6VYYInaoSGuuo7S+qFT43
+        FdcbZAJPgFdY5qoXHQqWwaAf6qqXSdBPAHpU5ab0TeWPRONetWdqr9muaVBY
+        ysdyI4pu0Pettr+mpZnWbBWxN9uKpxLL6bA16fwzjT7nWQNVchM/PD88D1sf
+        ukUX3kjSNZqWp1+MY+xTlzS+r6HtqR420YS4iR+/SGM3jkJKKAlC6lHqTGl8
+        oRxofG/C4OBYWylK6/6piUrejrm8rglxM2btJWx/Wg9N4G8oWZ7XH5uStC0J
+        BWor0Wbaup0GHcNaH9g4Wum34vysam7mJJ1a9cL0hekL0xemL0z/Nkz/TOA2
+        xPxKvKVx4vmJT2Z461E3JpETkzDwokveTpRXvO1xu9B2oe1C24W2C20X2n73
+        tA0T6idO+DJt/cCJfT8iYeT48eW/26ly9NbcA8AqQCvrB6TgG16czUqe5/nU
+        D33qEdd3XiWlfW1vz5BzQrrX3qMH9M2/R4+gt9B0oelC04WmC03fQtNTj5MW
+        H8MDMfVvqHki/uL36lFHvW6+n9a03/Zc/VV5HiQ+TSid4TmhUexGIY2JE17x
+        fKJ8iedYAQeL7Rj/boH+HwAAAP//Gq3QRyv00Qp9tEIfrdCp0D0GAAAA///s
+        2zEOgzAMBdCrcITYBifhNh1QYejScn/VQKVCSNulqFR8iSXylCF5cvw5CNi5
+        tNdSbA41S17slZRvWXyIPTj9o5AXnqPhLbyFt/D2f7zdU9rKUV0Od15WQ2Ly
+        yi5qIHYiSw2T4mz623a3wr7TNPqdpsB2km3Z9X1zLc7NBdNg8At+wS/4Bb87
+        53fL12PT18W6zGediYSDRBa1dpMp0XdZfOo77qIQtKPwEB7CQ3gID/fkoV3g
+        nz3M/4k7kKeilXoVSdNRSTH1kOEhPISH8BAewsPvejiKtml/KOGlh6WLwXrA
+        wJVfezgrJh5CwyNqeAcAAP//Gq0NR2vD0dpwtDakde8QZHhqYlFyRjxypQhM
+        VQU5IC3xmcCi0kDPwARY+uUmVsAWqWIctASRw3fYEjCgiyqBkqAZRlVjR6TC
+        vCg1DVgJZ0AzlX1xZl4yMPpSbDGNUSu0RdOuBlScU5qSGg8LO1tDcMkGKfBM
+        gZ6DmgYOYBgH6k4DpdpaAAAAAP//AwC+M+OatUoAAA==
+    http_version: 
+  recorded_at: Thu, 16 May 2013 01:30:31 GMT
+recorded_with: VCR 2.4.0

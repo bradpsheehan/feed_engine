@@ -14,6 +14,7 @@ gem 'redis-store', '~> 1.0.0'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'twitter'
+gem 'json'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -31,8 +32,14 @@ group :development, :test do
   gem 'sqlite3'
   gem 'guard-rspec'
   gem 'rb-fsevent', '~> 0.9'
+end
+
+group :test do
   gem 'cane'
   gem 'reek'
+  gem 'vcr'
+  gem 'webmock'
+  gem 'database_cleaner'
 end
 
 group :development do
