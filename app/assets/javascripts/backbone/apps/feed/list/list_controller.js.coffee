@@ -4,12 +4,15 @@
 
     getFeedItems: ->
       console.log "getting feed items"
+      new App.Entities.Feed
 
     getFeedView: (feedItems) ->
-      new List.Feeds
+      console.log feedItems.userPhoto
+      new List.Feed
+        model: feedItems
 
     listFeed: ->
-      console.log "tada"
+      console.log "listing the feed"
       feedItems = @getFeedItems()
       feedView = @getFeedView(feedItems)
       App.contentRegion.show feedView

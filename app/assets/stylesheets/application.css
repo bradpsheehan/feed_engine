@@ -29,3 +29,6 @@
   width: 80%;
 }
 
+#sidebar-region, #content-region {
+  color: #000;
+}

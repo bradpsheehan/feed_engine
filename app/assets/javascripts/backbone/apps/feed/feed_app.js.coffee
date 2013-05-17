@@ -5,5 +5,6 @@
       FeedApp.List.Controller.listFeed()
 
   FeedApp.on "start", ->
+    console.log "starting FeedApp"
     API.listFeed()
 

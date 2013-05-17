@@ -8,6 +8,7 @@
     contentRegion: "#content-region"
 
   App.addInitializer ->
+    #App.user = new User
     App.module("HeaderApp").start()
     App.module("FooterApp").start()
     App.module("SidebarApp").start()
