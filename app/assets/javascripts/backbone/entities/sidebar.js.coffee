@@ -8,9 +8,9 @@
   API =
     getSidebars: ->
       new Entities.SidebarCollection([
-        { name: "Your Activity" }
+        { name: "MyActivity" }
+        { name: "GroupRuns" }
         { name: "FitFeed" }
-        { name: "Group Runs" }
       ])
 
 
