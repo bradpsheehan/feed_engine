@@ -176,6 +176,13 @@
   content: "\e004"; }
 
 body {
+  /*background-image:url('asphalt_road_texture_with_yellow_stripe_1341410477.jpg');*/
+  background-size: cover;
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+  background-position:center;
+  /*background-color: #34506e;*/
+  background-color: white;
   color: black;
   font: 14px/1.231 "Lato", sans-serif; }
 

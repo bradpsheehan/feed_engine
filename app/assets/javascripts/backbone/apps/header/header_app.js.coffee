@@ -1,7 +1,7 @@
 @RunLine.module "HeaderApp", (HeaderApp, App, Backbone, Marionette, $, _) ->
   @startWithParent = false
 
-  API = 
+  API =
     showHeader: ->
       HeaderApp.Show.Controller.showHeader()
 

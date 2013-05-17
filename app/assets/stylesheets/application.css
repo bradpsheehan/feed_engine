@@ -20,7 +20,7 @@
   min-height: 100%;
 }
 #footer {
-  height: 20
+  height: 20px;
 }
 #header-nav-content {
   margin-left: auto;
@@ -40,7 +40,8 @@
   border-radius: 6px;
 }
 #main-cont {
-  background-color: #dee4e8;
+  padding: 1%;
+  background-color: #f2f2f2;
   width: 80%;
   margin-left: auto;
   margin-right: auto;

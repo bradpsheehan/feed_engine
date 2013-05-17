@@ -1,5 +1,6 @@
 <div id="main-cont">
   <div id="user-info">
-    User profile image here
+    <img src="">
+    <ul class="nav" id="blah"></ul>
   </div>
 </div>
