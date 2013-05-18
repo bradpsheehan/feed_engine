@@ -1,0 +1,85 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.twitter.com/1.1/statuses/update.json
+    body:
+      encoding: US-ASCII
+      string: status=%40runline3+reply+%23yes+to+come+run+with+me%21+4561
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - Twitter Ruby Gem 4.5.0
+      Authorization:
+      - OAuth oauth_consumer_key="SQXPKncl9wOlvvKwf1T5w", oauth_nonce="26df59c278a05f4d1ce90deeb6719f4d",
+        oauth_signature="3wFaoJKxzvO2IQux%2Fwb0Iq1TjU8%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1368903416", oauth_token="1428947773-5kMogR0HQWkeEM5ZisRNrvkG2EGgcuLlfOVVD4K",
+        oauth_version="1.0"
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store, must-revalidate, pre-check=0, post-check=0
+      Content-Length:
+      - '1995'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 18 May 2013 18:56:51 GMT
+      Etag:
+      - ! '"84fc6126970ed6a889186ef76e21dcd7"'
+      Expires:
+      - Tue, 31 Mar 1981 05:00:00 GMT
+      Last-Modified:
+      - Sat, 18 May 2013 18:56:51 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - tfe
+      Set-Cookie:
+      - _twitter_sess=BAh7CDoMY3NyZl9pZCIlZDU5YjRhMDI2YmIwNmExZmEzMzdhYzY2MDhiMzU4%250AZmU6D2NyZWF0ZWRfYXRsKwilZgC5PgE6B2lkIiVkNDUwMmQ0MmEzYjg0YmJi%250AMGM5MDg2NjhmNzk0ZjdiNA%253D%253D--c580adf825fce05cfd857487b34e4158f83b4509;
+        domain=.twitter.com; path=/; HttpOnly
+      - dnt=1; domain=.twitter.com; path=/; expires=Fri, 19-May-2023 06:56:51 GMT
+      - guest_id=v1%3A136890341134301095; Domain=.twitter.com; Path=/; Expires=Mon,
+        18-May-2015 18:56:51 UTC
+      - lang=en; path=/
+      - lang=en; path=/
+      - lang=en; path=/
+      - pid=; domain=.twitter.com; path=/; expires=Thu, 01-Jan-1970 00:00:00 GMT
+      - twid=u%3D1428947773%7CGj9Dm0IJMsaWrih0AoIlH%2BsYe2w%3D; domain=.twitter.com;
+        path=/; secure
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=631138519
+      Vary:
+      - Accept-Encoding
+      X-Access-Level:
+      - read-write-directmessages
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Mid:
+      - c5d995e3264aff3bdbc95ea46beade0207980cc7
+      X-Runtime:
+      - '0.15594'
+      X-Transaction:
+      - ade82d2ce923cb1e
+      X-Transaction-Mask:
+      - a6183ffa5f8ca943ff1b53b5644ef114506708bf
+    body:
+      encoding: US-ASCII
+      string: ! '{"coordinates":null,"in_reply_to_status_id":null,"truncated":false,"user":{"profile_image_url":"http:\/\/a0.twimg.com\/sticky\/default_profile_images\/default_profile_1_normal.png","profile_sidebar_border_color":"C0DEED","name":"runline
+        2","verified":false,"entities":{"description":{"urls":[]}},"follow_request_sent":false,"profile_background_tile":false,"profile_sidebar_fill_color":"DDEEF6","id":1428947773,"profile_image_url_https":"https:\/\/twimg0-a.akamaihd.net\/sticky\/default_profile_images\/default_profile_1_normal.png","created_at":"Tue
+        May 14 22:01:25 +0000 2013","default_profile_image":true,"contributors_enabled":false,"lang":"en","favourites_count":0,"screen_name":"runline4","profile_background_image_url_https":"https:\/\/twimg0-a.akamaihd.net\/images\/themes\/theme1\/bg.png","profile_background_color":"C0DEED","utc_offset":null,"followers_count":2,"is_translator":false,"statuses_count":10,"profile_background_image_url":"http:\/\/a0.twimg.com\/images\/themes\/theme1\/bg.png","time_zone":null,"url":null,"profile_link_color":"0084B4","notifications":false,"protected":false,"description":null,"default_profile":true,"following":false,"location":null,"id_str":"1428947773","profile_use_background_image":true,"friends_count":9,"profile_text_color":"333333","listed_count":0,"geo_enabled":false},"in_reply_to_screen_name":"RunLine3","in_reply_to_status_id_str":null,"contributors":null,"id_str":"335831364475695104","entities":{"user_mentions":[{"id_str":"1426604066","id":1426604066,"indices":[0,9],"name":"Run
+        Line","screen_name":"RunLine3"}],"hashtags":[{"indices":[16,20],"text":"yes"}],"urls":[]},"favorited":false,"source":"\u003Ca
+        href=\"http:\/\/jemaddux.com\" rel=\"nofollow\"\u003ERunLine\u003C\/a\u003E","in_reply_to_user_id_str":"1426604066","place":null,"id":335831364475695104,"created_at":"Sat
+        May 18 18:56:51 +0000 2013","in_reply_to_user_id":1426604066,"retweet_count":0,"text":"@runline3
+        reply #yes to come run with me! 4561","geo":null,"retweeted":false}'
+    http_version: 
+  recorded_at: Sat, 18 May 2013 18:56:56 GMT
+recorded_with: VCR 2.4.0

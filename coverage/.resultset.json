@@ -1,14 +1,14 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/johnmaddux/Dropbox/Code/feed_engine/config/environment.rb": [
+      "/Users/BradleySheehan/Documents/projects/feed_engine/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "/Users/johnmaddux/Dropbox/Code/feed_engine/config/application.rb": [
+      "/Users/BradleySheehan/Documents/projects/feed_engine/config/application.rb": [
         1,
         null,
         null,
@@ -78,7 +78,7 @@
         null,
         null
       ],
-      "/Users/johnmaddux/Dropbox/Code/feed_engine/config/boot.rb": [
+      "/Users/BradleySheehan/Documents/projects/feed_engine/config/boot.rb": [
         1,
         null,
         null,
@@ -86,7 +86,7 @@
         null,
         1
       ],
-      "/Users/johnmaddux/Dropbox/Code/feed_engine/config/environments/test.rb": [
+      "/Users/BradleySheehan/Documents/projects/feed_engine/config/environments/test.rb": [
         1,
         null,
         null,
@@ -125,7 +125,7 @@
         1,
         null
       ],
-      "/Users/johnmaddux/Dropbox/Code/feed_engine/config/initializers/backtrace_silencers.rb": [
+      "/Users/BradleySheehan/Documents/projects/feed_engine/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -134,7 +134,7 @@
         null,
         null
       ],
-      "/Users/johnmaddux/Dropbox/Code/feed_engine/config/initializers/inflections.rb": [
+      "/Users/BradleySheehan/Documents/projects/feed_engine/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -151,20 +151,20 @@
         null,
         null
       ],
-      "/Users/johnmaddux/Dropbox/Code/feed_engine/config/initializers/mime_types.rb": [
+      "/Users/BradleySheehan/Documents/projects/feed_engine/config/initializers/mime_types.rb": [
         null,
         null,
         null,
         null,
         null
       ],
-      "/Users/johnmaddux/Dropbox/Code/feed_engine/config/initializers/omniauth.rb": [
+      "/Users/BradleySheehan/Documents/projects/feed_engine/config/initializers/omniauth.rb": [
         1,
         1,
         null,
         null
       ],
-      "/Users/johnmaddux/Dropbox/Code/feed_engine/config/initializers/secret_token.rb": [
+      "/Users/BradleySheehan/Documents/projects/feed_engine/config/initializers/secret_token.rb": [
         null,
         null,
         null,
@@ -173,7 +173,7 @@
         null,
         1
       ],
-      "/Users/johnmaddux/Dropbox/Code/feed_engine/config/initializers/session_store.rb": [
+      "/Users/BradleySheehan/Documents/projects/feed_engine/config/initializers/session_store.rb": [
         null,
         null,
         1,
@@ -183,7 +183,7 @@
         null,
         null
       ],
-      "/Users/johnmaddux/Dropbox/Code/feed_engine/config/initializers/twitter.rb": [
+      "/Users/BradleySheehan/Documents/projects/feed_engine/config/initializers/twitter.rb": [
         1,
         1,
         1,
@@ -193,7 +193,7 @@
         null,
         null
       ],
-      "/Users/johnmaddux/Dropbox/Code/feed_engine/config/initializers/wrap_parameters.rb": [
+      "/Users/BradleySheehan/Documents/projects/feed_engine/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -209,9 +209,14 @@
         1,
         null
       ],
-      "/Users/johnmaddux/Dropbox/Code/feed_engine/app/controllers/application_controller.rb": [
+      "/Users/BradleySheehan/Documents/projects/feed_engine/app/controllers/application_controller.rb": [
         1,
         1,
+        null,
+        1,
+        null,
+        1,
+        null,
         null,
         1,
         0,
@@ -220,6 +225,11 @@
         null,
         null,
         1,
+        0,
+        null,
+        null,
+        1,
+        null,
         1,
         0,
         null,
@@ -228,24 +238,15 @@
         null,
         null
       ],
-      "/Users/johnmaddux/Dropbox/Code/feed_engine/app/helpers/application_helper.rb": [
+      "/Users/BradleySheehan/Documents/projects/feed_engine/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/johnmaddux/Dropbox/Code/feed_engine/app/helpers/omniauth_callbacks_helper.rb": [
+      "/Users/BradleySheehan/Documents/projects/feed_engine/app/helpers/omniauth_callbacks_helper.rb": [
         1,
         null
       ],
-      "/Users/johnmaddux/Dropbox/Code/feed_engine/app/controllers/runs_controller.rb": [
-        1,
-        1,
-        0,
-        0,
-        null,
-        null
-      ],
-      "/Users/johnmaddux/Dropbox/Code/feed_engine/app/models/run.rb": [
-        1,
+      "/Users/BradleySheehan/Documents/projects/feed_engine/app/controllers/runs_controller.rb": [
         1,
         1,
         null,
@@ -253,29 +254,50 @@
         0,
         0,
         0,
-        0,
         null,
         0,
-        0,
-        0,
-        0,
-        null,
-        null,
-        null,
-        null,
-        null,
-        0,
-        0,
-        null,
-        null,
         null,
         null,
         null,
         null
       ],
-      "/Users/johnmaddux/Dropbox/Code/feed_engine/app/controllers/sessions_controller.rb": [
+      "/Users/BradleySheehan/Documents/projects/feed_engine/app/models/run.rb": [
         1,
         1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        4,
+        null,
+        4,
+        8,
+        7,
+        null,
+        8,
+        null,
+        8,
+        null,
+        null,
+        8,
+        null,
+        null,
+        null
+      ],
+      "/Users/BradleySheehan/Documents/projects/feed_engine/app/controllers/sessions_controller.rb": [
+        1,
+        1,
+        0,
         0,
         0,
         0,
@@ -287,7 +309,7 @@
         null,
         null
       ],
-      "/Users/johnmaddux/Dropbox/Code/feed_engine/app/models/user.rb": [
+      "/Users/BradleySheehan/Documents/projects/feed_engine/app/models/user.rb": [
         1,
         1,
         1,
@@ -315,19 +337,19 @@
         null,
         null,
         1,
-        0,
+        8,
         null,
         null,
         1,
         null,
-        5,
+        13,
         null,
         null,
         1,
-        1,
-        1,
-        1,
-        1,
+        8,
+        8,
+        8,
+        8,
         null,
         null,
         1,
@@ -348,20 +370,24 @@
         null,
         null
       ],
-      "/Users/johnmaddux/Dropbox/Code/feed_engine/app/models/user_run.rb": [
+      "/Users/BradleySheehan/Documents/projects/feed_engine/app/models/user_run.rb": [
         1,
         null,
         1,
-        0,
-        0,
-        0,
-        0,
-        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         null,
         null,
         null
       ],
-      "/Users/johnmaddux/Dropbox/Code/feed_engine/config/routes.rb": [
+      "/Users/BradleySheehan/Documents/projects/feed_engine/config/routes.rb": [
+        1,
+        1,
+        null,
         1,
         null,
         1,
@@ -369,68 +395,12 @@
         1,
         1,
         1,
+        null,
         1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
         null,
         null
       ]
     },
-    "timestamp": 1368896677
+    "timestamp": 1368906411
   }
 }

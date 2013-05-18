@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
   end
 
   def tweet(status)
-    current_user.twitter.update(status)
+    twitter.update(status)
   end
 
   def twitter
