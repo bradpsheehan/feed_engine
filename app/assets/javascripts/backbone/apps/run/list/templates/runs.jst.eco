@@ -1,0 +1,7 @@
+<h1>Heeey!</h1>
+
+<form id="new_run">
+  <div id="run_data">
+  </div>
+  <input type="submit" value="Create Run">
+</form>

@@ -188,7 +188,6 @@ body {
 
 a {
   color: #1abc9c;
-  text-decoration: underline;
   -webkit-transition: 0.25s;
   -moz-transition: 0.25s;
   -o-transition: 0.25s;
@@ -605,7 +604,7 @@ h6 {
         background-color: #1abc9c; }
 
 .navbar-inner {
-  background-color: #4d4d4d
+  background-color: #2C3E50;
   border: none;
   padding-left: 4px;
   padding-right: 4px;

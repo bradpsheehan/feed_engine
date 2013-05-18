@@ -1,1 +1,1 @@
-<div id="sidebar-list-box"><a href="#"> <h1><%= @name %></h1></a></div>
+<div id="sidebar-list-box"><a href=<%= @url %>> <h2><%= @name %></h2></a></div>

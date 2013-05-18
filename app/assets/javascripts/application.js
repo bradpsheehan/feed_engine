@@ -18,5 +18,6 @@
 //= require lib/marionette
 //= require_tree ./backbone/config
 //= require backbone/app
+//= require backbone/router
 //= require_tree ./backbone/entities
 //= require_tree ./backbone/apps

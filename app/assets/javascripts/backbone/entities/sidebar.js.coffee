@@ -8,9 +8,16 @@
   API =
     getSidebars: ->
       new Entities.SidebarCollection([
-        { name: "MyActivity" }
-        { name: "GroupRuns" }
-        { name: "FitFeed" }
+        {
+          name: "MyActivity"
+        }
+        {
+          name: "GroupRuns"
+          url: "#/new"
+        }
+        {
+          name: "FitFeed"
+        }
       ])
 
 
