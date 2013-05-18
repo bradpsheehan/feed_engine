@@ -232,6 +232,10 @@
         1,
         null
       ],
+      "/Users/johnmaddux/Dropbox/Code/feed_engine/app/helpers/omniauth_callbacks_helper.rb": [
+        1,
+        null
+      ],
       "/Users/johnmaddux/Dropbox/Code/feed_engine/app/controllers/runs_controller.rb": [
         1,
         1,
@@ -427,6 +431,6 @@
         null
       ]
     },
-    "timestamp": 1368668155
+    "timestamp": 1368896677
   }
 }
