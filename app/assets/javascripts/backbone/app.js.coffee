@@ -15,5 +15,16 @@
     new App.Router
     Backbone.history.start()
 
+    $("form").submit ->
+
+      value = $("#group_name").val()
+      alert(value)
+      $.post "/runs",
+        group_name: value
+      , (run) ->
+        alert(run["name"])
+
+      false
+
   App
-`
+

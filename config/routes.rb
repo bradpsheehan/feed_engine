@@ -8,6 +8,7 @@ FeedEngine::Application.routes.draw do
   match 'auth/failure', to: redirect('/')
   match 'post_to_twitter', to: "application#post_to_twitter"
   get '/user', to: 'application#request_user'
-  match 'create_run', to: "runs#create_run", as: "create_run"
+  # match 'create_run', to: "runs#create_run", as: "create_run"
+  resources :runs
 
 end

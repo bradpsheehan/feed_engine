@@ -1,6 +1,6 @@
 <h1>Create a New Run</h1>
 
-<form id="new_run" method="post" action="">
+<form id="new_run" method="post" action="/runs.json">
   <div id="run_data">
   </div>
   <input type="submit" value="Create Run">

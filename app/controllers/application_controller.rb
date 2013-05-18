@@ -12,11 +12,6 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def post_to_twitter
-    current_user.twitter.update("Tweetie2 from Twweeter.")
-    redirect_to "/"
-  end
-
   def request_user
     respond_with(current_user)
   end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130515165404) do
+ActiveRecord::Schema.define(:version => 20130517223028) do
 
   create_table "runs", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -33,9 +33,15 @@ ActiveRecord::Schema.define(:version => 20130515165404) do
     t.string   "name"
     t.string   "oauth_token"
     t.string   "oauth_secret"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
     t.string   "status"
+    t.string   "email",              :default => ""
+    t.integer  "sign_in_count",      :default => 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
   end
 
 end

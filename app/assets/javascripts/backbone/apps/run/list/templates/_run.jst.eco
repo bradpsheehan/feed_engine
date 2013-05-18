@@ -1,1 +1,1 @@
-<%= @label_name %> <input type="text" name=<%= @name %>><br>
+<%= @label_name %> <input type="text" name=<%= @name %> id=<%= @name %>><br>
