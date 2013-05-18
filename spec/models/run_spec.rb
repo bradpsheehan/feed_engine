@@ -28,7 +28,7 @@ describe Run do
       VCR.use_cassette('create a run') do
         runs_count = Run.all.count
         user_runs_count = UserRun.all.count
-        Run.create_with_creator_and_invitees(current_user, "test run", "runline3")
+        Run.create_with_creator_and_invitees(current_user, "test run", ["runline3"])
         expect(Run.all.count).to be (runs_count + 1)
         expect(UserRun.all.count).to be (user_runs_count + 2)
       end
@@ -43,7 +43,7 @@ describe Run do
         run = Run.new
         run.name = "fake run"
         run.save!
-        invitees = "RunLine3"
+        invitees = ["RunLine3"]
         Run.invite_runners(current_user, run, invitees)
         expect(User.all.count).to be (user_count + 1)
       end
@@ -57,7 +57,7 @@ describe Run do
         run = Run.new
         run.name = "fake run"
         run.save!
-        invitees = "RunLine3"
+        invitees = ["RunLine3"]
         Run.invite_runners(current_user, run, invitees)
         expect(User.all.count).to be (user_count)
       end
@@ -69,7 +69,7 @@ describe Run do
         run = Run.new
         run.name = "fake run"
         run.save!
-        invitees = "RunLine3, runline5, runline6, runline7, runline8"
+        invitees = %w(RunLine3 runline5 runline6 runline7 runline8)
         Run.invite_runners(current_user, run, invitees)
         expect(UserRun.all.count).to be (user_run_count + 5)
       end

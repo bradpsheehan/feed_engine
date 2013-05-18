@@ -11,12 +11,9 @@
     events: ->
       "submit form" : "createRun"
 
-      
 
     createRun: ->
-      value = $("#group_name").val()
       $.post "/runs",
-        group_name: value
-      , (run) ->
+        (run) ->
 
-      false
+      # false

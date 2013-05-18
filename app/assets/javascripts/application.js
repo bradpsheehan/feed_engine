@@ -16,6 +16,7 @@
 //= require lib/underscore
 //= require lib/backbone
 //= require lib/marionette
+//= require lib/backbone_csrf_extension
 //= require_tree ./backbone/config
 //= require backbone/app
 //= require backbone/router
