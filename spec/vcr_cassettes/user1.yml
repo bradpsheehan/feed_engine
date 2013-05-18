@@ -1,0 +1,86 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.twitter.com/1.1/statuses/user_timeline.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - Twitter Ruby Gem 4.5.0
+      Authorization:
+      - OAuth oauth_consumer_key="SQXPKncl9wOlvvKwf1T5w", oauth_nonce="53574dbe9090f0fdf9911140bbc6f2cb",
+        oauth_signature="x3GITqTuVVRURnArrIxq7FY7pwQ%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1368661338", oauth_token="1428947773-5kMogR0HQWkeEM5ZisRNrvkG2EGgcuLlfOVVD4K",
+        oauth_version="1.0"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store, must-revalidate, pre-check=0, post-check=0
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '667'
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 15 May 2013 23:42:12 GMT
+      Expires:
+      - Tue, 31 Mar 1981 05:00:00 GMT
+      Last-Modified:
+      - Wed, 15 May 2013 23:42:12 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - tfe
+      Set-Cookie:
+      - guest_id=v1%3A136866133215633805; Domain=.twitter.com; Path=/; Expires=Fri,
+        15-May-2015 23:42:12 UTC
+      - lang=en
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=631138519
+      X-Access-Level:
+      - read-write-directmessages
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Rate-Limit-Limit:
+      - '180'
+      X-Rate-Limit-Remaining:
+      - '179'
+      X-Rate-Limit-Reset:
+      - '1368662232'
+      X-Transaction:
+      - 5c5844f495760af0
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAAKxUTW/bMAz9K4GuKxLb8ZrWxy3dbbfdmkKQbdoRKkuZRDfL
+        ivz3UY7tyM1SbNgMBIEeySd+6PHxlRUWBELJBbKMfWth9lUcZnE6S5IsSrJ0
+        NfsQ0TdLonjJbpgsWbZcpmlydxvR3/L+Pr1NUo9zh5YYLo0UhfDDswtXVsGP
+        DM60tgAy7SH3frbVhc+GZZVQDohXcws7deBo6AKBreM+Bd0qdcV4yuPSoXVg
+        r8T2pmuRjloEmmvRwGD2ESx77doRU7336Wq1WgZtOINU1imSUXFKapglvvCQ
+        c7D4VilDDZBGE0qnEshR7s5Aa9WQA2iUKMH5PCZ+r96L4Men4/GG7axBKMKe
+        VkYpswfreGFaTYNJCLMSdDkiMSUinX8WPRDdvPtQ4iz5OH0olXih2UoEF1C0
+        WHBTVQ5wKAJlA/yn0WNnazActMhVkPALWFnJADgNGybpCl1TXqDp7sJotDJv
+        0VCNb8mk42iFdkqQeUSpS5VUwHNRPNeWWH3lyjuwz9H64WHNfusjG1ED74bC
+        toi7bLPYLEQ0x71s6nlhms2ic3GbBW6hGf/jzSKv5ztK+X1a7kldT+46dif/
+        mR7pfFH5H5TiUBbPh82ihEq0Cvkk1F3iMdfGNkK9yeQvqvtPN5K4nsd5RtFd
+        +ikNrE6WkAvLc2NLWgRX5z740UGNXmty+nIbePldN1qX3RdY6dVeDJpltPfA
+        i31SzBV4GnPSsvRvf6Ju2l7fW3DIHXiB9DZtkIR0WjCuR4+d5gb5FYaaIDUJ
+        3Q3QTokCzvaztAbMAu4BMNC5F7/XfgCF22or3BZF3a0oEvOhyY3qD8PmOq1Y
+        3viwLldaZmfes5r7uwOkXwS0hY9PvwAAAP//AwCJPlCi3wYAAA==
+    http_version: 
+  recorded_at: Wed, 15 May 2013 23:42:18 GMT
+recorded_with: VCR 2.4.0
