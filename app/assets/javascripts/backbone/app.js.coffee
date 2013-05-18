@@ -11,20 +11,9 @@
     App.module("HeaderApp").start()
     App.module("FooterApp").start()
     App.module("SidebarApp").start()
-    App.module("RunApp").start()
+    # App.module("RunApp").start()
     new App.Router
     Backbone.history.start()
-
-    $("form").submit ->
-
-      value = $("#group_name").val()
-      alert(value)
-      $.post "/runs",
-        group_name: value
-      , (run) ->
-        alert(run["name"])
-
-      false
 
   App
 

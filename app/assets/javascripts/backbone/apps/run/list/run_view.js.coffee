@@ -7,3 +7,16 @@
     template: "run/list/templates/runs"
     itemView: List.Run
     itemViewContainer: "#run_data"
+
+    events: ->
+      "submit form" : "createRun"
+
+      
+
+    createRun: ->
+      value = $("#group_name").val()
+      $.post "/runs",
+        group_name: value
+      , (run) ->
+
+      false

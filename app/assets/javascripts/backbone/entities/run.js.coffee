@@ -9,7 +9,7 @@
     getRuns: ->
       new Entities.RunCollection([
         {
-          label_name: "Group Name"
+          label_name: "GroupName"
           name: "group_name"
         }
         {
