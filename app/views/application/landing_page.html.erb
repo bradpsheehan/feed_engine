@@ -7,13 +7,4 @@
   <%= link_to "Sign in with Twitter", "/auth/twitter" %>
 <% end %>
 
-<h2>Create Run</h2>
-<%= form_tag '/users/confirm', :method => :post%>
-  <%= label_tag "Run name" %>
-  <%= text_field_tag :run_name %>
-  <%= label_tag "Invite A Friend" %>
-  <%= text_field_tag :friends %>
-  <%= submit_tag("Create Run") %>
-<% end %>
 
-<h3>All Runs</h3>
