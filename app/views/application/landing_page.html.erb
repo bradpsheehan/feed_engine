@@ -8,7 +8,7 @@
 <% end %>
 
 <h2>Create Run</h2>
-<%= form_tag do %>
+<%= form_tag '/users/confirm', :method => :post%>
   <%= label_tag "Run name" %>
   <%= text_field_tag :run_name %>
   <%= label_tag "Invite A Friend" %>
