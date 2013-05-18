@@ -1,6 +1,6 @@
-<h1>Heeey!</h1>
+<h1>Create a New Run</h1>
 
-<form id="new_run">
+<form id="new_run" method="post" action="">
   <div id="run_data">
   </div>
   <input type="submit" value="Create Run">

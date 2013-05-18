@@ -3,7 +3,7 @@
 
   API =
     listRun: ->
-      RunApp.Show.Controller.showRun()
+      RunApp.List.Controller.listRun()
 
   RunApp.on "start", ->
     API.listRun()
