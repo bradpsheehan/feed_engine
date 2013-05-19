@@ -18,6 +18,10 @@
         {
           name: "FitFeed"
         }
+        {
+          name: "Settings"
+          url: "#/settings"
+        }
       ])
 
 
