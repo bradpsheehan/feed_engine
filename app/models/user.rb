@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
+  has_many :user_runs
+  has_many :runs, :through => :user_runs
+
+  validates :name, :uniqueness => true
 
   def mentions
     @mentions ||= twitter.mentions_timeline
@@ -20,9 +24,20 @@ class User < ActiveRecord::Base
     @friends ||= twitter.friends
   end
 
+  def tweet(status)
+    twitter.update(status)
+  end
+
   def twitter
     @twitter ||= Twitter::Client.new(oauth_token: oauth_token,
                                      oauth_token_secret: oauth_secret)
+  end
+
+  def self.create_invited_user(name)
+    user = User.new
+    user.name = name
+    user.status = "invited"
+    user.save!
   end
 
   def self.from_omniauth(auth)

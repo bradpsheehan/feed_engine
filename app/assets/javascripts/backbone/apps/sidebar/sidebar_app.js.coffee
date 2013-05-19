@@ -2,10 +2,9 @@
   @startWithParent = false
 
   API =
-    showSidebar: ->
-      SidebarApp.Show.Controller.showSidebar()
+    listSidebar: ->
+      SidebarApp.List.Controller.listSidebar()
 
   SidebarApp.on "start", ->
-    API.showSidebar()
-
+    API.listSidebar()
 

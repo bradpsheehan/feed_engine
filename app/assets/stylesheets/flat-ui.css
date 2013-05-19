@@ -176,12 +176,18 @@
   content: "\e004"; }
 
 body {
-  color: white;
+  /*background-image:url('asphalt_road_texture_with_yellow_stripe_1341410477.jpg');*/
+  background-size: cover;
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+  background-position:center;
+  /*background-color: #34506e;*/
+  background-color: white;
+  color: black;
   font: 14px/1.231 "Lato", sans-serif; }
 
 a {
   color: #1abc9c;
-  text-decoration: underline;
   -webkit-transition: 0.25s;
   -moz-transition: 0.25s;
   -o-transition: 0.25s;
@@ -598,7 +604,7 @@ h6 {
         background-color: #1abc9c; }
 
 .navbar-inner {
-  background-color: #4d4d4d
+  background-color: #2C3E50;
   border: none;
   padding-left: 4px;
   padding-right: 4px;
