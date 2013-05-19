@@ -1,4 +1,6 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :twitter, 'SQXPKncl9wOlvvKwf1T5w', 'tDwWFZ3pkvhWEf5VXDN0Obgfwhu1G0uJLoXK6ogmbs'
+  provider :twitter, ENV["CONSUMER_KEY"], ENV["CONSUMER_SECRET"]
+  provider :runkeeper, ENV['RUNKEEPER_CLIENT_ID'], ENV['RUNKEEPER_CLIENT_SECRET']
+  provider :mapmyfitness, ENV['MAPMYFITNESS_CONSUMER_KEY'], ENV['MAPMYFITNESS_SECRET_KEY']
 end
 

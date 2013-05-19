@@ -161,6 +161,8 @@
       "/Users/kareemgrant/Projects/feed_engine/config/initializers/omniauth.rb": [
         1,
         1,
+        1,
+        1,
         null,
         null
       ],
@@ -330,11 +332,13 @@
         null,
         null
       ],
-      "/Users/kareemgrant/Projects/feed_engine/app/models/fitness_app_user.rb": [
+      "/Users/kareemgrant/Projects/feed_engine/app/models/app_provider.rb": [
+        1,
         1,
         1,
         null,
         1,
+        null,
         null
       ],
       "/Users/kareemgrant/Projects/feed_engine/app/models/populator.rb": [
@@ -634,6 +638,6 @@
         null
       ]
     },
-    "timestamp": 1368929831
+    "timestamp": 1368997889
   }
 }

@@ -93,9 +93,6 @@ GEM
     faraday_middleware (0.9.0)
       faraday (>= 0.7.4, < 0.9)
     ffi (1.8.1)
-    figaro (0.6.4)
-      bundler (~> 1.0)
-      rails (>= 3, < 5)
     formatador (0.2.4)
     gon (4.1.0)
       actionpack (>= 2.3.0)
@@ -157,6 +154,7 @@ GEM
     mime-types (1.23)
     mono_logger (1.0.1)
     multi_json (1.7.3)
+    multi_xml (0.5.3)
     multipart-post (1.2.0)
     netrc (0.7.7)
     nokogiri (1.5.9)
@@ -170,6 +168,9 @@ GEM
     omniauth (1.1.4)
       hashie (>= 1.2, < 3)
       rack
+    omniauth-mapmyfitness (0.1.2)
+      multi_xml
+      omniauth-oauth
     omniauth-oauth (1.0.1)
       oauth
       omniauth (~> 1.0)
@@ -332,7 +333,6 @@ DEPENDENCIES
   faker
   faraday
   faraday_middleware
-  figaro
   gon
   guard-rspec
   haml-rails (>= 0.3.4)
@@ -342,6 +342,7 @@ DEPENDENCIES
   json
   mono_logger
   omniauth
+  omniauth-mapmyfitness
   omniauth-runkeeper
   omniauth-twitter
   pg

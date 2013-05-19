@@ -9,13 +9,10 @@ FactoryGirl.define do
     status           "confirmed"
   end
 
-  factory :fitness_app_user do
+  factory :app_provider do
     user
 
     name              "kareemgrant"
-    access_token      "318092c9fa74468dba0507844d29cf4d"
-    uid               "5234295"
-    provider          "runkeeper"
   end
 
   factory :activity do
