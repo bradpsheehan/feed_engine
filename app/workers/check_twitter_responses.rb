@@ -1,5 +1,5 @@
 class CheckTwitterResponses
-  @queue = check_for_yes_responses_to_runs_queue
+  @queue = :check_for_yes_responses_to_runs_queue
 
   def self.perform
     results = get_results("#runline #yes")
