@@ -3,13 +3,8 @@
   Create.Controller =
 
     createRun: ->
-      newRun = App.request "run:entities"
-      runView = @getCreateRunView(newRun)
+      runView = @getCreateRunView()
       App.contentRegion.show runView
 
-    getCreateRunView:(run) ->
-      run = new Create.Run
-        model: run
-      console.log run.model
-
-      run
+    getCreateRunView: ->
+      new Create.Run
