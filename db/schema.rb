@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130518235915) do
+ActiveRecord::Schema.define(:version => 20130519004101) do
 
   create_table "activities", :force => true do |t|
     t.string   "activity_type"
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(:version => 20130518235915) do
     t.datetime "updated_at",                        :null => false
   end
 
-  create_table "fitness_apps", :force => true do |t|
+  create_table "fitness_app_users", :force => true do |t|
     t.string   "provider"
     t.string   "uid"
     t.string   "access_token"

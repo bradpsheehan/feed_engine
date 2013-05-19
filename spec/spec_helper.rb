@@ -9,6 +9,8 @@ require 'rspec/rails'
 require 'rspec/autorun'
 require 'vcr'
 require 'database_cleaner'
+require 'factory_girl_rails'
+
 
 VCR.configure do |c|
   c.allow_http_connections_when_no_cassette = true

@@ -1,3 +1,5 @@
+require 'resque/server'
+
 FeedEngine::Application.routes.draw do
   root :to => "application#landing_page"
 

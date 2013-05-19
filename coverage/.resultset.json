@@ -326,14 +326,20 @@
         null,
         null,
         1,
+        1,
         null,
         null
       ],
-      "/Users/kareemgrant/Projects/feed_engine/app/models/fitness_app.rb": [
+      "/Users/kareemgrant/Projects/feed_engine/app/models/fitness_app_user.rb": [
+        1,
+        1,
+        null,
         1,
         null
       ],
       "/Users/kareemgrant/Projects/feed_engine/app/models/user.rb": [
+        1,
+        1,
         1,
         1,
         1,
@@ -410,6 +416,8 @@
       ],
       "/Users/kareemgrant/Projects/feed_engine/config/routes.rb": [
         1,
+        null,
+        1,
         1,
         null,
         1,
@@ -425,6 +433,6 @@
         null
       ]
     },
-    "timestamp": 1368922672
+    "timestamp": 1368926888
   }
 }
