@@ -8,13 +8,18 @@ gem 'sorcery'
 gem 'unicorn'
 gem 'haml-rails', '>= 0.3.4'
 gem 'faker'
+gem 'resque', :require => 'resque/server'
 gem 'figaro'
-gem 'resque', '~> 1.22.0'
 gem 'redis-store', '~> 1.0.0'
 gem 'omniauth'
 gem 'omniauth-twitter'
+gem 'omniauth-runkeeper'
 gem 'twitter'
 gem 'json'
+gem 'faraday'
+gem 'faraday_middleware'
+gem 'mono_logger'
+gem 'gon'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -24,15 +29,18 @@ group :assets do
 end
 
 group :development, :test do
+  gem 'heroku'
+  gem 'dotenv-rails'
   gem 'rspec-rails'
   gem 'pry'
-  gem 'simplecov', :require => false
-  gem 'rspec-rails'
+  gem 'unicorn'
   gem 'capybara'
   gem 'bullet'
   gem 'sqlite3'
   gem 'guard-rspec'
   gem 'rb-fsevent', '~> 0.9'
+  gem 'simplecov', git: "git://github.com/colszowka/simplecov.git", require: false
+  gem 'factory_girl_rails', require: false
 end
 
 group :test do

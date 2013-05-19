@@ -11,7 +11,31 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130518195032) do
+ActiveRecord::Schema.define(:version => 20130518235915) do
+
+  create_table "activities", :force => true do |t|
+    t.string   "activity_type"
+    t.string   "provider"
+    t.float    "duration"
+    t.float    "distance"
+    t.datetime "activity_date"
+    t.string   "activity_id"
+    t.integer  "user_id"
+    t.boolean  "detail_present", :default => false
+    t.text     "run_detail"
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
+  end
+
+  create_table "fitness_apps", :force => true do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "access_token"
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
 
   create_table "runs", :force => true do |t|
     t.datetime "created_at",     :null => false

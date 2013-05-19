@@ -1,14 +1,14 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/BradleySheehan/Documents/projects/feed_engine/config/environment.rb": [
+      "/Users/kareemgrant/Projects/feed_engine/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "/Users/BradleySheehan/Documents/projects/feed_engine/config/application.rb": [
+      "/Users/kareemgrant/Projects/feed_engine/config/application.rb": [
         1,
         null,
         null,
@@ -78,7 +78,7 @@
         null,
         null
       ],
-      "/Users/BradleySheehan/Documents/projects/feed_engine/config/boot.rb": [
+      "/Users/kareemgrant/Projects/feed_engine/config/boot.rb": [
         1,
         null,
         null,
@@ -86,7 +86,7 @@
         null,
         1
       ],
-      "/Users/BradleySheehan/Documents/projects/feed_engine/config/environments/test.rb": [
+      "/Users/kareemgrant/Projects/feed_engine/config/environments/test.rb": [
         1,
         null,
         null,
@@ -125,7 +125,7 @@
         1,
         null
       ],
-      "/Users/BradleySheehan/Documents/projects/feed_engine/config/initializers/backtrace_silencers.rb": [
+      "/Users/kareemgrant/Projects/feed_engine/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -134,7 +134,7 @@
         null,
         null
       ],
-      "/Users/BradleySheehan/Documents/projects/feed_engine/config/initializers/inflections.rb": [
+      "/Users/kareemgrant/Projects/feed_engine/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -151,20 +151,20 @@
         null,
         null
       ],
-      "/Users/BradleySheehan/Documents/projects/feed_engine/config/initializers/mime_types.rb": [
+      "/Users/kareemgrant/Projects/feed_engine/config/initializers/mime_types.rb": [
         null,
         null,
         null,
         null,
         null
       ],
-      "/Users/BradleySheehan/Documents/projects/feed_engine/config/initializers/omniauth.rb": [
+      "/Users/kareemgrant/Projects/feed_engine/config/initializers/omniauth.rb": [
         1,
         1,
         null,
         null
       ],
-      "/Users/BradleySheehan/Documents/projects/feed_engine/config/initializers/secret_token.rb": [
+      "/Users/kareemgrant/Projects/feed_engine/config/initializers/secret_token.rb": [
         null,
         null,
         null,
@@ -173,7 +173,7 @@
         null,
         1
       ],
-      "/Users/BradleySheehan/Documents/projects/feed_engine/config/initializers/session_store.rb": [
+      "/Users/kareemgrant/Projects/feed_engine/config/initializers/session_store.rb": [
         null,
         null,
         1,
@@ -183,7 +183,7 @@
         null,
         null
       ],
-      "/Users/BradleySheehan/Documents/projects/feed_engine/config/initializers/twitter.rb": [
+      "/Users/kareemgrant/Projects/feed_engine/config/initializers/twitter.rb": [
         1,
         1,
         1,
@@ -193,7 +193,7 @@
         null,
         null
       ],
-      "/Users/BradleySheehan/Documents/projects/feed_engine/config/initializers/wrap_parameters.rb": [
+      "/Users/kareemgrant/Projects/feed_engine/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -209,7 +209,7 @@
         1,
         null
       ],
-      "/Users/BradleySheehan/Documents/projects/feed_engine/app/controllers/application_controller.rb": [
+      "/Users/kareemgrant/Projects/feed_engine/app/controllers/application_controller.rb": [
         1,
         1,
         null,
@@ -229,45 +229,43 @@
         null,
         null,
         1,
-        null,
-        1,
         0,
         null,
-        null,
-        1,
-        null,
-        null
-      ],
-      "/Users/BradleySheehan/Documents/projects/feed_engine/app/helpers/application_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/BradleySheehan/Documents/projects/feed_engine/app/helpers/omniauth_callbacks_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/BradleySheehan/Documents/projects/feed_engine/app/controllers/runs_controller.rb": [
-        1,
-        1,
-        null,
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        null,
-        null,
-        null,
-        null,
-        null,
-        0,
         null,
         null,
         null,
         null
       ],
-      "/Users/BradleySheehan/Documents/projects/feed_engine/app/models/run.rb": [
+      "/Users/kareemgrant/Projects/feed_engine/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/kareemgrant/Projects/feed_engine/app/helpers/omniauth_callbacks_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/kareemgrant/Projects/feed_engine/app/controllers/runs_controller.rb": [
+        1,
+        1,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null
+      ],
+      "/Users/kareemgrant/Projects/feed_engine/app/models/run.rb": [
         1,
         1,
         1,
@@ -284,6 +282,8 @@
         1,
         null,
         1,
+        1,
+        null,
         1,
         null,
         null,
@@ -303,7 +303,7 @@
         null,
         null
       ],
-      "/Users/BradleySheehan/Documents/projects/feed_engine/app/controllers/sessions_controller.rb": [
+      "/Users/kareemgrant/Projects/feed_engine/app/controllers/sessions_controller.rb": [
         1,
         1,
         0,
@@ -318,7 +318,22 @@
         null,
         null
       ],
-      "/Users/BradleySheehan/Documents/projects/feed_engine/app/models/user.rb": [
+      "/Users/kareemgrant/Projects/feed_engine/app/models/activity.rb": [
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/kareemgrant/Projects/feed_engine/app/models/fitness_app.rb": [
+        1,
+        null
+      ],
+      "/Users/kareemgrant/Projects/feed_engine/app/models/user.rb": [
         1,
         1,
         1,
@@ -379,7 +394,7 @@
         null,
         null
       ],
-      "/Users/BradleySheehan/Documents/projects/feed_engine/app/models/user_run.rb": [
+      "/Users/kareemgrant/Projects/feed_engine/app/models/user_run.rb": [
         1,
         null,
         1,
@@ -393,7 +408,7 @@
         null,
         null
       ],
-      "/Users/BradleySheehan/Documents/projects/feed_engine/config/routes.rb": [
+      "/Users/kareemgrant/Projects/feed_engine/config/routes.rb": [
         1,
         1,
         null,
@@ -410,6 +425,6 @@
         null
       ]
     },
-    "timestamp": 1368908164
+    "timestamp": 1368922672
   }
 }
