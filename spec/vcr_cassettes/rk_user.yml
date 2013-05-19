@@ -1,0 +1,40 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.runkeeper.com/user
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.7
+      Authorization:
+      - Bearer 318092c9fa74468dba0507844d29cf4d
+      Accept:
+      - application/vnd.com.runkeeper.User+json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.2.1
+      Date:
+      - Sun, 19 May 2013 02:15:15 GMT
+      Content-Type:
+      - application/vnd.com.runkeeper.user+json;charset=ISO-8859-1
+      Content-Length:
+      - '422'
+      Connection:
+      - keep-alive
+      Content-Language:
+      - en-US
+    body:
+      encoding: US-ASCII
+      string: ! '{"strength_training_activities":"/strengthTrainingActivities","weight":"/weight","settings":"/settings","diabetes":"/diabetes","team":"/team","sleep":"/sleep","fitness_activities":"/fitnessActivities","change_log":"/changeLog","goals":"/goals","userID":5234295,"nutrition":"/nutrition","general_measurements":"/generalMeasurements","background_activities":"/backgroundActivities","records":"/records","profile":"/profile"}'
+    http_version: 
+  recorded_at: Sun, 19 May 2013 02:15:13 GMT
+recorded_with: VCR 2.4.0

@@ -1,0 +1,87 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.runkeeper.com/fitnessActivities/?pageSize=50
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.7
+      Authorization:
+      - Bearer 318092c9fa74468dba0507844d29cf4d
+      Accept:
+      - application/vnd.com.runkeeper.FitnessActivityFeed+json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.2.1
+      Date:
+      - Sun, 19 May 2013 02:15:14 GMT
+      Content-Type:
+      - application/vnd.com.runkeeper.FitnessActivityFeed+json;charset=ISO-8859-1
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Last-Modified:
+      - Thu, 11 Oct 2012 00:21:18 GMT
+      Content-Language:
+      - en-US
+    body:
+      encoding: US-ASCII
+      string: ! '{"items":[{"duration":3138.844,"total_distance":10622.2704823343,"has_path":true,"entry_mode":"API","source":"RunKeeper","start_time":"Wed,
+        10 Oct 2012 19:09:29","type":"Running","uri":"/fitnessActivities/124069314"},{"duration":1821.089,"total_distance":6481.98380886548,"has_path":true,"entry_mode":"API","source":"RunKeeper","start_time":"Tue,
+        9 Oct 2012 20:02:48","type":"Running","uri":"/fitnessActivities/123842703"},{"duration":1814.125,"total_distance":6643.04174579022,"has_path":true,"entry_mode":"API","source":"RunKeeper","start_time":"Wed,
+        3 Oct 2012 19:57:24","type":"Running","uri":"/fitnessActivities/122505044"},{"duration":900.967,"total_distance":3049.02173617456,"has_path":true,"entry_mode":"API","source":"RunKeeper","start_time":"Wed,
+        26 Sep 2012 19:45:55","type":"Running","uri":"/fitnessActivities/120925031"},{"duration":2603.724,"total_distance":9135.52931846853,"has_path":true,"entry_mode":"API","source":"RunKeeper","start_time":"Wed,
+        19 Sep 2012 19:31:59","type":"Running","uri":"/fitnessActivities/119292562"},{"duration":1106.969,"total_distance":4057.48399595331,"has_path":true,"entry_mode":"API","source":"RunKeeper","start_time":"Sun,
+        16 Sep 2012 09:15:25","type":"Running","uri":"/fitnessActivities/118369296"},{"duration":1828.528,"total_distance":6553.30857428298,"has_path":true,"entry_mode":"API","source":"RunKeeper","start_time":"Tue,
+        11 Sep 2012 18:35:00","type":"Running","uri":"/fitnessActivities/118266715"},{"duration":1934.214,"total_distance":6679.12059885461,"has_path":true,"entry_mode":"API","source":"RunKeeper","start_time":"Sun,
+        9 Sep 2012 09:29:59","type":"Running","uri":"/fitnessActivities/116520587"},{"duration":3740.264,"total_distance":12326.564043197,"has_path":true,"entry_mode":"API","source":"RunKeeper","start_time":"Thu,
+        6 Sep 2012 19:17:46","type":"Running","uri":"/fitnessActivities/115888331"},{"duration":1821.966,"total_distance":6167.05170355525,"has_path":true,"entry_mode":"API","source":"RunKeeper","start_time":"Thu,
+        23 Aug 2012 19:25:27","type":"Running","uri":"/fitnessActivities/112236130"},{"duration":1806,"total_distance":6158.17168009737,"has_path":true,"entry_mode":"Web","source":"RunKeeper","start_time":"Tue,
+        21 Aug 2012 20:40:00","type":"Running","uri":"/fitnessActivities/111705402"},{"duration":2857.277,"total_distance":9441.85881965064,"has_path":true,"entry_mode":"API","source":"RunKeeper","start_time":"Thu,
+        16 Aug 2012 19:21:44","type":"Running","uri":"/fitnessActivities/110356351"},{"duration":1366.76,"total_distance":4944.22550260633,"has_path":true,"entry_mode":"API","source":"RunKeeper","start_time":"Sat,
+        11 Aug 2012 10:02:17","type":"Running","uri":"/fitnessActivities/108824652"},{"duration":1740.023,"total_distance":6018.71492258089,"has_path":true,"entry_mode":"API","source":"RunKeeper","start_time":"Sat,
+        4 Aug 2012 11:03:09","type":"Running","uri":"/fitnessActivities/107023734"},{"duration":1983.514,"total_distance":6788.39951445847,"has_path":true,"entry_mode":"API","source":"RunKeeper","start_time":"Wed,
+        1 Aug 2012 21:39:30","type":"Running","uri":"/fitnessActivities/106408100"},{"duration":2664.555,"total_distance":8699.36425743287,"has_path":true,"entry_mode":"API","source":"RunKeeper","start_time":"Sun,
+        22 Jul 2012 14:17:08","type":"Running","uri":"/fitnessActivities/103825144"},{"duration":2437,"total_distance":7888.50830859626,"has_path":true,"entry_mode":"API","source":"RunKeeper","start_time":"Mon,
+        2 Jul 2012 19:43:12","type":"Running","uri":"/fitnessActivities/99179165"},{"duration":1977.473,"total_distance":7026.26625879698,"has_path":true,"entry_mode":"API","source":"RunKeeper","start_time":"Sun,
+        27 May 2012 10:17:30","type":"Running","uri":"/fitnessActivities/91046197"},{"duration":2190.721,"total_distance":6524.72419368517,"has_path":true,"entry_mode":"API","source":"RunKeeper","start_time":"Thu,
+        3 May 2012 19:42:11","type":"Running","uri":"/fitnessActivities/85686974"},{"duration":1261.538,"total_distance":4124.46223888437,"has_path":true,"entry_mode":"API","source":"RunKeeper","start_time":"Thu,
+        3 May 2012 18:51:41","type":"Running","uri":"/fitnessActivities/85676150"},{"duration":1445.416,"total_distance":4387.84324961316,"has_path":true,"entry_mode":"API","source":"RunKeeper","start_time":"Sat,
+        28 Apr 2012 12:38:20","type":"Running","uri":"/fitnessActivities/84463239"},{"duration":1451.637,"total_distance":4039.78895311497,"has_path":true,"entry_mode":"API","source":"RunKeeper","start_time":"Sat,
+        17 Dec 2011 15:44:09","type":"Running","uri":"/fitnessActivities/63129407"},{"duration":2252.436,"total_distance":6872.39931336768,"has_path":true,"entry_mode":"API","source":"RunKeeper","start_time":"Sat,
+        17 Dec 2011 14:57:33","type":"Running","uri":"/fitnessActivities/63127296"},{"duration":1723.112,"total_distance":6150.68157710997,"has_path":true,"entry_mode":"API","source":"RunKeeper","start_time":"Thu,
+        27 Oct 2011 22:39:02","type":"Running","uri":"/fitnessActivities/57804365"},{"duration":1830.543,"total_distance":5813.79382084108,"has_path":true,"entry_mode":"API","source":"RunKeeper","start_time":"Fri,
+        14 Oct 2011 07:58:51","type":"Running","uri":"/fitnessActivities/56154849"},{"duration":4346.234,"total_distance":13834.9439686308,"has_path":true,"entry_mode":"API","source":"RunKeeper","start_time":"Tue,
+        4 Oct 2011 20:10:14","type":"Running","uri":"/fitnessActivities/54989092"},{"duration":2890,"total_distance":8980.13952,"has_path":false,"entry_mode":"Web","source":"RunKeeper","start_time":"Wed,
+        28 Sep 2011 19:45:00","type":"Running","uri":"/fitnessActivities/54181138"},{"duration":3402.72,"total_distance":11399.0446999356,"has_path":true,"entry_mode":"API","source":"RunKeeper","start_time":"Tue,
+        20 Sep 2011 04:58:29","type":"Running","uri":"/fitnessActivities/52950345"},{"duration":2645.404,"total_distance":8734.54040053126,"has_path":true,"entry_mode":"API","source":"RunKeeper","start_time":"Sat,
+        10 Sep 2011 12:43:04","type":"Running","uri":"/fitnessActivities/51615726"},{"duration":540.238,"total_distance":1926.76294270304,"has_path":true,"entry_mode":"API","source":"RunKeeper","start_time":"Sat,
+        3 Sep 2011 15:31:24","type":"Running","uri":"/fitnessActivities/50658329"},{"duration":570.209,"total_distance":2158.66147302535,"has_path":true,"entry_mode":"API","source":"RunKeeper","start_time":"Sat,
+        3 Sep 2011 15:00:34","type":"Running","uri":"/fitnessActivities/50655896"},{"duration":1074.988,"total_distance":2856.78999154178,"has_path":true,"entry_mode":"API","source":"RunKeeper","start_time":"Sun,
+        21 Aug 2011 09:38:47","type":"Running","uri":"/fitnessActivities/48691110"},{"duration":2573.874,"total_distance":5677.25392171501,"has_path":true,"entry_mode":"API","source":"RunKeeper","start_time":"Sun,
+        21 Aug 2011 08:46:28","type":"Running","uri":"/fitnessActivities/48686267"},{"duration":553.982,"total_distance":2038.2728866684,"has_path":true,"entry_mode":"API","source":"RunKeeper","start_time":"Sun,
+        21 Aug 2011 08:31:35","type":"Running","uri":"/fitnessActivities/48678211"},{"duration":1866.445,"total_distance":6631.88837851148,"has_path":true,"entry_mode":"API","source":"RunKeeper","start_time":"Mon,
+        15 Aug 2011 21:59:43","type":"Running","uri":"/fitnessActivities/47869872"},{"duration":1980.451,"total_distance":7131.86503465543,"has_path":true,"entry_mode":"API","source":"RunKeeper","start_time":"Wed,
+        10 Aug 2011 23:18:49","type":"Running","uri":"/fitnessActivities/47138579"},{"duration":1982.197,"total_distance":7063.60763342449,"has_path":true,"entry_mode":"API","source":"RunKeeper","start_time":"Tue,
+        26 Jul 2011 22:07:27","type":"Running","uri":"/fitnessActivities/45009369"},{"duration":1582.006,"total_distance":5206.64254022545,"has_path":true,"entry_mode":"API","source":"RunKeeper","start_time":"Sat,
+        23 Jul 2011 09:37:47","type":"Running","uri":"/fitnessActivities/44495746"},{"duration":2045.359,"total_distance":6705.66617200592,"has_path":true,"entry_mode":"API","source":"RunKeeper","start_time":"Fri,
+        22 Jul 2011 07:01:28","type":"Running","uri":"/fitnessActivities/44357992"},{"duration":2252.766,"total_distance":6117.15854475104,"has_path":true,"entry_mode":"API","source":"RunKeeper","start_time":"Tue,
+        19 Jul 2011 06:50:04","type":"Running","uri":"/fitnessActivities/43930291"},{"duration":3008.737,"total_distance":7553.61741302114,"has_path":true,"entry_mode":"API","source":"RunKeeper","start_time":"Sun,
+        17 Jul 2011 11:29:11","type":"Running","uri":"/fitnessActivities/43688253"},{"duration":2375.688,"total_distance":5715.66485967945,"has_path":true,"entry_mode":"API","source":"RunKeeper","start_time":"Sat,
+        16 Jul 2011 10:17:25","type":"Running","uri":"/fitnessActivities/43557441"},{"duration":1993.984,"total_distance":6407.39523475803,"has_path":true,"entry_mode":"API","source":"RunKeeper","start_time":"Fri,
+        15 Jul 2011 07:01:09","type":"Running","uri":"/fitnessActivities/43393530"},{"duration":2765.379,"total_distance":8515.56630381382,"has_path":true,"entry_mode":"API","source":"RunKeeper","start_time":"Sun,
+        10 Jul 2011 10:36:32","type":"Running","uri":"/fitnessActivities/42707224"},{"duration":2221.357,"total_distance":6797.55734581039,"has_path":true,"entry_mode":"API","source":"RunKeeper","start_time":"Wed,
+        6 Jul 2011 21:00:32","type":"Running","uri":"/fitnessActivities/42268557"}],"size":45}'
+    http_version: 
+  recorded_at: Sun, 19 May 2013 02:15:13 GMT
+recorded_with: VCR 2.4.0

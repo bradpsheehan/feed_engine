@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   has_many :user_runs
   has_many :runs, :through => :user_runs
+  has_many :activities
+  has_one  :fitness_user
 
   validates :name, :uniqueness => true
 
