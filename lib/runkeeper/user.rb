@@ -22,4 +22,4 @@ module Runkeeper
       Runkeeper::FitnessActivities.new access_token, body["fitness_activities"], params
     end
   end
-
+end
