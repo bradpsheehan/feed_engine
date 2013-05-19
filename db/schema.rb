@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130517223028) do
+ActiveRecord::Schema.define(:version => 20130519221615) do
+
+  create_table "outstanding_twitter_invites", :force => true do |t|
+    t.integer  "invitor_id"
+    t.string   "invitor_twitter_handle"
+    t.integer  "invitee_id"
+    t.string   "invitee_twitter_handle"
+    t.integer  "invitee_user_run_id"
+    t.date     "run_date"
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
+  end
 
   create_table "runs", :force => true do |t|
     t.datetime "created_at", :null => false

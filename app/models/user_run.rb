@@ -6,6 +6,7 @@ class UserRun < ActiveRecord::Base
     user_run.user_id = user_id
     user_run.status = status
     user_run.save!
+    user_run
   end
 
 

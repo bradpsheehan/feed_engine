@@ -33,6 +33,15 @@ describe Run do
         expect(UserRun.all.count).to be (user_runs_count + 2)
       end
     end
+
+    it "create outstanding_twitter_invites for all invitees" do
+      VCR.use_cassette("invites_and_create_twitter_invites") do
+        invitees = "RunLine3, runline5, runline6, runline7, runline8"
+        Run.create(current_user, "another test run", invitees)
+        count = OutstandingTwitterInvites.all.count
+        expect(OutstandingTwitterInvites.all.count).to be (count + 100)
+      end
+    end
   end
 
   describe "Run.invite_runners(run_creator, run, invitees)" do
@@ -75,5 +84,4 @@ describe Run do
       end
     end
   end
-
 end

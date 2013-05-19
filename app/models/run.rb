@@ -20,8 +20,14 @@ private
         User.create_invited_user(invitee)
       end
       user = User.find_by_name(invitee)
-      UserRun.create(run.id, user.id, "invited")
-      run_creator.tweet("@#{user.name} reply #yes to come run with me via runline-herokuapp.com/run/#{rand(0..9999)}")
+      user_run = UserRun.create(run.id, user.id, "invited")
+      OutstandingTwitterInvites.create_invite(
+        run_creator,
+        invitee,
+        user_run.id,
+        run.run_date
+        )
+      run_creator.tweet("@#{user.name} reply #yes to come run with me #{rand(0..9999)}")
     end
   end
 end
