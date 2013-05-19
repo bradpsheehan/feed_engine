@@ -6,6 +6,10 @@
       @runs = @initializeRuns(attributes.runs)
       @imageURL = attributes.imageURL
 
+
+    feeds: ->
+      #to finish...
+
     initializeRuns:(runs) ->
       new Entities.Runs(runs)
 

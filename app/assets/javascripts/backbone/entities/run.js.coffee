@@ -13,6 +13,7 @@
       @runners = new Entities.Users(attributes.runners)
       @routeId = parseInt(attributes.routeId)
 
+
     route:
       _route ||= getRoute()
 
