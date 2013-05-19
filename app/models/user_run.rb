@@ -8,4 +8,6 @@ class UserRun < ActiveRecord::Base
     user_run.save!
   end
 
+
+
 end

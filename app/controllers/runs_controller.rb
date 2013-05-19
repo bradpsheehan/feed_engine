@@ -4,3 +4,5 @@ class RunsController < ApplicationController
     redirect_to "/"
   end
 end
+
+

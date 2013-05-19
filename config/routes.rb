@@ -6,7 +6,9 @@ FeedEngine::Application.routes.draw do
   match 'auth/failure', to: redirect('/')
   match 'post_to_twitter', to: "application#post_to_twitter"
   match 'create_run', to: "runs#create_run", as: "create_run"
+  match 'run/:number', to: redirect('/')
 
+  mount Resque::Server, :at => "/resque"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

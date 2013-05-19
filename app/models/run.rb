@@ -21,8 +21,7 @@ private
       end
       user = User.find_by_name(invitee)
       UserRun.create(run.id, user.id, "invited")
-      #tweet to all invited users of the run
-      run_creator.tweet("@#{user.name} reply #yes to come run with me! #{rand(0..9999)}")
+      run_creator.tweet("@#{user.name} reply #yes to come run with me via runline-herokuapp.com/run/#{rand(0..9999)}")
     end
   end
 end
