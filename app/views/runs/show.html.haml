@@ -14,7 +14,7 @@
     %br
     %h3 Start Time
     %p
-      =@run.run_start_time
+      =time_tag @run.run_start_time
     %br
     %h3 Route Map
     #route-map-placeholder
@@ -25,9 +25,4 @@
     %br
     %h3 Runners
   #runner-pics-lrg
-    .circle.pull-left
-    .circle.pull-left
-    .circle.pull-left
-    .circle.pull-left
-    .circle.pull-left
-    .circle.pull-left
+    =render partial: "runner", collection: @run.confirmed_runners, as: :runner

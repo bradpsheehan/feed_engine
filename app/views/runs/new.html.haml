@@ -1,0 +1,51 @@
+#create-run.span8
+  %h2 Create a Group Run
+  = form_for @run do |f|
+    = f.text_field :name, placeholder:"Group Name"
+    %br
+    = f.text_field :run_date, placeholder:"Date"
+    %br
+    = f.text_field :run_start_time, placeholder:"Time"
+    %label.radio
+      %input#selectExisitingRoute{:checked => "", :name => "routeSelector", :type => "radio", :value => "selectExisitngRoute"}/
+      Select an exisiting route
+    %label.radio
+      %input#createNewRoute{:name => "routeSelector", :type => "radio", :value => "createNewRoute"}/
+      Create a new Route
+    #route-selection
+      = f.select(:route_id, options_from_collection_for_select(@routes, :id, :name) )
+      = render partial: "new_run_map"
+    = text_field_tag "friends", nil, placeholder: "Enter friend twitters"
+    %label
+      Details:
+      %br
+      =f.text_area :details, {:placeholder => "details"}
+    = f.submit class:"btn"
+/ end #create-run
+= javascript_tag do
+  showMap();
+
+  $('form').submit(function(event) {
+
+
+  var radio_selection = $('input:radio[name=routeSelector]:checked').val();
+  if(radio_selection == "createNewRoute") {
+
+  var points = JSON.stringify(getRoutePoints(gpolys));
+  $(event.target).append("
+  %input{:name => "route[path]", :type => "hidden", :value => "\"+points+\""}>/
+  ");
+  } else {
+
+  var route_id = $('#run_route_id').find(":selected").val();
+
+  var input = "
+  %input{:name => "run[route_id]", :type => "hidden", :value => "\"+route_id+\""}>/
+  ";
+
+  $(event.target).append(input);
+  }
+
+
+
+  });
