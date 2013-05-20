@@ -11,11 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(:version => 20130519230321) do
-=======
 ActiveRecord::Schema.define(:version => 20130520062249) do
->>>>>>> origin/routes
 
   create_table "activities", :force => true do |t|
     t.string   "activity_type"
