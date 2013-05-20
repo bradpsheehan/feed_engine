@@ -80,9 +80,10 @@ ActiveRecord::Schema.define(:version => 20130520062249) do
     t.string   "name"
     t.string   "oauth_token"
     t.string   "oauth_secret"
-    t.datetime "created_at",                        :null => false
-    t.datetime "updated_at",                        :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
     t.string   "status"
+    t.string   "email",              :default => ""
     t.integer  "sign_in_count",      :default => 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
