@@ -12,11 +12,15 @@
         #header-nav-content
           %h1.span7 RunLine
           %ul#top-nav.nav.pull-right
-            %li
-              %a{:href => "#"} Bradley's Account
-            %li
-              %a{:href => "#"} Logout
-            / end #feed-lists
-          / end #sidebar
+            - if current_user
+              %li
+                %a{:href => "#{dashboard_path}"}
+                  = current_user.name
+              %li
+                %a{:href => "#{signout_path}"} Logout
+            - else
+              %li
+                %a{:href => "/auth/twitter"} Login
+
       = yield
     %footer#footer
