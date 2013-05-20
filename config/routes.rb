@@ -5,7 +5,10 @@ FeedEngine::Application.routes.draw do
 
   get '/dashboard', to: 'application#index'
 
-  match 'auth/:provider/callback', to: 'sessions#create'
+  match 'auth/twitter/callback', to: 'sessions#create'
+  match 'auth/runkeeper/callback', to: 'registrations#create'
+  match 'auth/mapmyfitness/callback', to: 'registrations#create'
+
   match 'signout', to: 'sessions#destroy', as: 'signout'
   match 'auth/failure', to: redirect('/')
   match 'post_to_twitter', to: "application#post_to_twitter"

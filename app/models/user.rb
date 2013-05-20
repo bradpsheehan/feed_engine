@@ -35,6 +35,10 @@ class User < ActiveRecord::Base
                                      oauth_token_secret: oauth_secret)
   end
 
+  def app_token
+    @token ||= app_provider.access_token
+  end
+
   def self.create_invited_user(name)
     user = User.new
     user.name = name
@@ -46,6 +50,7 @@ class User < ActiveRecord::Base
     where(auth.slice("provider", "uid")).first || create_from_omniauth(auth)
   end
 
+
   def self.create_from_omniauth(auth)
     create! do |user|
       user.provider = auth["provider"]
@@ -56,6 +61,7 @@ class User < ActiveRecord::Base
       user.status = "live"
     end
   end
+
 end
 
 
