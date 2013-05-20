@@ -23,7 +23,7 @@ private
       user_run = UserRun.create(run.id, user.id, "invited")
       OutstandingTwitterInvites.create_invite(
         run_creator,
-        invitee,
+        user,
         user_run.id,
         run.run_date
         )
