@@ -3,7 +3,6 @@ class SessionsController < ApplicationController
     runner = User.from_omniauth(env['omniauth.auth'])
     if runner
       session[:user_id] = runner.id
-      cookies[:thesesh] = "woohoo"
       redirect_to dashboard_path, notice: "Signed in."
     else
       redirect_to dashboard_path, alert: "Authentication failed."
