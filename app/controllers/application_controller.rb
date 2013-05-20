@@ -3,23 +3,23 @@ class ApplicationController < ActionController::Base
 
   respond_to :json, only: :request_user
 
-  def index
-  end
+  before_filter :check_user_logged_in, only: :index
 
   def landing_page
     if current_user
-      #@friends = current_user.friends
+      redirect_to dashboard_path
     end
-  end
-
-  def request_user
-    respond_with(current_user)
   end
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
-  # helper_method :current_user
+  def check_user_logged_in
+    unless current_user
+      redirect_to root_path
+    end
+  end
+
 end
 

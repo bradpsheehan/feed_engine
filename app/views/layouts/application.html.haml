@@ -10,7 +10,8 @@
     #wrap
       =render 'header'
       #main-container.container
-        =render 'sidebar'
+        -if current_user
+          =render 'sidebar'
 
         = yield
     %footer#footer

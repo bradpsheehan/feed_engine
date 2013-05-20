@@ -2,7 +2,12 @@
   #header-nav-content
     %h1.span7 RunLine
     %ul#top-nav.nav.pull-right
-      %li
-        %a{:href => "/profile"} Bradley's Account
-      %li
-        %a{:href => "/signout"} Logout
+      - if current_user
+        %li
+          =link_to current_user.name, profile_path
+        %li
+          =link_to "Logout", signout_path
+      - else
+        %li
+          =link_to "Login", "/oauth/twitter"
+
