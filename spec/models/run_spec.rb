@@ -57,7 +57,7 @@ describe Run do
   end
 
   describe "Run.invite_runners(run_creator, run, invitees)" do
-    xit "creates users who don't exist" do
+    it "creates users who don't exist" do
       VCR.use_cassette('invite_and_create_runners') do
         current_user
         user_count = User.all.count
@@ -70,7 +70,7 @@ describe Run do
       end
     end
 
-    xit "doesn't create users who already exist" do
+    it "doesn't create users who already exist" do
       VCR.use_cassette('invite_and_dont_create_runners') do
         current_user
         runline3
@@ -84,7 +84,7 @@ describe Run do
       end
     end
 
-    xit "creates user_runs for all invitees" do
+    it "creates user_runs for all invitees" do
       VCR.use_cassette('invite_and_create_user_runs') do
         user_run_count = UserRun.all.count
         run = Run.new

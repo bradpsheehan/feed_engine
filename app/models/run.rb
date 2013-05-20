@@ -6,7 +6,7 @@ class Run < ActiveRecord::Base
   attr_accessible :organizer_id, :run_date, :run_start_time, :route_id,
                   :name, :details
 
-  def self.create_with_invitees(current_user, invitees, run_info)
+  def self.create_with_invitees(invitees, run_info)
     run = Run.create(run_info)
     run.invite_runners(current_user, run, invitees)
     run

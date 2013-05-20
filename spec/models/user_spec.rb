@@ -60,7 +60,7 @@ describe User do
   end
 
   describe "User.create_invited_user(name)" do
-    xit "creates a user with status 'invited'" do
+    it "creates a user with status 'invited'" do
       user_count = User.all.count
       User.create_invited_user("jimmy")
       expect(User.all.count).to be(user_count+1)
