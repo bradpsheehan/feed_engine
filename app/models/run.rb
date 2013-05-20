@@ -3,8 +3,9 @@ class Run < ActiveRecord::Base
   has_many :users, :through => :user_runs
   belongs_to :route
 
-  attr_accessible :organizer_id, :run_date, :run_start_time, :route_id,
-                  :name, :details
+	delegate :name, :path, to: :route, prefix: true
+
+  attr_accessible :organizer_id, :run_date, :run_start_time, :route_id, :name, :details
 
   def self.create_with_invitees(invitees, run_info)
     run = Run.create(run_info)
