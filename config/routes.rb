@@ -4,7 +4,6 @@ FeedEngine::Application.routes.draw do
   mount Resque::Server, :at => "/resque"
 
   root :to => "application#landing_page"
-
   get '/dashboard', to: 'application#index'
 
   match 'auth/twitter/callback', to: 'sessions#create'
@@ -18,4 +17,8 @@ FeedEngine::Application.routes.draw do
   # match 'create_run', to: "runs#create_run", as: "create_run"
   resources :runs
   resources :routes, only: [:new, :create, :index, :show]
+
+  match 'create_run', to: "runs#create_run", as: "create_run"
+  match 'run/:number', to: redirect('/')
+
 end

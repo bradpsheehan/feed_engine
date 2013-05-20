@@ -22,12 +22,39 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 Dir["lib/**/*.rb"].each {|file| load(file); }
 
 RSpec.configure do |config|
+
   config.order = "random"
   config.include(OmniauthMacros)
   config.include FactoryGirl::Syntax::Methods
 
+  REDIS_PID = "#{Rails.root}/tmp/pids/redis-test.pid"
+  REDIS_CACHE_PATH = "#{Rails.root}/tmp/cache/"
+
+
   config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)
+    redis_options = {
+      "daemonize"     => 'yes',
+      "pidfile"       => REDIS_PID,
+      "port"          => 9736,
+      "timeout"       => 300,
+      "save 900"      => 1,
+      "save 300"      => 1,
+      "save 60"       => 10000,
+      "dbfilename"    => "dump.rdb",
+      "dir"           => REDIS_CACHE_PATH,
+      "loglevel"      => "debug",
+      "logfile"       => "stdout",
+      "databases"     => 16
+    }.map { |k, v| "#{k} #{v}" }.join("\n")
+    `echo '#{redis_options}' | redis-server -`
+  end
+
+  config.after(:suite) do
+    %x{
+      cat #{REDIS_PID} | xargs kill -QUIT
+      rm -f #{REDIS_CACHE_PATH}dump.rdb
+    }
   end
 
   config.before(:each) do
@@ -47,4 +74,6 @@ RSpec.configure do |config|
   end
 end
 
+
 OmniAuth.config.test_mode = true
+
