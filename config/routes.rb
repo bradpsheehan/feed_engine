@@ -16,9 +16,7 @@ FeedEngine::Application.routes.draw do
   get '/user', to: 'application#request_user'
   # match 'create_run', to: "runs#create_run", as: "create_run"
   resources :runs
-  resources :routes, only: [:new, :create, :index, :show]
 
-  match 'create_run', to: "runs#create_run", as: "create_run"
-  match 'run/:number', to: redirect('/')
+  resources :routes, only: [:create, :show]
 
 end

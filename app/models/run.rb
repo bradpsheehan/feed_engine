@@ -47,9 +47,11 @@ class Run < ActiveRecord::Base
   #   send_invite(invitee_name)
   # end
 
-  # def confirmed_runners
-  #   #TODO
-  # end
+  def confirmed_runners
+    confirmed_user_runs = user_runs.select {|user_run| user_run.status == "confirmed"}
+    confirmed_user_runs.collect(&:user) << organizer
+  end
+
 
   # private
 

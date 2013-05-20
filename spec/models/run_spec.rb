@@ -96,4 +96,21 @@ describe Run do
       end
     end
   end
+
+  describe "confirmed_runners" do
+
+    it "return the confirmed runners" do
+
+      run = Run.create
+      user_run = UserRun.create(run_id: run.id, user_id: current_user.id, status: "confirmed")
+      expect(run.confirmed_runners).to include(current_user)
+
+    end
+
+    it "includes the organizer" do
+      run = Run.create(organizer_id: current_user.id)
+      expect(run.confirmed_runners).to include(current_user)
+    end
+
+  end
 end

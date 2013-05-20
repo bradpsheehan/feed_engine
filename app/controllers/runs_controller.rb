@@ -1,16 +1,9 @@
 class RunsController < ApplicationController
 
   def create
-    run_info = {}
-    run_info[:run_date] = Date.parse(params[:date])
-    run_info[:run_start_time] = Time.parse(params[:time])
-    run_info[:details] = params[:details]
-    run = Run.create_with_creator_and_invitees(
-      current_user,
-      params[:group_name],
-      [params[:friends]],
-      run_info
-    )
+    params[:run][:organizer_id] = current_user.id
+    friends = params[:friends].gsub(" ", "").split(",")
+    run = Run.create_with_invitees(friends, params[:run])
 
     redirect_to run
   end
