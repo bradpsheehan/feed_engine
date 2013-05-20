@@ -1,1 +1,0 @@
-<div id="sidebar-list-box"><a href=<%= @url %>> <h2><%= @name %></h2></a></div>

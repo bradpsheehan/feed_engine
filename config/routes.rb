@@ -13,4 +13,6 @@ FeedEngine::Application.routes.draw do
   # match 'create_run', to: "runs#create_run", as: "create_run"
   resources :runs
 
+  get '/create_route', to: 'application#create_route'
+
 end
