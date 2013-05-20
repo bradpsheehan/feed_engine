@@ -1,7 +1,11 @@
 #inner-container.span8
-  %h1 Your Profile
+  %h1
+    Your Profile
+    %hr
+    .api-integrators.span8
+      %h3.pull-left
+        Integrate with RunKeeper
+      #api-connect.btn.btn-primary.pull-right
+        =link_to "connect", "/auth/runkeeper"
 
-  %h3 Integrate with RunKeeper
 
-  .btn
-    connect

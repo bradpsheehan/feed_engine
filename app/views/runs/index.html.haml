@@ -1,12 +1,15 @@
 #inner-container.span8
   #inner-header.span8
-    %h1 Your Groups
+    %h1.pull-left
+      Your Groups
+    #api-connect.btn.btn-large.btn-primary.pull-right
+      =link_to "new run", new_run_path
   -@runs.each do |run|
     #inner-content.span8
       #run-details
         .run-header.pull-left
           %h1
-            =run.name
+            =link_to run.name, run_path(run.id)
         .pull-right
           %h3 Start Time
           %p

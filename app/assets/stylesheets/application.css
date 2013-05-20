@@ -198,3 +198,13 @@ nav#feed-lists li.feeds-run {
   color: white;
   margin-bottom: 25px;
 }
+#inner-container {
+  color: white;
+}
+.api-integrator{
+  display: inline;
+}
+#api-connect {
+  margin-top: 2%;
+}
+
