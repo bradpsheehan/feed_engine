@@ -6,7 +6,6 @@ describe Populator do
 
     before do
       @user = create(:user)
-
       @data = {
         "type" => "running",
         "duration" =>  5757.987,
@@ -18,19 +17,14 @@ describe Populator do
     end
 
     it "saves record to the database" do
-
       Populator.stub(:get_activity_id).and_return("124069314")
-
       expect {
         Populator.create_activity(@data, @user)
       }.to change(Activity, :count).by(1)
-
     end
-
   end
 
   describe "#add_activity_list" do
-
     # help_needed!
 
     before do
@@ -73,7 +67,4 @@ describe Populator do
       expect(activities.length).to eq 2
     end
   end
-
-
-
 end
