@@ -1,7 +1,7 @@
 class Run < ActiveRecord::Base
   has_many :user_runs
   has_many :users, :through => :user_runs
-  has_one :route
+  belongs_to :route
 
   attr_accessible :organizer_id, :run_date, :run_start_time, :route_id, :name
 
@@ -26,6 +26,9 @@ class Run < ActiveRecord::Base
     send_invite(invitiee_name)
   end
 
+  def confirmed_runners
+    #TODO
+  end
 
   private
 

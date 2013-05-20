@@ -16,7 +16,7 @@ class RunsController < ApplicationController
   end
 
   def show
-    "yay"
+    @run = Run.find_by_id(params[:id])
 
   end
 

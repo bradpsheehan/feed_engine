@@ -23,8 +23,6 @@ Drag the markers and the path will be redrawn.
   $('form').submit(function(event) {
     event.preventDefault()
 
-    $('form').dialog('open');
-
     var points = JSON.stringify(getRoutePoints(gpolys));
     $(event.target).append("<input type=hidden name=path value='"+points+"' />");
 
