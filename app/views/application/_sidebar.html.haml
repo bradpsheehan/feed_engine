@@ -1,9 +1,7 @@
 %aside#sidebar.span3
   .current-user.mini-profile
-    %img.user-photo{:src => ""}/
-    %p Bradley Sheehan
-    %p
-      %a{:href => "/profile"} view profile
+    =image_tag current_user.photo
+    %a{:href => "/profile"} view profile
   %nav#feed-lists
     %ul.nav.nav-tabs.nav-stacked
       %li
