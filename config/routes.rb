@@ -19,4 +19,6 @@ FeedEngine::Application.routes.draw do
 
   resources :routes, only: [:create, :show]
 
+  get '/profile', to: 'user#show', as: 'profile'
+
 end

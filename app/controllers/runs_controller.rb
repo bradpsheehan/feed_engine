@@ -15,6 +15,10 @@ class RunsController < ApplicationController
     redirect_to run
   end
 
+  def index
+    @runs = Run.all
+  end
+
   def show
     @run = Run.find_by_id(params[:id])
   end
