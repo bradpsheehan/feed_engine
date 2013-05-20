@@ -22,6 +22,8 @@ var hide_text = function() {
 }
 
 var toggle_feed_item_details = function() {
+		alert('hey!!');
+
 	$(".feed-details").after("<div class='feed-expander'>Expand</div>");
 	$(".feed-details").toggle();
 }

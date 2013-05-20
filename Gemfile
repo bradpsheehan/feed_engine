@@ -20,6 +20,7 @@ gem 'faraday'
 gem 'faraday_middleware'
 gem 'mono_logger'
 gem 'gon'
+gem 'chronic'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

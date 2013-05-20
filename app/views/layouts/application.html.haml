@@ -1,9 +1,23 @@
 !!!
 %html
   %head
-    %title RunLine
+    %title FeedEngine
     = stylesheet_link_tag    "application", :media => "all"
+    %script{:src => "http://maps.google.com/maps?file=api&v=2&sensor=false&key=AIzaSyBsmTCDQYlmID4H8rqVe7Gb9Nm_SMpHahA", :type => "text/javascript"}
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    = yield
+    #wrap
+      %nav#nav-bar.navbar.navbar-inner
+        #header-nav-content
+          %h1.span7 RunLine
+          %ul#top-nav.nav.pull-right
+            %li
+              %a{:href => "#"} Bradley's Account
+            %li
+              %a{:href => "#"} Logout
+            / end #feed-lists
+          / end #sidebar
+      = yield
+    %footer#footer
+
