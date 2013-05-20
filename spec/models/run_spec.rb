@@ -26,10 +26,11 @@ describe Run do
   let :attributes do
     {
       name: "Run Name",
-      date: "5/23/2013",
-      time: "5:12pm",
+      run_date: "5/23/2013",
+      run_start_time: "5:12pm",
       details: "run run run",
-      route_id: 1
+      route_id: 1,
+      organizer_id: current_user.id
     }
   end
 
@@ -37,9 +38,9 @@ describe Run do
     it "creates a new run and user_run" do
       VCR.use_cassette('create a run') do
         runs_count = Run.all.count
-        Run.create_with_invitees(["runline3"], attributes)
+        run = Run.create_with_invitees(["runline3"], attributes)
         expect(Run.all.count).to eq(runs_count + 1)
-        expect(run.user_runs).to eq 1
+        expect(run.user_runs.count).to eq 1
       end
     end
 

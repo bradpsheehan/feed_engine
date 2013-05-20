@@ -3,10 +3,11 @@ class Run < ActiveRecord::Base
   has_many :users, :through => :user_runs
   belongs_to :route
 
-  attr_accessible :organizer_id, :run_date, :run_start_time, :route_id, :name
+  attr_accessible :organizer_id, :run_date, :run_start_time, :route_id, :name, :details
 
   def self.create_with_invitees(invitees, run_info)
     run = Run.create(run_info)
+
     run.invite_runners(invitees)
     run
   end
@@ -15,15 +16,15 @@ class Run < ActiveRecord::Base
     @organizer ||= User.find_by_id(organizer_id)
   end
 
-  def add_invittees(invitee_names)
+  def invite_runners(invitee_names)
     invitee_names.each do |invitee_name|
       invite_runner(invitee_name)
     end
   end
 
-  def invite_runner(invitte_name)
-    add_invitee(invitee_named)
-    send_invite(invitiee_name)
+  def invite_runner(invitee_name)
+    add_invitee(invitee_name)
+    send_invite(invitee_name)
   end
 
   def confirmed_runners
