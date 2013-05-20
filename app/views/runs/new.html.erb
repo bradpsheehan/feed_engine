@@ -6,25 +6,17 @@
     <%= f.text_field :run_start_time, placeholder:"Time" %></br>
 
     <label class="radio">
-      <span class="icon"></span>
-      <span class="icon-to-fade"></span>
       <input type="radio" name="routeSelector" id="selectExisitingRoute" value="selectExisitngRoute" checked>
       Select an exisiting route
     </label>
     <label class="radio">
-      <span class="icon"></span>
-      <span class="icon-to-fade"></span>
       <input type="radio" name="routeSelector" id="createNewRoute" value="createNewRoute">
       Create a new Route
     </label>
 
     <div id="route-selection">
-
       <%= f.select(:route_id, options_from_collection_for_select(@routes, :id, :name) )%>
-      <div id="new-route">
-        Map goes here</br>
-        <img src="http://placehold.it/500x350">
-      </div>
+      <!--<%= render partial: "new_run_map" %> -->
     </div>
     <%= text_field_tag "friends", nil, placeholder: "Enter friend twitters" %>
     <label>
@@ -32,9 +24,7 @@
       <textarea placeholder="details"></textarea>
     </label>
 
-    <% end %>
+    <%= f.submit %>
+
+  <% end %>
 </div> <!-- end #create-run -->
-
-<%= javascript_tag do -%>
-
-<% end -%>

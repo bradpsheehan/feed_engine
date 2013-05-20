@@ -1,5 +1,5 @@
 class Route < ActiveRecord::Base
-  serialize :path
+  serialize :path, Array
   has_many :runs
   attr_accessible :name, :path
 

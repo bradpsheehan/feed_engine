@@ -28,7 +28,8 @@ class Run < ActiveRecord::Base
   end
 
   def confirmed_runners
-    #TODO
+    confirmed_user_runs = user_runs.select {|user_run| user_run.status == "confirmed"}
+    confirmed_user_runs.collect(&:user) << organizer
   end
 
   private
