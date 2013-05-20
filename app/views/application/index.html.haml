@@ -1,90 +1,61 @@
-#wrap
-  %nav#nav-bar.navbar.navbar-inner
-    #header-nav-content
-      %h1.span7 RunLine
-      %ul#top-nav.nav.pull-right
-        %li
-          %a{:href => "#"} Bradley's Account
-        %li
-          %a{:href => "#"} Logout
-  #main-container.container
-    .row
-      %aside#sidebar.span3
-        .current-user.mini-profile
-          %img.user-photo{:src => ""}/
-          %p Bradley Sheehan
-          %p
-            %a{:href => "#"} view profile
-        %nav#feed-lists
-          %ul.nav.nav-tabs.nav-stacked
+#main-container.container
+  -render 'sidebar'
+  #feed-content.span9
+    %article.feed-item
+      %section.feed-summary
+        %img.user-photo-thumbnail
+        %span.feed-summary-text John completed a run
+      %section.feed-details.row
+        .route-map-mini.span4
+          %img{:src => "http://placehold.it/250x200"}/
+        .run-info.span4
+          %ul
             %li
-              %a{:href => "#"} Fit Feed
+              %span.run-info-label> Pace
+              6 mph
             %li
-              %a{:href => "#"} Your Activity
+              %span.run-info-label> Time
+              1hr 00 min 00 sec
             %li
-              %a{:href => "#"} Runs
-        / end #feed-lists
-      / end #sidebar
-      #feed-content.span9
-        %article.feed-item
-          %section.feed-summary
-            %img.user-photo-thumbnail{:src => "http://placekitten.com/40/40"}/
-            %span.feed-summary-text John completed a run
-          %section.feed-details.row
-            .route-map-mini.span4
-              %img{:src => "http://placehold.it/250x200"}/
-            .run-info.span4
-              %ul
-                %li
-                  %span.run-info-label> Pace
-                  6 mph
-                %li
-                  %span.run-info-label> Time
-                  1hr 00 min 00 sec
-                %li
-                  %span.run-info-label> Distance
-                  6 miles
-          / end .feed-details
-        / end .feed-item
-        %article.feed-item
-          %section.feed-summary
-            %img.user-photo-thumbnail{:src => "http://placekitten.com/40/40"}/
-            %span.feed-summary-text Kareem completed a run
-          %section.feed-details.row
-            .route-map-mini.span4
-              %img{:src => "http://placehold.it/250x200"}/
-            .run-info.span4
-              %ul
-                %li
-                  %span.run-info-label> Pace
-                  6 mph
-                %li
-                  %span.run-info-label> Time
-                  1hr 00 min 00 sec
-                %li
-                  %span.run-info-label> Distance
-                  6 miles
-          / end .feed-details
-        / end .feed-item
-        %article.feed-item
-          %section.feed-summary
-            %img.user-photo-thumbnail{:src => "http://placekitten.com/40/40"}/
-            %span.feed-summary-text Elaine completed a run
-          %section.feed-details.row
-            .route-map-mini.span4
-              %img{:src => "http://placehold.it/250x200"}/
-            .run-info.span4
-              %ul
-                %li
-                  %span.run-info-label> Pace
-                  6 mph
-                %li
-                  %span.run-info-label> Time
-                  1hr 00 min 00 sec
-                %li
-                  %span.run-info-label> Distance
-                  6 miles
-          / end .feed-details
-        / end .feed-item
-      / end #feed-content
-%footer#footer
+              %span.run-info-label> Distance
+              6 miles
+      / end .feed-details
+    / end .feed-item
+    %article.feed-item
+      %section.feed-summary
+        %img.user-photo-thumbnail
+        %span.feed-summary-text Kareem completed a run
+      %section.feed-details.row
+        .route-map-mini.span4
+          %img{:src => "http://placehold.it/250x200"}/
+        .run-info.span4
+          %ul
+            %li
+              %span.run-info-label> Pace
+              6 mph
+            %li
+              %span.run-info-label> Time
+              1hr 00 min 00 sec
+            %li
+              %span.run-info-label> Distance
+              6 miles
+      / end .feed-details
+    / end .feed-item
+    %article.feed-item
+      %section.feed-summary
+        %img.user-photo-thumbnail
+        %span.feed-summary-text Denver Marathon Group completed a run!
+      %section.feed-details.row
+        .route-map-mini.span4
+          %img{:src => "http://placehold.it/250x200"}/
+        .run-info.span4
+          %ul
+            %li
+              %span.run-info-label> Pace
+              6 mph
+            %li
+              %span.run-info-label> Time
+              1hr 00 min 00 sec
+            %li
+              %span.run-info-label> Distance
+              6 miles

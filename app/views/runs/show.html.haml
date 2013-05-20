@@ -1,5 +1,36 @@
-= @run.name
-= @run.organizer.name
-= @run.run_date
-= @run.run_start_time
-= @run.confirmed_runners
+#main-container.container
+  =render 'sidebar'
+  #inner-content.span8
+    #run-details
+      #run-header
+        %h1
+          =@run.name
+      %br
+      %h3 Group Organizers
+      %p
+        Bradley Sheehan
+      %br
+      %h3 Date
+      %p
+        =@run.run_date
+      %br
+      %h3 Start Time
+      %p
+        =@run.run_start_time
+      %br
+      %h3 Route Map
+      #route-map-placeholder
+      %br
+      %h3 Details
+      %p
+        =@run.details
+      %br
+      %h3 Runners
+    #runner-pics-lrg
+      .circle.pull-left
+      .circle.pull-left
+      .circle.pull-left
+      .circle.pull-left
+      .circle.pull-left
+      .circle.pull-left
+

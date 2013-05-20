@@ -1,0 +1,16 @@
+%aside#sidebar.span3
+  .current-user.mini-profile
+    %img.user-photo{:src => ""}/
+    %p Bradley Sheehan
+    %p
+      %a{:href => "#"} view profile
+  %nav#feed-lists
+    %ul.nav.nav-tabs.nav-stacked
+      %li
+        %a{:href => "#"} Fit Feed
+      %li
+        %a{:href => "/runs"} Your Activity
+      %li
+        %a
+          -runs_path
+          Runs

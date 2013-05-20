@@ -18,6 +18,3 @@
 //= require route_creator
 //= require serialize_object
 //= require jquery.form
-
-
-

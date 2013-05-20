@@ -4062,6 +4062,8 @@ input[type="submit"].btn.btn-mini {
   -webkit-border-radius: 0;
      -moz-border-radius: 0;
           border-radius: 0;
+  background-color: #2980B9;
+  margin-bottom: 5px;
 }
 
 .nav-tabs.nav-stacked > li:first-child > a {
@@ -4084,7 +4086,7 @@ input[type="submit"].btn.btn-mini {
 
 .nav-tabs.nav-stacked > li > a:hover {
   z-index: 2;
-  border-color: #ddd;
+  background-color: #3498DB;
 }
 
 .nav-pills.nav-stacked > li > a {
