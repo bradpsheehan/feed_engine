@@ -44,7 +44,7 @@ describe Run do
       end
     end
 
-    xit "sends tweets to each invitee" do
+    xit "sends tweets to each invitee"
 
     it "create outstanding_twitter_invites for all invitees" do
       VCR.use_cassette("invites_and_create_twitter_invites") do

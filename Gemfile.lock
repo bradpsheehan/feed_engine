@@ -93,6 +93,9 @@ GEM
     faraday_middleware (0.9.0)
       faraday (>= 0.7.4, < 0.9)
     ffi (1.8.1)
+    figaro (0.6.4)
+      bundler (~> 1.0)
+      rails (>= 3, < 5)
     formatador (0.2.4)
     gon (4.1.0)
       actionpack (>= 2.3.0)
@@ -335,6 +338,7 @@ DEPENDENCIES
   faker
   faraday
   faraday_middleware
+  figaro
   gon
   guard-rspec
   haml-rails (>= 0.3.4)
@@ -354,7 +358,7 @@ DEPENDENCIES
   rb-fsevent (~> 0.9)
   redis-store (~> 1.0.0)
   reek
-  resque
+  resque (~> 1.22.0)
   resque_spec
   rspec-rails
   sass-rails (~> 3.2.3)
