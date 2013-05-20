@@ -5,7 +5,7 @@ $(document).ready(function() {
     $('#new-route').toggle();
 
     $('input:radio[name=routeSelector]').change(function() {
-        $('#existing-routes').toggle();
+        $('#run_route_id').toggle();
         $('#new-route').toggle();
     });
 });

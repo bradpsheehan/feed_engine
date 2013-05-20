@@ -23,20 +23,33 @@ describe Run do
     runline3
   end
 
-  describe "Run.create(run_creator, name, invitees)" do
+  let :attributes do
+    {
+      name: "Run Name",
+      date: "5/23/2013",
+      time: "5:12pm",
+      details: "run run run",
+      route_id: 1
+    }
+  end
+
+  describe "create_with_invitees(invitees)" do
     it "creates a new run and user_run" do
       VCR.use_cassette('create a run') do
         runs_count = Run.all.count
-        user_runs_count = UserRun.all.count
-        Run.create_with_creator_and_invitees(current_user, "test run", ["runline3"])
-        expect(Run.all.count).to be (runs_count + 1)
-        expect(UserRun.all.count).to be (user_runs_count + 2)
+        Run.create_with_invitees(["runline3"], attributes)
+        expect(Run.all.count).to eq(runs_count + 1)
+        expect(run.user_runs).to eq 1
       end
+    end
+
+    xit "sends tweets to each invitee" do
+
     end
   end
 
   describe "Run.invite_runners(run_creator, run, invitees)" do
-    it "creates users who don't exist" do
+    xit "creates users who don't exist" do
       VCR.use_cassette('invite_and_create_runners') do
         current_user
         user_count = User.all.count
@@ -44,12 +57,12 @@ describe Run do
         run.name = "fake run"
         run.save!
         invitees = ["RunLine3"]
-        Run.invite_runners(current_user, run, invitees)
-        expect(User.all.count).to be (user_count + 1)
+        run.invite_runners(invitees)
+        expect(User.all.count).to be(user_count + 1)
       end
     end
 
-    it "doesn't create users who already exist" do
+    xit "doesn't create users who already exist" do
       VCR.use_cassette('invite_and_dont_create_runners') do
         current_user
         runline3
@@ -58,20 +71,20 @@ describe Run do
         run.name = "fake run"
         run.save!
         invitees = ["RunLine3"]
-        Run.invite_runners(current_user, run, invitees)
-        expect(User.all.count).to be (user_count)
+        run.invite_runners(invitees)
+        expect(run.users).to be(user_count)
       end
     end
 
-    it "creates user_runs for all invitees" do
+    xit "creates user_runs for all invitees" do
       VCR.use_cassette('invite_and_create_user_runs') do
         user_run_count = UserRun.all.count
         run = Run.new
         run.name = "fake run"
         run.save!
         invitees = %w(RunLine3 runline5 runline6 runline7 runline8)
-        Run.invite_runners(current_user, run, invitees)
-        expect(UserRun.all.count).to be (user_run_count + 5)
+        run.invite_runners(invitees)
+        expect(run.user_runs).to eq(invitees.length)
       end
     end
   end

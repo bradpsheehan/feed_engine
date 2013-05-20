@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
 
   validates :name, :uniqueness => true
 
+  attr_accessible :name, :status
+
   def mentions
     @mentions ||= twitter.mentions_timeline
   end
@@ -33,13 +35,6 @@ class User < ActiveRecord::Base
   def twitter
     @twitter ||= Twitter::Client.new(oauth_token: oauth_token,
                                      oauth_token_secret: oauth_secret)
-  end
-
-  def self.create_invited_user(name)
-    user = User.new
-    user.name = name
-    user.status = "invited"
-    user.save!
   end
 
   def self.from_omniauth(auth)
