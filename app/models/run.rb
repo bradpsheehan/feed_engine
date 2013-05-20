@@ -3,7 +3,7 @@ class Run < ActiveRecord::Base
   has_many :users, :through => :user_runs
   belongs_to :route
 
-	delegate :name, :path, to: :route, prefix: true
+	delegate :name, :path, :path_points, to: :route, prefix: true
 
   attr_accessible :organizer_id, :run_date, :run_start_time, :route_id, :name, :details
 

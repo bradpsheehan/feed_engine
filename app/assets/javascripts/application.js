@@ -12,9 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require epoly
 //= require feed-item-expander
 //= require route-switcher
-//= require route_creator
 //= require serialize_object
 //= require jquery.form
