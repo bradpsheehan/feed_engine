@@ -36,6 +36,17 @@ ActiveRecord::Schema.define(:version => 20130520062249) do
     t.string   "access_token"
   end
 
+  create_table "outstanding_twitter_invites", :force => true do |t|
+    t.integer  "invitor_id"
+    t.string   "invitor_twitter_handle"
+    t.integer  "invitee_id"
+    t.string   "invitee_twitter_handle"
+    t.integer  "invitee_user_run_id"
+    t.date     "run_date"
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
+  end
+
   create_table "routes", :force => true do |t|
     t.string   "name"
     t.text     "path"
@@ -69,10 +80,9 @@ ActiveRecord::Schema.define(:version => 20130520062249) do
     t.string   "name"
     t.string   "oauth_token"
     t.string   "oauth_secret"
-    t.datetime "created_at",                         :null => false
-    t.datetime "updated_at",                         :null => false
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
     t.string   "status"
-    t.string   "email",              :default => ""
     t.integer  "sign_in_count",      :default => 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
