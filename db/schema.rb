@@ -13,17 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20130520062249) do
 
-  create_table "outstanding_twitter_invites", :force => true do |t|
-    t.integer  "invitor_id"
-    t.string   "invitor_twitter_handle"
-    t.integer  "invitee_id"
-    t.string   "invitee_twitter_handle"
-    t.integer  "invitee_user_run_id"
-    t.date     "run_date"
-    t.datetime "created_at",             :null => false
-    t.datetime "updated_at",             :null => false
-  end
-
   create_table "activities", :force => true do |t|
     t.string   "activity_type"
     t.string   "provider"
@@ -45,6 +34,17 @@ ActiveRecord::Schema.define(:version => 20130520062249) do
     t.datetime "updated_at",   :null => false
     t.string   "uid"
     t.string   "access_token"
+  end
+
+  create_table "outstanding_twitter_invites", :force => true do |t|
+    t.integer  "invitor_id"
+    t.string   "invitor_twitter_handle"
+    t.integer  "invitee_id"
+    t.string   "invitee_twitter_handle"
+    t.integer  "invitee_user_run_id"
+    t.date     "run_date"
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
   end
 
   create_table "routes", :force => true do |t|
