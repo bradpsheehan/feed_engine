@@ -1,13 +1,12 @@
 class SessionsController < ApplicationController
   def create
-    if current_user
-      Registrar.register(auth: env['omniauth.auth'], user: current_user)
-    else
-      runner = User.from_omniauth(env['omniauth.auth'])
+    runner = User.from_omniauth(env['omniauth.auth'])
+    if runner
       session[:user_id] = runner.id
       cookies[:thesesh] = "woohoo"
       redirect_to dashboard_path, notice: "Signed in."
-      return
+    else
+      redirect_to dashboard_path, alert: "Authentication failed."
     end
   end
 

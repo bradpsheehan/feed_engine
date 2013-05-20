@@ -1,6 +1,8 @@
 require 'resque/server'
 
 FeedEngine::Application.routes.draw do
+  mount Resque::Server, :at => "/resque"
+
   root :to => "application#landing_page"
 
   get '/dashboard', to: 'application#index'

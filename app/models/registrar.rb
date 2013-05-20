@@ -4,6 +4,8 @@ class Registrar
     create_provider(data) unless existing_account?(data[:auth])
   end
 
+  private
+
   def self.existing_account?(auth)
     uid_list(auth).include?(auth[:uid].to_s)
   end

@@ -2,6 +2,8 @@ class Populator
   def self.add_activity_list(data, user)
     user_activities = get_user_activities(user)
 
+    # help_needed!
+
     data["items"].each do |activity|
       activity_id = self.get_activity_id(activity["uri"])
       next if user_activities.include?(activity_id)
@@ -23,13 +25,13 @@ class Populator
                      provider: data["source"],
                      run_detail: data["run_detail"],
                      detail_present: true,
-                     user_id:  user)
+                     user: user)
   end
 
   private
 
   def self.get_user_activities(user)
-    @activities || Activity.where(user_id: user).pluck(:activity_id)
+    @activities ||= Activity.where(user_id: user).pluck(:activity_id)
   end
 
 

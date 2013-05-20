@@ -50,6 +50,7 @@ group :test do
   gem 'vcr'
   gem 'webmock'
   gem 'database_cleaner'
+  gem 'resque_spec'
 end
 
 group :development do

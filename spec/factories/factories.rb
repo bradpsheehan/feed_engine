@@ -1,18 +1,20 @@
 FactoryGirl.define do
 
   factory :user do
-    name             "kareemgrant"
     provider         "twitter"
     oauth_token      "318092c9fa74468dba0507844d29cf4d"
     oauth_secret     "abscded"
     uid              "5234295"
     status           "confirmed"
+    sequence(:name) { |n| "claws#{n}" }
   end
 
   factory :app_provider do
     user
 
-    name              "kareemgrant"
+    uid               "123908"
+    access_token      "982342sdf"
+    sequence(:name) { |n| "wolverine#{n}" }
   end
 
   factory :activity do
