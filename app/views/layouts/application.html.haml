@@ -8,19 +8,10 @@
     = csrf_meta_tags
   %body
     #wrap
-      %nav#nav-bar.navbar.navbar-inner
-        #header-nav-content
-          %h1.span7 RunLine
-          %ul#top-nav.nav.pull-right
-            - if current_user
-              %li
-                %a{:href => "#{dashboard_path}"}
-                  = current_user.name
-              %li
-                %a{:href => "#{signout_path}"} Logout
-            - else
-              %li
-                %a{:href => "/auth/twitter"} Login
+      =render 'header'
+      #main-container.container
+        -if current_user
+          =render 'sidebar'
 
-      = yield
+        = yield
     %footer#footer

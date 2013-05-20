@@ -164,6 +164,7 @@ nav#feed-lists li.feeds-run {
   border-radius: 6px;
   padding-right: 2%;
   padding-left: 2%;
+  margin-bottom: 2%;
 }
 .circle {
   display: inline-block;
@@ -191,4 +192,9 @@ nav#feed-lists li.feeds-run {
   height: 375px;
   width: 600px;
   background-color: lightgray;
+}
+#inner-header h1 {
+  font-size: 4em;
+  color: white;
+  margin-bottom: 25px;
 }
