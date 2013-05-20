@@ -63,6 +63,7 @@ describe Run do
         user_count = User.all.count
         run = Run.new
         run.name = "fake run"
+        run.organizer_id = current_user.id
         run.save!
         invitees = ["RunLine3"]
         run.invite_runners(invitees)
@@ -77,10 +78,11 @@ describe Run do
         user_count = User.all.count
         run = Run.new
         run.name = "fake run"
+        run.organizer_id = current_user.id
         run.save!
-        invitees = ["RunLine3"]
+        invitees = ["runline3"]
         run.invite_runners(invitees)
-        expect(run.users).to be(user_count)
+        expect(run.users.count).to be(user_count+1)
       end
     end
 
@@ -89,10 +91,11 @@ describe Run do
         user_run_count = UserRun.all.count
         run = Run.new
         run.name = "fake run"
+        run.organizer_id = current_user.id
         run.save!
         invitees = %w(RunLine3 runline5 runline6 runline7 runline8)
         run.invite_runners(invitees)
-        expect(run.user_runs).to eq(invitees.length)
+        expect(run.user_runs.count).to eq(invitees.length)
       end
     end
   end
