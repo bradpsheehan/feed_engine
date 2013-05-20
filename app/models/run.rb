@@ -1,6 +1,7 @@
 class Run < ActiveRecord::Base
   has_many :user_runs
   has_many :users, :through => :user_runs
+  has_one :route
 
   def self.create_with_creator_and_invitees(run_creator, name, invitees, run_info=nil)
     run = Run.new
