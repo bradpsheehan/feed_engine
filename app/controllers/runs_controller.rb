@@ -1,7 +1,6 @@
 class RunsController < ApplicationController
 
   def create
-
     unless params[:route][:name].empty?
       route = Route.create(params[:route])
       params[:run][:route_id] = route.id
@@ -11,7 +10,6 @@ class RunsController < ApplicationController
     friends = params[:friends].gsub(" ", "").split(",")
 
     run = Run.create_with_invitees(friends, params[:run])
-
     redirect_to run
   end
 

@@ -35,8 +35,7 @@ describe Populator do
       @data = RunkeeperData.items
     end
 
-    it "Background worker is called" do
-      pending
+    xit "Background worker is called" do
       user_activities = [@activity1.activity_id]
       Resque.stub(:enqueue)
       Populator.stub(:get_user_activities).and_return(user_activities)

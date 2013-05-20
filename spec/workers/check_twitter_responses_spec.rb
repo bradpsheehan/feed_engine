@@ -1,7 +1,36 @@
 require 'spec_helper'
 
 describe CheckTwitterResponses do
+include_context "standard test dataset"
+
   include Rails.application.routes.url_helpers
+
+  describe "CheckTwitterResponses.is_reply_to_invitation?(tweet)" do
+    it "verifies the tweet doesn't match any in the twitter invites table" do
+      tweet = stub(tweet, :in_reply_to_status_id => nil)
+      reply = CheckTwitterResponses.is_reply_to_invitation?(tweet)
+      expect(reply).to be false
+    end
+
+    it "verifies the tweet matches a tweet in the twitter invites table" do
+      VCR.use_cassette("tweet_matching") do
+        runs_count = Run.all.count
+        invites_count = OutstandingTwitterInvites.all.count
+        run = Run.create_with_invitees(["runline3"], attributes)
+        expect(Run.all.count).to eq(runs_count + 1)
+        expect(OutstandingTwitterInvites.all.count).to eq(invites_count + 1)
+
+
+        # tweet = stub(tweet, :in_reply_to_status_id => 345)
+        # run = Run.create()
+        # user_run = UserRun.create(user_id: runline3.id, status: "invited")
+        # OutstandingTwitterInvites.create_invite(current_user, runline3,
+        #                                         user_run.id, run_date)
+        # reply = CheckTwitterResponses.is_reply_to_invitation?(tweet)
+        # expect(reply).to be true
+      end
+    end
+  end
 
   describe "CheckTwitterResponses.get_tweets(search_params)" do
     it "returns lots of results" do

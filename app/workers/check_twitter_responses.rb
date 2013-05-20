@@ -12,6 +12,10 @@ class CheckTwitterResponses
     end
   end
 
+  def self.is_reply_to_invitation?(tweet)
+    false
+  end
+
   def self.get_tweets(search_params)
     Twitter.search(search_params).results
   end

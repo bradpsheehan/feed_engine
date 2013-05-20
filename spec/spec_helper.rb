@@ -74,6 +74,39 @@ RSpec.configure do |config|
   end
 end
 
-
 OmniAuth.config.test_mode = true
 
+shared_context "standard test dataset" do
+  let :current_user do
+    current_user = User.new()
+    current_user.provider = "twitter"
+    current_user.uid = "1428947773"
+    current_user.name = "runline4"
+    current_user.oauth_token = "1428947773-TgBfPRRdcT9XPBnXcJuoE2nVUydfI7y6WonhyGu"
+    current_user.oauth_secret = "lXNUrIkC45eOG3l6aSHDaRKKHNc3PqHPisMF55pYI"
+    current_user.save!
+    current_user
+  end
+
+  let :runline3 do
+    runline3 = User.new()
+    runline3.provider = "twitter"
+    runline3.uid = "1426604066"
+    runline3.name = "RunLine3"
+    runline3.oauth_token = "1426604066-fJtyEG3BaDTP3PrD3v7tACxXVwaFKnOj40mn3EB"
+    runline3.oauth_secret = "07yRkLIBSFRi6IoOysWQzRmlwcsZLGjgRKH5CwrfKw"
+    runline3.save!
+    runline3
+  end
+
+  let :attributes do
+    {
+      name: "Run Name",
+      run_date: "5/23/2013",
+      run_start_time: "5:12pm",
+      details: "run run run",
+      route_id: 1,
+      organizer_id: current_user.id
+    }
+  end
+end
