@@ -16,7 +16,7 @@
 
     <div id="route-selection">
       <%= f.select(:route_id, options_from_collection_for_select(@routes, :id, :name) )%>
-      <!--<%= render partial: "new_run_map" %> -->
+      <%= render partial: "new_run_map" %>
     </div>
     <%= text_field_tag "friends", nil, placeholder: "Enter friend twitters" %>
     <label>
@@ -28,3 +28,27 @@
 
   <% end %>
 </div> <!-- end #create-run -->
+<%= javascript_tag do -%>
+  showMap();
+
+  $('form').submit(function(event) {
+
+
+  var radio_selection = $('input:radio[name=routeSelector]:checked').val();
+    if(radio_selection == "createNewRoute") {
+
+      var points = JSON.stringify(getRoutePoints(gpolys));
+      $(event.target).append("<input type=hidden name=route[path] value='"+points+"' />");
+    } else {
+
+      var route_id = $('#run_route_id').find(":selected").val();
+
+      var input = "<input type=hidden name=run[route_id] value='"+route_id+"' />";
+
+      $(event.target).append(input);
+    }
+
+
+
+  });
+<% end -%>
