@@ -3,10 +3,10 @@ require 'spec_helper'
 describe CheckTwitterResponses do
   include Rails.application.routes.url_helpers
 
-  describe "CheckTwitterResponses.get_results(search_params)" do
+  describe "CheckTwitterResponses.get_tweets(search_params)" do
     it "returns lots of results" do
       VCR.use_cassette('obama_twitter_results') do
-        results = CheckTwitterResponses.get_results("#obama")
+        results = CheckTwitterResponses.get_tweets("#obama")
         expect(results.count).to be > 1
         expect(results.class).to be Array
         expect(results.first.class).to be Twitter::Tweet
