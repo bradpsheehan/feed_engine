@@ -20,8 +20,8 @@ class User < ActiveRecord::Base
     @friends_tweets = @friends_tweets.flatten
   end
 
-  def photo
-    @photo ||= twitter.user(name).profile_image_url(:original)
+  def photo(size=:normal)
+    @photo ||= twitter.user(name).profile_image_url(size)
     #profile_image_url(:normal)
   end
 
