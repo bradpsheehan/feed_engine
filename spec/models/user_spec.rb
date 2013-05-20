@@ -24,7 +24,7 @@ describe User do
       auth["credentials"]["secret"] = "secret"
       user_count = User.all.count
       User.create_from_omniauth(auth)
-      expect(User.all.count).to be (user_count + 1)
+      expect(User.all.count).to be(user_count + 1)
     end
   end
 
@@ -40,7 +40,7 @@ describe User do
       auth["credentials"]["secret"] = "secret"
       user_count = User.all.count
       User.from_omniauth(auth)
-      expect(User.all.count).to be (user_count + 1)
+      expect(User.all.count).to be(user_count + 1)
     end
 
     it "doesn't create a user and finds the user if they already exist" do
@@ -55,15 +55,15 @@ describe User do
       User.from_omniauth(auth)
       user_count = User.all.count
       User.from_omniauth(auth)
-      expect(User.all.count).to be (user_count)
+      expect(User.all.count).to be(user_count)
     end
   end
 
   describe "User.create_invited_user(name)" do
-    it "creates a user with status 'invited'" do
+    xit "creates a user with status 'invited'" do
       user_count = User.all.count
       User.create_invited_user("jimmy")
-      expect(User.all.count).to be (user_count+1)
+      expect(User.all.count).to be(user_count+1)
     end
   end
 

@@ -1,36 +1,46 @@
 class Run < ActiveRecord::Base
   has_many :user_runs
   has_many :users, :through => :user_runs
+  belongs_to :route
 
-  def self.create_with_creator_and_invitees(run_creator, name, invitees, run_info=nil)
-    run = Run.new
-    run.name = name
-    if run_info
-      run.details = run_info[:details]
-      run.route_id = run_info[:route_id]
-      run.run_date = run_info[:run_date]
-      run.run_start_time = run_info[:run_start_time]
-    end
-    run.save!
-    #create a user_run for the run creator and set status to "confirmed" √
-    run.user_runs.create(user_id: run_creator.id, status: "confirmed")
-    invite_runners(run_creator, run, invitees)
+  attr_accessible :organizer_id, :run_date, :run_start_time, :route_id, :name, :details
 
+  def self.create_with_invitees(invitees, run_info)
+    run = Run.create(run_info)
+
+    run.invite_runners(invitees)
     run
   end
 
-private
-  def self.invite_runners(run_creator, run, invitees)
+  def organizer
+    @organizer ||= User.find_by_id(organizer_id)
+  end
 
-    invitees.each do |invitee|
-      unless User.find_by_name(invitee)
-        User.create_invited_user(invitee)
-      end
-      user = User.find_by_name(invitee)
-      run.user_runs.create(user_id: user.id, status: "invited")
-
-      #tweet to all invited users of the run
-      run_creator.tweet("@#{user.name} reply #yes to come run with me! #{rand(0..9999)}")
+  def invite_runners(invitee_names)
+    invitee_names.each do |invitee_name|
+      invite_runner(invitee_name)
     end
   end
+
+  def invite_runner(invitee_name)
+    add_invitee(invitee_name)
+    send_invite(invitee_name)
+  end
+
+  def confirmed_runners
+    #TODO
+  end
+
+  private
+
+  def add_invitee(invitee_name)
+    user = User.find_or_create_by_name(name: invitee_name, status: "invited")
+    user_runs.create(user_id: user.id, status: "invited")
+  end
+
+  def send_invite(invitee_name)
+    organizer.tweet("@#{invitee_name} reply #yes to come run with me on #{run_date}")
+  end
+
+
 end

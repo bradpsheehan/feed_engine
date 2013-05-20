@@ -76,3 +76,6 @@
   color: white;
 }
 
+#sidebar-region, #content-region {
+  color: #000;
+}

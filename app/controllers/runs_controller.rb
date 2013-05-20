@@ -1,5 +1,4 @@
 class RunsController < ApplicationController
-  respond_to :json
 
   def create
     run_info = {}
@@ -10,10 +9,20 @@ class RunsController < ApplicationController
       current_user,
       params[:group_name],
       [params[:friends]],
-      run_info)
+      run_info
+    )
 
-    # respond_with(run)
-    redirect_to dashboard_path
+    redirect_to run
+  end
+
+  def show
+    @run = Run.find_by_id(params[:id])
+
+  end
+
+  def new
+    @run = Run.new
+    @routes = Route.all
   end
 
 end

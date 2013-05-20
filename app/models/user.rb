@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
 
   validates :name, :uniqueness => true
 
+  attr_accessible :name, :status
+
   def mentions
     @mentions ||= twitter.mentions_timeline
   end

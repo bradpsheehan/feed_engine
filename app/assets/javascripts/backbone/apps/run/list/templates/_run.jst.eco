@@ -1,1 +1,0 @@
-<input type="text" name=<%= @name %> id=<%= @name %> placeholder=<%= @label_name %>><br>

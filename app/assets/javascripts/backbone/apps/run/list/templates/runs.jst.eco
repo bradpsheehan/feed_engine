@@ -1,8 +1,0 @@
-<h1>Run with Friends</h1>
-
-<form id="new_run" method="post" action="/runs.json">
-  <div id="run_data">
-  </div>
-  <input type="hidden" name="authenticity_token" value="<%= $('meta[name="csrf-token"]').prop("content") %>">
-  <input type="submit" value="Create Run">
-</form>

@@ -1,6 +1,0 @@
-<nav id="nav-bar" class="navbar navbar-inner">
-  <div class="container" id=header-nav-content>
-    <h1 class="span7">RunLine</h1>
-    <ul class="nav pull-right"></ul>
-  </div>
-</nav>

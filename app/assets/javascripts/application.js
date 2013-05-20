@@ -12,15 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require lib/jquery.cookie
-//= require lib/underscore
-//= require lib/backbone
-//= require lib/marionette
-//= require lib/backbone_csrf_extension
-//= require_tree ./backbone/config
-//= require backbone/app
-//= require backbone/router
-//= require_tree ./backbone/entities
-//= require_tree ./backbone/apps
+//= require epoly
+//= require feed-item-expander
+//= require route-switcher
+//= require route_creator
+//= require serialize_object
+//= require jquery.form
 
 
