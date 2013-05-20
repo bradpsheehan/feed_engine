@@ -46,6 +46,7 @@ class User < ActiveRecord::Base
     user.name = name
     user.status = "invited"
     user.save!
+    user
   end
 
   def self.from_omniauth(auth)

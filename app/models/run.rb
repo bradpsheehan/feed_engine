@@ -8,7 +8,7 @@ class Run < ActiveRecord::Base
 
   def self.create_with_invitees(invitees, run_info)
     run = Run.create(run_info)
-    run.invite_runners(run.organizer, run, invitees)
+    run.invite_runners(invitees)
     run
   end
 
@@ -37,8 +37,14 @@ class Run < ActiveRecord::Base
   private
 
   def add_invitee(invitee_name)
-    user = User.find_or_create_by_name(name: invitee_name, status: "invited")
-    user_runs.create(user_id: user.id, status: "invited", run_id: id)
+    user = ""
+    if User.find_by_name(invitee_name)
+      user = User.find_by_name(invitee_name)
+    else
+      user = User.create_invited_user(invitee_name)
+    end
+    #user = User.find_or_create_by_name(name: invitee_name, status: "invited")
+    user_runs.create(user_id: user.id, status: "invited")
   end
 
   def send_invite(invitee_name)
