@@ -1,0 +1,33 @@
+#run-header
+  %h1
+    =@run.name
+%br
+%h3 Group Organizers
+%p
+  Bradley Sheehan
+%br
+%h3 Date
+%p
+  =@run.run_date
+%br
+%h3 Start Time
+%p
+  =time_tag @run.run_start_time, format: '%I:%M %p'
+%br
+%h3 Route Map
+#map_canvas
+  Loading Route...
+%br
+%h3 Details
+%p
+  =@run.details
+%br
+%h3 Runners
+#runner-pics-lrg
+  =render partial: "runner", collection: @run.confirmed_runners, as: :runner
+
+%script{:src => "https://maps.googleapis.com/maps/api/js?sensor=true", :type => "text/javascript"}
+%script{:src => "/assets/show_map", :type => "text/javascript"}
+
+= javascript_tag do
+  showMap(#{raw @run.route_path}, "map_canvas");
