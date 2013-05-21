@@ -181,7 +181,7 @@ body {
 
 a {
   color: #1abc9c;
-  text-decoration: underline;
+  text-decoration: none;
   -webkit-transition: 0.25s;
   -moz-transition: 0.25s;
   -o-transition: 0.25s;
@@ -1870,7 +1870,7 @@ footer {
     color: white; }
   .footer-banner a {
     color: #cff3ec;
-    text-decoration: underline; }
+    text-decoration: none; }
     .footer-banner a:hover {
       text-decoration: none; }
   .footer-banner ul {

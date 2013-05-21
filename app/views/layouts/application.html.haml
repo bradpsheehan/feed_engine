@@ -9,9 +9,10 @@
   %body
     #wrap
       =render 'header'
-      #main-container.container
-        -if current_user
+      -if current_user
+        #main-container
           =render 'sidebar'
-
+          = yield
+      -else
         = yield
     %footer#footer

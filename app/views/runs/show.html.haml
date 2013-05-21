@@ -1,28 +1,28 @@
-#inner-content.span8
-  #run-details
-    #run-header
-      %h1
-        =@run.name
-    %br
-    %h3 Group Organizers
-    %p
-      =@run.organizer.name
-    %br
-    %h3 Date
-    %p
-      =@run.run_date
-    %br
-    %h3 Start Time
-    %p
-      =time_tag @run.run_start_time
-    %br
-    %h3 Route Map
-    #route-map-placeholder
-    %br
-    %h3 Details
-    %p
-      =@run.details
-    %br
-    %h3 Runners
-  #runner-pics-lrg
-    =render partial: "runner", collection: @run.confirmed_runners, as: :runner
+#inner-container.span8
+  #run-header.span8
+    %h1
+      =@run.name
+  #inner-content.span8
+    #run-details
+      %h3 Group Organizers
+      %p
+        =@run.organizer.name
+      %br
+      %h3 Date
+      %p
+        =@run.run_date
+      %br
+      %h3 Start Time
+      %p
+        =time_tag @run.run_start_time
+      %br
+      %h3 Route Map
+      #route-map-placeholder
+      %br
+      %h3 Details
+      %p
+        =@run.details
+      %br
+      %h3 Runners
+    #runner-pics-lrg
+      =render partial: "runner", collection: @run.confirmed_runners, as: :runner
