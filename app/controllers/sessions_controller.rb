@@ -1,14 +1,19 @@
 class SessionsController < ApplicationController
   def create
     runner = User.from_omniauth(env['omniauth.auth'])
-    
+
     if runner
       session[:user_id] = runner.id
-      Client::API.get_runs(current_user) if current_user.app_token
+      get_user_runs
+      # Client::API.get_runs(current_user) if current_user.app_token
       redirect_to profile_path, notice: "Signed in."
     else
       redirect_to root_path, alert: "Authentication failed."
     end
+  end
+
+  def get_user_runs
+    Client::API.get_runs(current_user) if current_user.app_token
   end
 
 
