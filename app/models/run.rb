@@ -3,7 +3,7 @@ class Run < ActiveRecord::Base
   has_many :users, :through => :user_runs
   belongs_to :route
 
-	delegate :name, :path, to: :route, prefix: true
+	delegate :name, :path, :path_points, to: :route, prefix: true
 
   attr_accessible :organizer_id, :run_date, :run_start_time, :route_id, :name, :details
 
@@ -32,6 +32,14 @@ class Run < ActiveRecord::Base
   def confirmed_runners
     confirmed_user_runs = user_runs.select {|user_run| user_run.status == "confirmed"}
     confirmed_user_runs.collect(&:user) << organizer
+  end
+
+  def cancel
+    cancelled = true
+
+    #TODO send message to runners
+
+    save
   end
 
 

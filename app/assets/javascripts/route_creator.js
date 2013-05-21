@@ -1,5 +1,5 @@
 var gpolys = [];
-var showMap = function() {
+var createRoute = function() {
 //<![CDATA[
 if (GBrowserIsCompatible()) {
 

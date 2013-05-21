@@ -16,4 +16,8 @@ class RoutesController < ApplicationController
     @routes = Route.all
     respond_with(@routes)
   end
+
+  def update
+
+  end
 end

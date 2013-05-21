@@ -1,16 +1,12 @@
 %aside#sidebar.span3
   .current-user.mini-profile
-    %img.user-photo{:src => ""}/
-    %p Bradley Sheehan
-    %p
-      %a{:href => "#"} view profile
+    =image_tag current_user.photo(:original)
+    %a{:href => "/profile"} view profile
   %nav#feed-lists
     %ul.nav.nav-tabs.nav-stacked
       %li
-        %a{:href => "#"} Fit Feed
+        %a{:href => "/dashboard"} Fit Feed
+      / %li
+      /   %a{:href => "#"} Your Activity
       %li
-        %a{:href => "/runs"} Your Activity
-      %li
-        %a
-          -runs_path
-          Runs
+        =link_to 'Runs', runs_path

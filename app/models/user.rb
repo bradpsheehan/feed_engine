@@ -20,6 +20,14 @@ class User < ActiveRecord::Base
     @friends_tweets = @friends_tweets.flatten
   end
 
+  def photo(size=:normal)
+    if @photo.nil?
+      @photo = {}
+    end
+
+    @photo[size] ||= twitter.user(name).profile_image_url(size)
+  end
+
   def timeline
     @timeline ||= twitter.user_timeline
   end
