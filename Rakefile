@@ -1,6 +1,4 @@
 #!/usr/bin/env rake
-require 'resque/tasks'
-
 require File.expand_path('../config/application', __FILE__)
 
 FeedEngine::Application.load_tasks
@@ -26,4 +24,21 @@ namespace :sanitation do
 
   desc "Check both line length and method length"
   task :all => [:lines, :methods]
+end
+
+# Resque tasks
+require 'resque/tasks'
+require 'resque_scheduler/tasks'
+
+task "resque:setup" => :environment do
+  require 'resque'
+  require 'resque_scheduler'
+  require 'resque/scheduler'
+
+  Resque.redis = 'localhost:6379'
+  schedule = YAML.load_file("#{Rails.root}/config/resque_schedule.yml")
+  # puts schedule
+  Resque.schedule = schedule
+
+  # require 'tasks'
 end
