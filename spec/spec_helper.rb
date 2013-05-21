@@ -14,6 +14,7 @@ require 'factory_girl_rails'
 
 VCR.configure do |c|
   c.allow_http_connections_when_no_cassette = true
+  # c.allow_playback_repeats = all
   c.cassette_library_dir = 'spec/vcr_cassettes'
   c.hook_into :webmock # or :fakeweb
 end
