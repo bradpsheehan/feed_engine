@@ -15,12 +15,23 @@ describe RegistrationsController do
       post :create
     end
 
-    it "should redirect to dashboard" do
-      Registrar.stub(:register)
+    context "successful authentication" do
+      it "should redirect to new run path" do
+        Registrar.stub(:register).and_return(true)
 
-      post :create
-      expect(response).to redirect_to dashboard_path
+        post :create
+        expect(response).to redirect_to new_run_path
+      end
     end
+
+    context "unsuccessful authentication" do
+      it "should render profile template with error message " do
+        Registrar.stub(:register).and_return(false)
+        post :create
+        expect(response).to render_template 'users/profile'
+      end
+    end
+
 
   end
 end

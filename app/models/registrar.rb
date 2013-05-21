@@ -1,13 +1,25 @@
 class Registrar
 
   def self.register(data)
-    create_provider(data) unless existing_account?(data[:auth])
+    if uid_exists?(data[:auth])
+      if current_user_uid_match?(data)
+        true
+      else
+        false
+      end
+    else
+      create_provider(data)
+    end
   end
 
   private
 
-  def self.existing_account?(auth)
-    uid_list(auth).include?(auth[:uid].to_s)
+  def self.uid_exists?(payload)
+    uid_list(payload).include?(payload[:uid].to_s)
+  end
+
+  def self.current_user_uid_match?(data)
+    AppProvider.exists?(:user_id => data[:user], :uid => data[:auth][:uid])
   end
 
   def self.create_provider(data)
@@ -15,6 +27,6 @@ class Registrar
   end
 
   def self.uid_list(auth)
-    @uids || AppProvider.where(name: auth[:provider]).pluck(:uid)
+    @uids ||= AppProvider.where(name: auth[:provider]).pluck(:uid)
   end
 end

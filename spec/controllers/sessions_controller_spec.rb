@@ -8,7 +8,7 @@ describe SessionsController do
       user = double('user', id: 1)
       User.stub(:from_omniauth).and_return(user)
       post :create
-      expect(response).to redirect_to dashboard_path
+      expect(response).to redirect_to profile_path
     end
 
     it "sets session[:user_id] to user.id" do

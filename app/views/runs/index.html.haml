@@ -2,8 +2,7 @@
   #inner-header.span8
     %h1.pull-left
       Your Groups
-    #api-connect.btn.btn-large.btn-primary.pull-right
-      =link_to "new run", new_run_path
+    %a#api-connect.btn.btn-large.btn-primary.pull-right{:href => "/runs/new"} new run
   -@runs.each do |run|
     #inner-content.span8
       #run-details
@@ -13,7 +12,7 @@
         .pull-right
           %h3 Start Time
           %p
-            =run.run_start_time
+            =time_tag run.run_start_time
           %h3 Date
           %p
             =run.run_date
