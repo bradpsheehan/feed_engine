@@ -12,9 +12,6 @@ gem 'figaro'
 gem 'resque', :require => 'resque/server'
 gem 'redis'
 gem 'resque-scheduler', :require => 'resque_scheduler'
-
-# gem 'nokogiri', '~> 2.9.0'
-# gem 'redis-store', '~> 1.0.0'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-runkeeper'
@@ -26,6 +23,7 @@ gem 'faraday_middleware'
 gem 'mono_logger'
 gem 'gon'
 gem 'chronic'
+gem 'heroku'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -35,7 +33,6 @@ group :assets do
 end
 
 group :development, :test do
-  gem 'heroku'
   gem 'dotenv-rails'
   gem 'rspec-rails'
   gem 'pry'
