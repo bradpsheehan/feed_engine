@@ -12,6 +12,7 @@ gem 'figaro'
 gem 'resque', :require => 'resque/server'
 gem 'redis'
 gem 'resque-scheduler', :require => 'resque_scheduler'
+gem 'omniauth-dailymile', :git => 'git://github.com/hampei/omniauth-dailymile.git'
 
 # gem 'nokogiri', '~> 2.9.0'
 # gem 'redis-store', '~> 1.0.0'
