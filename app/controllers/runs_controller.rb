@@ -30,6 +30,15 @@ class RunsController < ApplicationController
     @routes = Route.all
   end
 
+  def update
+    @run = Run.find_by_id(params[:id])
+    if params[:cancel] && @run.organizer_id == current_user.id
+      @run.cancel
+    end
+
+    redirect_to @run
+  end
+
 end
 
 

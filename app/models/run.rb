@@ -34,6 +34,14 @@ class Run < ActiveRecord::Base
     confirmed_user_runs.collect(&:user) << organizer
   end
 
+  def cancel
+    cancelled = true
+
+    #TODO send message to runners
+
+    save
+  end
+
 
   private
 
