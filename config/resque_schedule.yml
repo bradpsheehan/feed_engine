@@ -1,0 +1,6 @@
+check_twitter_responses:
+  # cron: "1 * * * *"
+  every: 5m
+  class: CheckTwitterResponses
+  queue: check_for_yes_responses_to_runs_queue
+  description: "This job checks twitter for run invitation responses"

@@ -1,38 +1,7 @@
 require 'spec_helper'
 
 describe Run do
-  let :current_user do
-    current_user = User.new()
-    current_user.provider = "twitter"
-    current_user.uid = "1428947773"
-    current_user.name = "runline4"
-    current_user.oauth_token = "1428947773-5kMogR0HQWkeEM5ZisRNrvkG2EGgcuLlfOVVD4K"
-    current_user.oauth_secret = "Diu5BLQkrnR4ivVVUrnCZ14LSApWQWi4wdCcRuElLE"
-    current_user.save!
-    current_user
-  end
-
-  let :runline3 do
-    runline3 = User.new()
-    runline3.provider = "twitter"
-    runline3.uid = "1426604066"
-    runline3.name = "RunLine3"
-    runline3.oauth_token = "1426604066-fJtyEG3BaDTP3PrD3v7tACxXVwaFKnOj40mn3EB"
-    runline3.oauth_secret = "07yRkLIBSFRi6IoOysWQzRmlwcsZLGjgRKH5CwrfKw"
-    runline3.save!
-    runline3
-  end
-
-  let :attributes do
-    {
-      name: "Run Name",
-      run_date: "5/23/2013",
-      run_start_time: "5:12pm",
-      details: "run run run",
-      route_id: 1,
-      organizer_id: current_user.id
-    }
-  end
+include_context "standard test dataset"
 
   describe "create_with_invitees(invitees)" do
     it "creates a new run and user_run" do
@@ -44,14 +13,24 @@ describe Run do
       end
     end
 
-    xit "sends tweets to each invitee"
-
-    xit "create outstanding_twitter_invites for all invitees" do
+    it "create outstanding_twitter_invites for all invitees" do
       VCR.use_cassette("invites_and_create_twitter_invites") do
         count = OutstandingTwitterInvites.all.count
-        invitees = "RunLine3, runline5, runline6, runline7, runline8"
-        Run.create("another test run", invitees)
-        expect(OutstandingTwitterInvites.all.count).to be (count + 5)
+        invitees = ["RunLine3","runline5","runline6","runline7","runline8"]
+        Run.create_with_invitees(invitees, attributes)
+        expect(OutstandingTwitterInvites.all.count).to eq(count + 5)
+      end
+    end
+  end
+
+  describe "run#add_invitee" do
+    it "creates user_runs with a run_id" do
+      VCR.use_cassette("creates_user_runs_with_a_run_id") do
+        count = UserRun.all.count
+        invitees = ["RunLine3","runline5","runline6","runline7","runline8"]
+        run = Run.create_with_invitees(invitees, attributes)
+        expect(UserRun.all.count).to eq(count + 5)
+        expect(UserRun.last.run_id).to eq run.id
       end
     end
   end
@@ -71,18 +50,21 @@ describe Run do
       end
     end
 
-    xit "doesn't create users who already exist" do
+    it "doesn't create users who already exist" do
       VCR.use_cassette('invite_and_dont_create_runners') do
         current_user
         runline3
         user_count = User.all.count
+
         run = Run.new
         run.name = "fake run"
         run.organizer_id = current_user.id
         run.save!
-        invitees = ["RunLine3"]
+
+        invitees = ["RunLine3","runline5","runline6","runline7"]
         run.invite_runners(invitees)
-        expect(run.users.count).to eq(user_count)
+
+        expect(User.all.count).to eq(user_count + 3)
       end
     end
 
