@@ -1,8 +1,14 @@
 class RegistrationsController < ApplicationController
 
   def create
-    Registrar.register(auth: env['omniauth.auth'], user: current_user)
-    redirect_to dashboard_path, notice: "Successfully registered."
+    success = Registrar.register(auth: env['omniauth.auth'], user: current_user)
+
+    if success
+      redirect_to new_run_path, notice: "Successfully registered."
+    else
+      flash[:error] = "F u."
+      render 'users/profile'
+    end
   end
 
 end
