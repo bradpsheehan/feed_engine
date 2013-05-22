@@ -11,12 +11,13 @@
             .run-info.span3
               %h3
                 Date/Time
-              =activity.activity_date
+              = date_tag activity.activity_date
+              = better_time_tag activity.activity_date
               %h3
                 Distance
               =activity.distance
               %h3
                 Duration
-              =activity.duration
+              =readable_duration activity.duration
             / .route-map-mini.span4
             / #map_canvas

@@ -1,0 +1,12 @@
+#inner-content.span8
+  #run-details
+    .run-header.pull-left
+      %h1
+        =activity.user.name
+    .pull-right
+      %h3 Duration
+      %p
+        = readable_duration activity.duration
+      %h3 Date
+      %p
+        =time_tag run.started_at, format: '%B %d, %Y'
