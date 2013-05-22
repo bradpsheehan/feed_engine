@@ -116,10 +116,7 @@ include_context "standard test dataset"
     end
 
     context "time is 5 minutes after run start time" do
-
-
       it "returns the run" do
-
         expect(Run.fuzzy_find(started_at: start_time+300, user: current_user)).to eq run1
 
       end
@@ -133,6 +130,7 @@ include_context "standard test dataset"
       end
 
     end
+
     context "time is 15 minutes before run start time" do
       it "returns the run" do
         expect(Run.fuzzy_find(started_at: start_time-15*60, user: current_user)).to eq run1
@@ -154,5 +152,13 @@ include_context "standard test dataset"
       end
     end
 
+  describe "cancel" do
+    it "cancels the run" do
+      run = Run.create(organizer_id: current_user.id)
+      run.cancel
+
+      run = Run.find_by_id(run.id)
+      expect(run.cancelled).to eq true
+    end
   end
 end

@@ -44,7 +44,7 @@ class Run < ActiveRecord::Base
   end
 
   def cancel
-    cancelled = true
+    self.cancelled = true
 
     #TODO send message to runners
     save

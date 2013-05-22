@@ -19,5 +19,6 @@ FeedEngine::Application.routes.draw do
   match 'post_to_twitter', to: "application#post_to_twitter"
   get '/user', to: 'application#request_user'
   get '/profile', to: 'users#show', as: 'profile'
+  get '/activity/:id', to: 'activities#show', as: 'activity'
 
 end
