@@ -3,17 +3,5 @@
     %h1.pull-left
       Your Groups
     %a#api-connect.btn.btn-large.btn-primary.pull-right{:href => "/runs/new"} new run
-  -@runs.each do |run|
-    -if run.cancelled == false
-      #inner-content.span8
-        #run-details
-          .run-header.pull-left
-            %h1
-              =link_to run.name, run_path(run.id)
-          .pull-right
-            %h3 Start Time
-            %p
-            =time_tag run.run_start_time, format: '%I:%M %p'
-            %h3 Date
-            %p
-              =run.run_date
+
+  =render partial: "run_summary", collection: @runs, as: :run

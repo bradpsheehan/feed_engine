@@ -22,6 +22,18 @@ describe Populator do
         Populator.create_activity(@data, @user)
       }.to change(Activity, :count).by(1)
     end
+
+    it "sets the run id" do
+      date_time = DateTime.parse("Wed, 10 Oct 2012 19:09:29")
+
+      @run = Run.create
+      Run.should_receive(:fuzzy_find).with(user: @user, started_at: date_time).and_return(@run)
+      activity = Populator.create_activity(@data, @user)
+      @run.reload
+      expect(@run.activities.first.id).to eq activity.id
+
+    end
+
   end
 
   describe "#add_activity_list" do

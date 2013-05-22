@@ -1,10 +1,32 @@
 var gpolys = [];
+var map = null;
+var geocoder;
+
+var centerMap = function(address) {
+  if (geocoder) {
+    geocoder.getLatLng(
+      address,
+      function(point) {
+        if (!point) {
+          alert(address + " not found");
+        } else {
+          map.setCenter(point, 13);
+          var marker = new GMarker(point);
+        }
+      }
+    );
+  }
+}
+
 var createRoute = function() {
 //<![CDATA[
 if (GBrowserIsCompatible()) {
 
-  var map = new GMap2(document.getElementById("map"));
-  map.setCenter(new GLatLng(39.7336, -104.99925),13)
+  map = new GMap2(document.getElementById("map"));
+  geocoder = new GClientGeocoder();
+
+  centerMap("Denver, Colorado");
+
   map.addControl(new GLargeMapControl());
   map.addControl(new GMapTypeControl());
   // == use different GDirections for adding and dragging, it is just simpler that way ==

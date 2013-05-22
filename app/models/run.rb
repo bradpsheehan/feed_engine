@@ -1,17 +1,26 @@
 class Run < ActiveRecord::Base
   has_many :user_runs
   has_many :users, :through => :user_runs
+  has_many :activities
   belongs_to :route
 
 	delegate :name, :path, :path_points, to: :route, prefix: true
 
-  attr_accessible :organizer_id, :run_date, :run_start_time, :route_id,
+  attr_accessible :organizer_id, :started_at, :route_id,
                   :name, :details
 
   def self.create_with_invitees(invitees, run_info)
     run = Run.create(run_info)
     run.invite_runners(invitees)
     run
+  end
+
+  def self.fuzzy_find(params)
+    user = params[:user]
+    time = params[:started_at]
+
+    user.runs.where("started_at >= ?", (time-15*60)).where("started_at <= ?", (time+15*60)).first
+
   end
 
   def organizer
@@ -41,20 +50,24 @@ class Run < ActiveRecord::Base
     save
   end
 
+  def over?
+    false
+  end
+
   private
 
   def add_invitee(invitee_name)
     user = User.find_or_create_by_name(name: invitee_name, status: "invited")
     user_run = user_runs.create(user_id: user.id, status: "invited")
     OutstandingTwitterInvites.create_invite(organizer, user,
-                                            user_run.id, run_date)
+                                            user_run.id, started_at)
   end
 
   def send_invite(invitee_name)
     begin
       organizer.tweet("@#{invitee_name} reply #yes to come run with me on #{run_date}")
     rescue
-      organizer.tweet("@#{invitee_name} reply #yes to come run with me on #{run_date} #{rand(0..9999)}")
+      organizer.tweet("@#{invitee_name} reply #yes to come run with me on #{started_at} #{rand(0..9999)}")
     end
   end
 

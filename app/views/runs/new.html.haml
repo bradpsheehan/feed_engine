@@ -4,9 +4,9 @@
     .control-group
       = f.text_field :name, placeholder:"Group Name"
     .control-group
-      = f.text_field :run_date, placeholder:"Date"
+      = text_field_tag "run_date", nil, id: "run_run_date", placeholder:"Date"
     .control-group
-      = f.text_field :run_start_time, placeholder:"Time"
+      = text_field_tag "start_time", nil, id: "run_run_start_time", placeholder:"Time"
 
     .control-group
       %label.radio

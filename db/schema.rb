@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130521005315) do
+ActiveRecord::Schema.define(:version => 20130522015700) do
 
   create_table "activities", :force => true do |t|
     t.string   "activity_type"
@@ -25,7 +25,10 @@ ActiveRecord::Schema.define(:version => 20130521005315) do
     t.text     "run_detail"
     t.datetime "created_at",                        :null => false
     t.datetime "updated_at",                        :null => false
+    t.integer  "run_id"
   end
+
+  add_index "activities", ["run_id"], :name => "index_activities_on_run_id"
 
   create_table "app_providers", :force => true do |t|
     t.string   "name"
@@ -57,16 +60,17 @@ ActiveRecord::Schema.define(:version => 20130521005315) do
   end
 
   create_table "runs", :force => true do |t|
-    t.datetime "created_at",                        :null => false
-    t.datetime "updated_at",                        :null => false
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
     t.string   "name"
-    t.date     "run_date"
-    t.time     "run_start_time"
     t.text     "details"
     t.integer  "route_id"
     t.integer  "organizer_id"
-    t.boolean  "cancelled",      :default => false
+    t.boolean  "cancelled",    :default => false
+    t.datetime "started_at"
   end
+
+  add_index "runs", ["started_at"], :name => "index_runs_on_started_at"
 
   create_table "user_runs", :force => true do |t|
     t.integer  "run_id"
