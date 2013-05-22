@@ -51,10 +51,14 @@ class Run < ActiveRecord::Base
   end
 
   def over?
-    false
+    started_at+buffer < Time.now
   end
 
   private
+
+  def buffer
+    5*60*60
+  end
 
   def add_invitee(invitee_name)
     user = User.find_or_create_by_name(name: invitee_name, status: "invited")
