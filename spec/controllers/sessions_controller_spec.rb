@@ -3,7 +3,6 @@ require 'spec_helper'
 describe SessionsController do
 
   describe "POST .create" do
-
     it "redirects to profile after authorization" do
       user = double('user', id: 1)
       User.stub(:from_omniauth).and_return(user)
@@ -16,6 +15,25 @@ describe SessionsController do
       User.stub(:from_omniauth).and_return(user)
       post :create
       expect(session[:user_id]).to eq user.id
+    end
+
+    context "runner exists" do
+      before do
+        user = double('user', id: 1, app_token: true)
+        controller.stub(:current_user).and_return(user)
+        controller.should_receive(:get_user_runs)
+        User.stub(:from_omniauth).and_return(user)
+      end
+
+      it "redirects to dashboard after authorization" do
+        post :create
+        expect(response).to redirect_to profile_path
+      end
+
+      it "sets session[:user_id] to user.id" do
+        post :create
+        expect(session[:user_id]).to eq 1
+      end
     end
 
     it "renders :new template and does not save user with invalid info" do

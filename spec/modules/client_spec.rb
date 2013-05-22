@@ -8,31 +8,36 @@ describe Client::API do
   describe "#get_runs" do
 
     before do
-      @user = double('user')
-      @data = {token: "sdfsdfsd", user: @user}
+      @user = create(:user)
+      @app_provider = create(:app_provider)
+      @token = @app_provider.access_token
       @runs = OpenStruct.new("body" => {"source" => "runkeeper"})
       @rk_user = double('rk_user')
+
     end
 
     it "makes a call to Populator object to add data to database" do
-      Runkeeper::User.stub(:new).with(@data[:token]).and_return(@rk_user)
+      Runkeeper::User.stub(:new).with(@token).and_return(@rk_user)
       @rk_user.stub(:fitness_activities_feed).and_return(@runs)
-      Populator.should_receive(:add_activity_list).with(@runs.body, @data[:user])
-      Client::API.get_runs(@data)
+      @user.stub(:app_token).and_return(@token)
+      Populator.should_receive(:add_activity_list).with(@runs.body, @user)
+      Client::API.get_runs(@user)
     end
 
     it "makes a call to the API interface and returns runkeeper user obj" do
-      Runkeeper::User.should_receive(:new).with(@data[:token]).and_return(@rk_user)
+      Runkeeper::User.should_receive(:new).with(@token).and_return(@rk_user)
       @rk_user.stub(:fitness_activities_feed).and_return(@runs)
-      Populator.stub(:add_activity_list).with(@runs.body, @data[:user])
-      Client::API.get_runs(@data)
+      Populator.stub(:add_activity_list).with(@runs.body, @user)
+      @user.stub(:app_token).and_return(@token)
+      Client::API.get_runs(@user)
     end
 
     it "uses runkeeper user object to retreive list of runs"  do
-      Runkeeper::User.stub(:new).with(@data[:token]).and_return(@rk_user)
+      Runkeeper::User.stub(:new).with(@token).and_return(@rk_user)
       @rk_user.should_receive(:fitness_activities_feed).and_return(@runs)
-      Populator.stub(:add_activity_list).with(@runs.body, @data[:user])
-      Client::API.get_runs(@data)
+      Populator.stub(:add_activity_list).with(@runs.body, @user)
+      @user.stub(:app_token).and_return(@token)
+      Client::API.get_runs(@user)
     end
 
     it "returns the correct number of activities" do

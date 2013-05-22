@@ -1,12 +1,11 @@
 #inner-container.span8
-  %h1 Your Profile
+  #inner-header.span8
+    %h1.pull-left
+      Fitness Apps
+    #profile-content.span8
+      #profile-details
+        .api-integrators.span8
+          %h3.pull-left
+            Integrate with RunKeeper
+          %a#api-connect.btn.btn-primary.pull-right{:href => "/auth/runkeeper"} connect
 
-  %h3 Integrate with RunKeeper
-
-  .btn
-    connect
-
-  %h3 Integrate with DailyMile
-
-  .btn
-    connect

@@ -25,7 +25,11 @@ class User < ActiveRecord::Base
       @photo = {}
     end
 
-    @photo[size] ||= twitter.user(name).profile_image_url(size)
+    begin
+      @photo[size] ||= twitter.user(name).profile_image_url(size)
+    rescue
+      @photo[size] == {}
+    end
   end
 
   def timeline
