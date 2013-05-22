@@ -130,6 +130,7 @@ nav#feed-lists li.feeds-run {
   margin-left: auto;
   display: block;
   width: 70%;
+  margin-top: 2%;
 }
 #footer {
   position: relative;
@@ -257,7 +258,7 @@ nav#feed-lists li.feeds-run {
   color: #34495E;
 }
 #feed-lists > ul > li > a {
-  color: #34495E;
+  color: white;
   text-align: center;
   font-size: 22px;
 }
