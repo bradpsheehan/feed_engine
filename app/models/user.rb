@@ -53,6 +53,10 @@ class User < ActiveRecord::Base
     @token ||= app_provider.access_token
   end
 
+  def connected?
+    @connected ||= app_provider.user_id.present?
+  end
+
   def self.create_invited_user(name)
     user = User.new
     user.name = name

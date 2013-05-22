@@ -17,3 +17,4 @@
 //= require route-switcher
 //= require serialize_object
 //= require jquery.form
+//= require google_map
