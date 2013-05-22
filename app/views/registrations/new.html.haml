@@ -1,0 +1,8 @@
+#inner-content.span8
+  = form_tag ('/dm_connect') do
+    .control-group
+      = text_field_tag 'dm_username'
+      = hidden_field_tag 'provider', 'dailymile'
+    .control-group
+      = submit_tag "Submit"
+

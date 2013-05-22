@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130521005315) do
+ActiveRecord::Schema.define(:version => 20130522184135) do
 
   create_table "activities", :force => true do |t|
     t.string   "activity_type"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(:version => 20130521005315) do
     t.datetime "updated_at",   :null => false
     t.string   "uid"
     t.string   "access_token"
+    t.string   "username"
   end
 
   add_index "app_providers", ["user_id", "uid"], :name => "index_app_providers_on_user_id_and_uid", :unique => true

@@ -37,7 +37,10 @@ describe RegistrationsController do
         expect(response).to render_template 'users/profile'
       end
     end
+  end
 
+  describe "POST .dm_connect" do
 
   end
+
 end
