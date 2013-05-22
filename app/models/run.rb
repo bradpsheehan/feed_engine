@@ -50,6 +50,10 @@ class Run < ActiveRecord::Base
     save
   end
 
+  def over?
+    false
+  end
+
   private
 
   def add_invitee(invitee_name)

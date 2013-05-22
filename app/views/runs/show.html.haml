@@ -2,3 +2,5 @@
   = render partial: "cancelled_run"
 -else
   = render partial: "show_run"
+  -if @run.over?
+    =render partial: "result", collection: @run.activities, as: :activity
