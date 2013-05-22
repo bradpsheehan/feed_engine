@@ -42,7 +42,7 @@ class CheckTwitterResponses
   end
 
   def self.is_reply_to_invitation?(tweet)
-    invitees ||= OutstandingTwitterInvites.all.map do |invite|
+    invitees ||= OutstandingTwitterInvites.all.to_a.map do |invite|
       invite.invitee_twitter_handle
     end
     return true if invitees.include? tweet.user.name
