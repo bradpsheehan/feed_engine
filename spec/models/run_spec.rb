@@ -185,4 +185,9 @@ include_context "standard test dataset"
     end
 
   end
+
+  describe "invite_runners"
+  describe "invite_runner"
+  describe "confirmed_runnners"
+
 end

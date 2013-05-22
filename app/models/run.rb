@@ -19,7 +19,7 @@ class Run < ActiveRecord::Base
     user = params[:user]
     time = params[:started_at]
 
-    user.runs.where("started_at >= ?", (time-15*60)).where("started_at <= ?", (time+15*60)).first
+    user.runs.where("started_at >= ?", (time-fuzzy_find_buffer)).where("started_at <= ?", (time+fuzzy_find_buffer)).first
 
   end
 
@@ -51,12 +51,16 @@ class Run < ActiveRecord::Base
   end
 
   def over?
-    started_at+buffer < Time.now
+    started_at+over_buffer < Time.now
   end
 
   private
 
-  def buffer
+  def self.fuzzy_find_buffer
+    15*60
+  end
+
+  def over_buffer
     5*60*60
   end
 
@@ -74,25 +78,5 @@ class Run < ActiveRecord::Base
       organizer.tweet("@#{invitee_name} reply #yes to come run with me on #{started_at} #{rand(0..9999)}")
     end
   end
-
-
-  # def invite_runners(run_creator, run, invitees)
-  #   invitees = invitees.gsub(" ","").split(",")
-
-  #   invitees.each do |invitee|
-  #     unless User.find_by_name(invitee)
-  #       User.create_invited_user(invitee)
-  #     end
-  #     user = User.find_by_name(invitee)
-  #     user_run = UserRun.create(run.id, user.id, "invited")
-  #     OutstandingTwitterInvites.create_invite(
-  #       run_creator,
-  #       user,
-  #       user_run.id,
-  #       run.run_date
-  #       )
-  #     run_creator.tweet("@#{user.name} reply #yes to come run with me #{rand(0..9999)}")
-  #   end
-  # end
 
 end
