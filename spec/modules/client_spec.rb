@@ -34,6 +34,14 @@ describe Client::API do
       Populator.stub(:add_activity_list).with(@runs.body, @data[:user])
       Client::API.get_runs(@data)
     end
+
+    it "returns the correct number of activities" do
+      user = User.new
+      user.stub(:app_token).and_return("token")
+      VCR.use_cassette 'rk_activities' do
+        expect(Client::API.get_runs(user).length).to eq 45
+      end
+    end
   end
 
   describe "#get_run_detail" do

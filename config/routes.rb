@@ -14,6 +14,9 @@ FeedEngine::Application.routes.draw do
   match 'auth/runkeeper/callback', to: 'registrations#create'
   match 'auth/mapmyfitness/callback', to: 'registrations#create'
 
+  get '/auth/dailymile/callback', to: 'daily_mile#callback'
+  # match '/dailymile/authorize', to: 'daily_mile#authorize'
+
   match 'signout', to: 'sessions#destroy', as: 'signout'
   match 'auth/failure', to: "application#landing_page"
   match 'post_to_twitter', to: "application#post_to_twitter"

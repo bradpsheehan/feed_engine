@@ -2,8 +2,8 @@ module Client
   module API
     extend self
 
-    def get_runs(data)
-      user = Runkeeper::User.new(data[:token])
+    def get_runs(user)
+      user = Runkeeper::User.new(user.app_token)
       runs = user.fitness_activities_feed.body.to_hash
       Populator.add_activity_list(runs, data[:user])
     end
