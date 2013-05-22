@@ -43,7 +43,7 @@ group :development, :test do
   gem 'guard-rspec'
   gem 'rb-fsevent', '~> 0.9'
   gem 'simplecov', git: "git://github.com/colszowka/simplecov.git", require: false
-  gem 'factory_girl_rails', require: false
+  gem 'factory_girl_rails'
 end
 
 group :test do
