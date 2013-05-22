@@ -42,3 +42,8 @@ task "resque:setup" => :environment do
 
   # require 'tasks'
 end
+
+task "resque:check_twitter" => :environment do
+  require 'resque'
+  Resque.enqueue(CheckTwitterResponses)
+end
