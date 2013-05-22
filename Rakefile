@@ -35,7 +35,7 @@ task "resque:setup" => :environment do
   require 'resque_scheduler'
   require 'resque/scheduler'
 
-  Resque.redis = 'localhost:9637'
+  # Resque.redis = 'localhost:9637'
   schedule = YAML.load_file("#{Rails.root}/config/resque_schedule.yml")
   # puts schedule
   Resque.schedule = schedule

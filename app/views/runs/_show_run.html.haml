@@ -1,35 +1,33 @@
-- if @run.organizer_id == current_user.id
-  = button_to "Cancel Run", {action: "update", cancel: true}, {class: "btn btn-warning pull-right", method: :put}
-#run-header
+#run-header.span8
+  - if @run.organizer_id == current_user.id
+    = button_to "Cancel Run", {action: "update", cancel: true}, {class: "btn btn-warning pull-right", method: :put}
   %h1
     =@run.name
-%br
-%h3 Group Organizers
-%p
-  Bradley Sheehan
-%br
-%h3 Date
-%p
-  =@run.run_date
-%br
-%h3 Start Time
-%p
-  =time_tag @run.run_start_time, format: '%I:%M %p'
-%br
-%h3 Route Map
-#map_canvas
-  Loading Route...
-%br
-%h3 Details
-%p
-  =@run.details
-%br
-%h3 Runners
-#runner-pics-lrg
-  =render partial: "runner", collection: @run.confirmed_runners, as: :runner
+#inner-content.span8
+  #run-details
+    %br
+    %h3 Date
+    %p
+      =@run.run_date
+    %br
+    %h3 Start Time
+    %p
+      =time_tag @run.run_start_time, format: '%I:%M %p'
+    %br
+    %h3 Route Map
+    #map_canvas
+      Loading Route...
+    %br
+    %h3 Details
+    %p
+      =@run.details
+    %br
+    %h3 Runners
+    #runner-pics-lrg
+      =render partial: "runner", collection: @run.confirmed_runners, as: :runner
 
-%script{:src => "https://maps.googleapis.com/maps/api/js?sensor=true", :type => "text/javascript"}
-%script{:src => "/assets/show_map", :type => "text/javascript"}
+    %script{:src => "https://maps.googleapis.com/maps/api/js?sensor=true", :type => "text/javascript"}
+    %script{:src => "/assets/show_map", :type => "text/javascript"}
 
-= javascript_tag do
-  showMap(#{raw @run.route_path}, "map_canvas");
+    = javascript_tag do
+      showMap(#{raw @run.route_path}, "map_canvas");
