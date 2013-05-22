@@ -4,7 +4,7 @@ var createRoute = function() {
 if (GBrowserIsCompatible()) {
 
   var map = new GMap2(document.getElementById("map"));
-  map.setCenter(new GLatLng(53.7877, -2.9832),13)
+  map.setCenter(new GLatLng(39.7336, -104.99925),13)
   map.addControl(new GLargeMapControl());
   map.addControl(new GMapTypeControl());
   // == use different GDirections for adding and dragging, it is just simpler that way ==
