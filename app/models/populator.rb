@@ -18,6 +18,7 @@ class Populator
 
   def self.create_activity(data, user)
     run = Run.fuzzy_find({user: user, started_at: DateTime.parse(data["start_time"])})
+    run_id = run ? run.id : nil
     Activity.create!(activity_type: data["type"],
                      duration: data["duration"],
                      distance: data["total_distance"],
@@ -27,7 +28,7 @@ class Populator
                      run_detail: data["run_detail"],
                      detail_present: true,
                      user: user,
-                     run_id: run.id)
+                     run_id: run_id)
   end
 
   private
