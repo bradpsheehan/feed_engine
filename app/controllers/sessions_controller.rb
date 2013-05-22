@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
     if runner
       session[:user_id] = runner.id
       begin
-        get_user_runs #blows up the first time user logs in because they haven't authorized runkeeper
+        get_user_runs
       rescue
       end
       redirect_to profile_path, notice: "Signed in."

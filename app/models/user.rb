@@ -28,7 +28,7 @@ class User < ActiveRecord::Base
     begin
       @photo[size] ||= twitter.user(name).profile_image_url(size)
     rescue
-      @photo[size] = "http://placehold.it/200x200" #todo have a placeholder image
+      @photo[size] = "http://placehold.it/200x200"
     end
   end
 

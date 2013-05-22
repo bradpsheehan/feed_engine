@@ -16,7 +16,8 @@ class CheckTwitterResponses
   end
 
   def self.get_invitations(invitee)
-    invitations ||= OutstandingTwitterInvites.where(invitee_twitter_handle: invitee.name)
+    dataset = OutstandingTwitterInvites
+    invitations ||= dataset.where(invitee_twitter_handle: invitee.name)
   end
 
   def self.destroy_invitations(invitations)

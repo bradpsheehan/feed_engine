@@ -9,7 +9,9 @@ class RunsController < ApplicationController
     end
 
     params[:run][:organizer_id] = current_user.id
-    params[:run][:started_at] = Chronic.parse(params[:run_date]+" "+params[:start_time])
+    started_at = Chronic.parse(params[:run_date]+" "+params[:start_time])
+    params[:run][:started_at] = started_at
+
     friends = params[:friends].gsub("@", "").gsub(" ", "").split(",")
     run = Run.create_with_invitees(friends, params[:run])
     redirect_to run

@@ -4,7 +4,7 @@ class Run < ActiveRecord::Base
   has_many :activities
   belongs_to :route
 
-	delegate :name, :path, :path_points, to: :route, prefix: true
+  delegate :name, :path, :path_points, to: :route, prefix: true
 
   attr_accessible :organizer_id, :started_at, :route_id,
                   :name, :details
@@ -20,8 +20,8 @@ class Run < ActiveRecord::Base
     user = params[:user]
     time = params[:started_at]
 
-    user.runs.where("started_at >= ?", (time-fuzzy_find_buffer)).where("started_at <= ?", (time+fuzzy_find_buffer)).first
-
+    dataset = user.runs.where("started_at >= ?", (time-fuzzy_find_buffer))
+    dataset.where("started_at <= ?", (time+fuzzy_find_buffer)).first
   end
 
   def organizer
@@ -40,14 +40,12 @@ class Run < ActiveRecord::Base
   end
 
   def confirmed_runners
-    confirmed_user_runs = user_runs.select {|user_run| user_run.status == "confirmed"}
+    confirmed_user_runs = user_runs.select {|ur| ur.status == "confirmed"}
     confirmed_user_runs.collect(&:user) << organizer
   end
 
   def cancel
     self.cancelled = true
-
-    #TODO send message to runners
     save
   end
 
@@ -74,9 +72,11 @@ class Run < ActiveRecord::Base
 
   def send_invite(invitee_name)
     begin
-      organizer.tweet("@#{invitee_name} reply #yes to come run with me on #{run_date} via #runline")
+      t = "@#{invitee_name} reply #yes to run with me on"
+      t += " #{run_date} via #runline"
+      organizer.tweet(t)
     rescue
-      # organizer.tweet("@#{invitee_name} reply #yes to come run with me on #{run_date} #{num} via #runline")
+
     end
   end
 end
