@@ -151,6 +151,7 @@ include_context "standard test dataset"
 
       end
     end
+  end
 
   describe "cancel" do
     it "cancels the run" do
