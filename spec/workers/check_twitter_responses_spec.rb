@@ -18,7 +18,7 @@ include_context "standard test dataset"
   end
 
   describe "CheckTwitterResponses.perfom" do
-    it "does stuff" do
+    xit "checks tweets, updates user runs and deletes old invites" do
       VCR.use_cassette("check_the_entire_worker") do
         tweets = CheckTwitterResponses.perform
         expect(tweets.count).to eq 15

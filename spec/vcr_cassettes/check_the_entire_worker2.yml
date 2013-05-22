@@ -1,0 +1,76 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.twitter.com/1.1/search/tweets.json?q=%23yes%20%23runline
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - Twitter Ruby Gem 4.6.2
+      Authorization:
+      - OAuth oauth_consumer_key="SQXPKncl9wOlvvKwf1T5w", oauth_nonce="b524b64efb4ccfa744bf630c20275f9e",
+        oauth_signature="p%2F4a0NkJbJRxIlqBUyxU%2BJ0S000%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1369248313", oauth_token="61654242-W6Ck8S0KcarCPkZPv0OdVIhiMaRDgByDMweN7Sqmg",
+        oauth_version="1.0"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store, must-revalidate, pre-check=0, post-check=0
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 22 May 2013 18:45:12 GMT
+      Expires:
+      - Tue, 31 Mar 1981 05:00:00 GMT
+      Last-Modified:
+      - Wed, 22 May 2013 18:45:12 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - tfe
+      Set-Cookie:
+      - guest_id=v1%3A136924831249811936; Domain=.twitter.com; Path=/; Expires=Fri,
+        22-May-2015 18:45:12 UTC
+      - lang=en
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=631138519
+      X-Access-Level:
+      - read-write-directmessages
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Rate-Limit-Limit:
+      - '180'
+      X-Rate-Limit-Remaining:
+      - '179'
+      X-Rate-Limit-Reset:
+      - '1369249212'
+      X-Transaction:
+      - aef2468a465781f9
+      X-Xss-Protection:
+      - 1; mode=block
+      Transfer-Encoding:
+      - chunked
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAAGSP0QrCMAxF/yUwXxzStZNpYfghIqVsEQtb1SYFx9i/G3Di
+        gw8hhHtzuHcGYs+ZkMCeLyUQ+tTd3Ijse88e7AzdfXwMyNi7EMGqnapMCaN/
+        udCDNabRTXPUptbmIKPqr+aIE1j4N0AJz4xpErHQZkLayko5DiGiaAmvCenm
+        chrEcaIQOxRc+w/aPNsPoNDqh9jIw5B7dBg5cEBqK6F29xwZbLWXiitRuvyO
+        Na2CZXkDAAD//wMA/tz1+RMBAAA=
+    http_version: 
+  recorded_at: Wed, 22 May 2013 18:45:14 GMT
+recorded_with: VCR 2.5.0

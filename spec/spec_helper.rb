@@ -103,7 +103,7 @@ shared_context "standard test dataset" do
   let :attributes do
     {
       name: "Run Name",
-      run_date: "5/23/2013",
+      run_date: "5/25/2013",
       run_start_time: "5:12pm",
       details: "run run run",
       route_id: 1,

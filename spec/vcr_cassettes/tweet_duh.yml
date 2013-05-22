@@ -1,0 +1,85 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.twitter.com/1.1/statuses/update.json
+    body:
+      encoding: US-ASCII
+      string: status=hello+world+138588
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - Twitter Ruby Gem 4.6.2
+      Authorization:
+      - OAuth oauth_consumer_key="SQXPKncl9wOlvvKwf1T5w", oauth_nonce="8132b465361ec457f7d5fa8072f43671",
+        oauth_signature="qyT7MP1hYKUeTAAmthljg%2FWE%2F%2BI%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1369253388", oauth_token="1428947773-5kMogR0HQWkeEM5ZisRNrvkG2EGgcuLlfOVVD4K",
+        oauth_version="1.0"
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store, must-revalidate, pre-check=0, post-check=0
+      Content-Length:
+      - '1817'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 22 May 2013 20:09:47 GMT
+      Etag:
+      - ! '"482313721b24f68aa1e92590ef2e65ff"'
+      Expires:
+      - Tue, 31 Mar 1981 05:00:00 GMT
+      Last-Modified:
+      - Wed, 22 May 2013 20:09:47 GMT
+      Pragma:
+      - no-cache
+      Server:
+      - tfe
+      Set-Cookie:
+      - _twitter_sess=BAh7CDoMY3NyZl9pZCIlOGYwNGZkNzc0NDUxNTFjMWMwM2ZiYzY4YTEzMWE5%250AMjM6B2lkIiVjNDU3N2VlMDRiNTFkMjEzMzk3OWNkY2YwMzljYzA4ZToPY3Jl%250AYXRlZF9hdGwrCHic3M0%252BAQ%253D%253D--8f495dcd4a55c0aea719f7b66fbf5d4c2cf3bb10;
+        domain=.twitter.com; path=/; HttpOnly
+      - dnt=1; domain=.twitter.com; path=/; expires=Tue, 23-May-2023 08:09:47 GMT
+      - guest_id=v1%3A136925338736030498; Domain=.twitter.com; Path=/; Expires=Fri,
+        22-May-2015 20:09:47 UTC
+      - lang=en; path=/
+      - lang=en; path=/
+      - lang=en; path=/
+      - pid=; domain=.twitter.com; path=/; expires=Thu, 01-Jan-1970 00:00:00 GMT
+      - twid=u%3D1428947773%7CGj9Dm0IJMsaWrih0AoIlH%2BsYe2w%3D; domain=.twitter.com;
+        path=/; secure
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=631138519
+      Vary:
+      - Accept-Encoding
+      X-Access-Level:
+      - read-write-directmessages
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Mid:
+      - bc24e05f08ce153525d433d674eeeb0cb958dc11
+      X-Runtime:
+      - '0.33932'
+      X-Transaction:
+      - 68d6d638ed7a98eb
+      X-Transaction-Mask:
+      - a6183ffa5f8ca943ff1b53b5644ef11429c95117
+      X-Ua-Compatible:
+      - IE=9,chrome=1
+    body:
+      encoding: US-ASCII
+      string: ! '{"in_reply_to_status_id_str":null,"id_str":"337299270875115521","favorited":false,"coordinates":null,"user":{"is_translator":false,"profile_image_url":"http:\/\/a0.twimg.com\/sticky\/default_profile_images\/default_profile_1_normal.png","created_at":"Tue
+        May 14 22:01:25 +0000 2013","name":"runline 2","profile_background_image_url":"http:\/\/a0.twimg.com\/images\/themes\/theme1\/bg.png","entities":{"description":{"urls":[]}},"verified":false,"contributors_enabled":false,"profile_link_color":"0084B4","id":1428947773,"profile_background_image_url_https":"https:\/\/twimg0-a.akamaihd.net\/images\/themes\/theme1\/bg.png","id_str":"1428947773","default_profile":true,"statuses_count":30,"profile_use_background_image":true,"url":null,"notifications":false,"friends_count":1,"lang":"en","profile_text_color":"333333","time_zone":null,"followers_count":2,"location":null,"utc_offset":null,"profile_sidebar_border_color":"C0DEED","listed_count":0,"protected":false,"description":null,"profile_background_tile":false,"geo_enabled":false,"following":false,"profile_sidebar_fill_color":"DDEEF6","profile_image_url_https":"https:\/\/twimg0-a.akamaihd.net\/sticky\/default_profile_images\/default_profile_1_normal.png","default_profile_image":true,"follow_request_sent":false,"profile_background_color":"C0DEED","favourites_count":0,"screen_name":"runline4"},"in_reply_to_user_id_str":null,"entities":{"hashtags":[],"user_mentions":[],"urls":[]},"in_reply_to_user_id":null,"source":"\u003Ca
+        href=\"http:\/\/jemaddux.com\" rel=\"nofollow\"\u003ERunLine\u003C\/a\u003E","place":null,"retweet_count":0,"truncated":false,"id":337299270875115521,"retweeted":false,"created_at":"Wed
+        May 22 20:09:47 +0000 2013","in_reply_to_status_id":null,"text":"hello world
+        138588","contributors":null,"in_reply_to_screen_name":null,"geo":null}'
+    http_version: 
+  recorded_at: Wed, 22 May 2013 20:09:50 GMT
+recorded_with: VCR 2.5.0

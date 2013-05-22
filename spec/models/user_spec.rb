@@ -79,7 +79,10 @@ describe User do
 
   describe "User #tweet" do
     it "tweets" do
-      expect(current_user.respond_to?(:tweet))
+      VCR.use_cassette("tweet duh") do
+        tweet = current_user.tweet("hello world #{rand(0..999999)}")
+        expect(tweet.class).to be Twitter::Tweet
+      end
     end
   end
 

@@ -2,7 +2,7 @@ class CheckTwitterResponses
   @queue = :check_for_yes_responses_to_runs_queue
 
   def self.perform
-    tweets = get_tweets("#yes")
+    tweets = get_tweets("#yes #runline")
     tweets.each do |tweet|
       if is_reply_to_invitation?(tweet)
         invitor, invitee = get_runners(tweet)

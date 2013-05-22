@@ -10,6 +10,7 @@ class Run < ActiveRecord::Base
 
   def self.create_with_invitees(invitees, run_info)
     run = Run.create(run_info)
+    # binding.pry
     run.invite_runners(invitees)
     run
   end
@@ -46,36 +47,17 @@ class Run < ActiveRecord::Base
   def add_invitee(invitee_name)
     user = User.find_or_create_by_name(name: invitee_name, status: "invited")
     user_run = user_runs.create(user_id: user.id, status: "invited")
-    OutstandingTwitterInvites.create_invite(organizer, user,
-                                            user_run.id, run_date)
+    OutstandingTwitterInvites.create_invite(organizer,
+                                            user,
+                                            user_run.id,
+                                            run_date)
   end
 
   def send_invite(invitee_name)
     begin
-      organizer.tweet("@#{invitee_name} reply #yes to come run with me on #{run_date}")
+      organizer.tweet("@#{invitee_name} reply #yes to come run with me on #{run_date} via #runline")
     rescue
-      organizer.tweet("@#{invitee_name} reply #yes to come run with me on #{run_date} #{rand(0..9999)}")
+      organizer.tweet("@#{invitee_name} reply #yes to come run with me on #{run_date} #{rand(0..9999)} via #runline")
     end
   end
-
-
-  # def invite_runners(run_creator, run, invitees)
-  #   invitees = invitees.gsub(" ","").split(",")
-
-  #   invitees.each do |invitee|
-  #     unless User.find_by_name(invitee)
-  #       User.create_invited_user(invitee)
-  #     end
-  #     user = User.find_by_name(invitee)
-  #     user_run = UserRun.create(run.id, user.id, "invited")
-  #     OutstandingTwitterInvites.create_invite(
-  #       run_creator,
-  #       user,
-  #       user_run.id,
-  #       run.run_date
-  #       )
-  #     run_creator.tweet("@#{user.name} reply #yes to come run with me #{rand(0..9999)}")
-  #   end
-  # end
-
 end
