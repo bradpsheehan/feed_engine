@@ -98,4 +98,14 @@ include_context "standard test dataset"
     end
 
   end
+
+  describe "cancel" do
+    it "cancels the run" do
+      run = Run.create(organizer_id: current_user.id)
+      run.cancel
+
+      run = Run.find_by_id(run.id)
+      expect(run.cancelled).to eq true
+    end
+  end
 end

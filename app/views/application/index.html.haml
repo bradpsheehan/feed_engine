@@ -1,25 +1,22 @@
-#feed-content.span8
+#inner-container.span8
+  #inner-header.span8
+    %h1.pull-left
+      Your Activity
   -current_user.activities.each do |activity|
-    %article.feed-item
-      %section.feed-summary
-        %img.user-photo-thumbnail
-        %span.feed-summary-text
-          =current_user.name
-          just completed a run
-        %section.feed-details.row
-          .route-map-mini.span4
-            %img{:src => "http://placehold.it/250x200"}/
-          .run-info.span4
-            %ul
-              %li
-                %span.run-info-label
-                  Date/Time
-                =activity.activity_date
-              %li
-                %span.run-info-label
-                  Distance
-                =activity.distance
-              %li
-                %span.run-info-label
-                  Duration
-                =activity.duration
+    #inner-content.span8
+      %a#api-connect.btn.btn-primary.pull-right{:href => "/activity/#{activity.id}"} view map
+      %article.feed-item
+        %section.feed-summary
+          %section.feed-details.row
+            .run-info.span3
+              %h3
+                Date/Time
+              =activity.activity_date
+              %h3
+                Distance
+              =activity.distance
+              %h3
+                Duration
+              =activity.duration
+            / .route-map-mini.span4
+            / #map_canvas
