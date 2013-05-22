@@ -6,9 +6,14 @@ class RegistrationsController < ApplicationController
     if success
       redirect_to new_run_path, notice: "Successfully registered."
     else
-      flash[:error] = "F u."
+      flash[:error] = "Registration failed."
       render 'users/profile'
     end
+  end
+
+  def destroy
+    current_user.app_provider.destroy
+    redirect_to '/profile', notice: "App Successfully Disconnected"
   end
 
 end

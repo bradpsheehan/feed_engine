@@ -21,4 +21,6 @@ FeedEngine::Application.routes.draw do
   get '/profile', to: 'users#show', as: 'profile'
   get '/activity/:id', to: 'activities#show', as: 'activity'
 
+  delete 'disconnect', to: 'registrations#destroy', as: 'disconnect'
+
 end
