@@ -20,6 +20,9 @@ nav,
 section {
   display: block;
 }
+article {
+  color: #34495E;
+}
 
 audio,
 canvas,

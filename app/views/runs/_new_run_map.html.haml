@@ -1,5 +1,10 @@
 #new-route
-  = text_field_tag 'route[name]', nil, placeholder: "Enter Route Name", id: "new-route-tag"
+  %div
+    = text_field_tag 'route[name]', nil, placeholder: "Enter Route Name", id: "new-route-tag"
+  %div
+    = text_field_tag 'location', nil, placeholder: "Enter a location, e.g 'Denver, Colorado'", id: "address"
+    = link_to "Go!", "#", id: "go-to-address"
+
   Click on the map and a path will be drawn that follows the streets.
   %br/
   Drag the markers and the path will be redrawn.
@@ -15,3 +20,14 @@
 
   %script{src: "/assets/epoly.js", type:"text/javascript"}
   %script{src: "/assets/route_creator.js", type:"text/javascript"}
+
+= javascript_tag do
+  $('#go-to-address').click(function() {
+
+  var address = $('#address').val();
+
+  centerMap(address);
+
+  return false;
+
+  });

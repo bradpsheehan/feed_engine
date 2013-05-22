@@ -1,4 +1,5 @@
 $(function() {
+	if(typeof gon !== 'undefined') {
   var data = gon.path;
 
   // Set the initial Lat and Long of the Google Map
@@ -48,5 +49,6 @@ $(function() {
       map: map,
       title: 'Ending Location'
   });
+    }
 
 });

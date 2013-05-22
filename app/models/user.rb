@@ -28,7 +28,7 @@ class User < ActiveRecord::Base
     begin
       @photo[size] ||= twitter.user(name).profile_image_url(size)
     rescue
-      @photo[size] == {}
+      @photo[size] = "http://placehold.it/200x200" #todo have a placeholder image
     end
   end
 
@@ -51,6 +51,10 @@ class User < ActiveRecord::Base
 
   def app_token
     @token ||= app_provider.access_token
+  end
+
+  def connected?
+    @connected ||= app_provider.present?
   end
 
   def self.create_invited_user(name)
