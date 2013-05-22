@@ -6,6 +6,15 @@ GIT
       multi_json
       simplecov-html (~> 0.7.1)
 
+GIT
+  remote: git@github.com:hampei/omniauth-dailymile.git
+  revision: 13146b21a67ef4ee9ba35d0b6defd2da1b2d358f
+  specs:
+    omniauth-dailymile (1.0.1)
+      multi_json (~> 1.0)
+      omniauth (~> 1.0)
+      omniauth-oauth2 (~> 1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -44,6 +53,8 @@ GEM
       erubis (>= 2.6.6)
     binding_of_caller (0.7.1)
       debug_inspector (>= 0.0.1)
+    bootstrap-sass (2.3.1.0)
+      sass (~> 3.2)
     builder (3.0.4)
     bullet (4.6.0)
       uniform_notifier
@@ -333,6 +344,7 @@ PLATFORMS
 DEPENDENCIES
   better_errors
   binding_of_caller
+  bootstrap-sass (~> 2.3.1.0)
   bullet
   cane
   capybara
@@ -355,6 +367,7 @@ DEPENDENCIES
   json
   mono_logger
   omniauth
+  omniauth-dailymile!
   omniauth-mapmyfitness
   omniauth-runkeeper
   omniauth-twitter

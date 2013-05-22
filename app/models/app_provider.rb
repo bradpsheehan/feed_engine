@@ -5,6 +5,7 @@ class AppProvider < ActiveRecord::Base
   validates_uniqueness_of :user_id
 
   def self.create_from_omniauth(data)
+    binding.pry
     create! do |provider|
       provider.name = data[:auth][:provider].downcase
       provider.uid = data[:auth][:uid]

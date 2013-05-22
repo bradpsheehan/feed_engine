@@ -13,4 +13,9 @@ class RegistrationsController < ApplicationController
     end
   end
 
+  def dailymile_connect
+    binding.pry
+  end
+
+
 end
