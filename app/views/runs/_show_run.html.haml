@@ -8,11 +8,11 @@
     %br
     %h3 Date
     %p
-      =@run.run_date
+      =time_tag @run.started_at, format: '%B %d, %Y'
     %br
     %h3 Start Time
     %p
-      =time_tag @run.run_start_time, format: '%I:%M %p'
+      =time_tag @run.started_at, format: '%I:%M %p'
     %br
     %h3 Route Map
     #map_canvas
