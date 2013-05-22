@@ -20,6 +20,7 @@ class Run < ActiveRecord::Base
   end
 
   def invite_runners(invitee_names)
+    puts invitee_names.inspect
     invitee_names.each do |invitee_name|
       invite_runner(invitee_name)
     end
