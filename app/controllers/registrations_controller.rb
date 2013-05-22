@@ -6,7 +6,7 @@ class RegistrationsController < ApplicationController
     if success
       redirect_to new_run_path, notice: "Successfully registered."
     else
-      flash[:error] = "F u."
+      flash[:error] = "Error"
       render 'users/profile'
     end
   end
