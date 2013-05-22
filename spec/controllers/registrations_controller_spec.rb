@@ -40,7 +40,25 @@ describe RegistrationsController do
   end
 
   describe "POST .dm_connect" do
+    before do
+      @user = create(:user)
+      @user.stub(:username).and_return("justreem")
+      @provider = double('provider')
+      controller.stub(:current_user).and_return(@user)
+    end
 
+    it "should redirect to new run page after successfully creating a provider" do
+      AppProvider.stub(:new).and_return(@provider)
+      @provider.stub(:save).and_return(true)
+      post :dm_connect
+      expect(response).to redirect_to new_run_path
+    end
+
+    it "should render the profile page when receiving invalid params"  do
+      @provider.stub(:save).and_return(false)
+      post :dm_connect, name: "dailymile", username: "name", user_id: @user.id
+      expect(response).to render_template :profile
+    end
   end
 
 end
