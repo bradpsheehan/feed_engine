@@ -5,26 +5,27 @@
     =@run.name
 #inner-content.span8
   #run-details
-    %br
     %h3 Date
     %p
       =date_tag @run.started_at
-    %br
     %h3 Start Time
     %p
       =better_time_tag @run.started_at
-    %br
     %h3 Route Map
     #map_canvas
       Loading Route...
-    %br
     %h3 Details
     %p
       =@run.details
-    %br
-    %h3 Runners
-    #runner-pics-lrg
-      =render partial: "runner", collection: @run.confirmed_runners, as: :runner
+
+    -if @run.over?
+      %h3 Runner Results:
+      =render partial: "result", collection: @run.activities, as: :activity
+    -else
+      %h3 Runners
+      #runner-pics-lrg
+        =render partial: "runner", collection: @run.confirmed_runners, as: :runner
+
 
     %script{:src => "https://maps.googleapis.com/maps/api/js?sensor=true", :type => "text/javascript"}
     %script{:src => "/assets/show_map", :type => "text/javascript"}
