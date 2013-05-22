@@ -58,7 +58,8 @@ class Run < ActiveRecord::Base
     begin
       organizer.tweet("@#{invitee_name} reply #yes to come run with me on #{run_date} via #runline")
     rescue
-      organizer.tweet("@#{invitee_name} reply #yes to come run with me on #{run_date} #{rand(0..9999)} via #runline")
+      num = rand(0..9999)
+      organizer.tweet("@#{invitee_name} reply #yes to come run with me on #{run_date} #{num} via #runline")
     end
   end
 end
