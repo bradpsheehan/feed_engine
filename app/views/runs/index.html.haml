@@ -3,5 +3,10 @@
     %h1.pull-left
       Group Runs
     %a#api-connect.btn.btn-large.btn-primary.pull-right{:href => "/runs/new"} new run
-  =render partial: "run_summary", collection: @runs, as: :run
+  - if @runs.empty?
+    #inner-content.span8
+      %h3.feed-item You aren't part of any group runs!
+  - else
+    =render partial: "run_summary", collection: @runs, as: :run
+
 

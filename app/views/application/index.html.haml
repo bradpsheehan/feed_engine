@@ -4,6 +4,8 @@
       My Runs
   -current_user.activities.each do |activity|
     #inner-content.span8
+      - if activity.run_detail
+        %a#api-connect.btn.btn-primary.pull-right{:href => "/activity/#{activity.id}"} view map
       %article.feed-item
         %section.feed-summary
           %section.feed-details.row
