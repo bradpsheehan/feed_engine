@@ -108,12 +108,12 @@ nav#feed-lists li.feeds-run {
 .user-photo {
   width: 200px;
   height: 200px;
-  border: solid green 1px
+  border: solid green 1px;
 }
 .user-photo-thumbnail {
   width: 40px;
   height: 40px;
-  border: solid green 1px
+  border: solid green 1px;
 }
 #top-nav {
   display: inline;
@@ -140,7 +140,7 @@ nav#feed-lists li.feeds-run {
   background-color: #2980B9;
   padding-top: 2%;
   bottom: 0;
-  width: 100%
+  width: 100%;
 }
 #wrap {
   min-height: 100%;
