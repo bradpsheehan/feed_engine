@@ -117,5 +117,16 @@ describe User do
     end
   end
 
+  describe "all_runs" do
+    it "returns all the runs the user is in and organizes" do
+      run = Run.create(organizer_id: current_user.id)
+      run2 = Run.create
+      run2.users << current_user
+
+      expect(current_user.all_runs).to match_array([run, run2])
+
+    end
+  end
+
 end
 
