@@ -3,15 +3,24 @@
   #inner-header.span8
     %h1.pull-left
       Fitness Apps
-    #profile-content.span8
-      #profile-details
-        .api-integrators
-
-          -if current_user.connected?
+    -if current_user.connected?
+      #profile-content.span8
+        #profile-details
+          .api-integrators
             %h3.pull-left
               Disconnect from #{current_user.provider}
             #api-connect.btn.btn-danger.pull-right
               = link_to "disconnect", disconnect_path, method: :delete
-          -else
+    -else
+      #profile-content.span8
+        #profile-details
+          .api-integrators
+            %h3.pull-left
+              Connect with Runkeeper
             %a#api-connect.btn.btn-primary.pull-right{:href => "/auth/runkeeper"} connect
+      #profile-content.span8
+        #profile-details
+          .api-integrators
+            %h3.pull-left
+              Connect with Daily Mile
             %a#api-connect.btn.btn-primary.pull-right{:href => "/connect"} connect
