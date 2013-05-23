@@ -61,6 +61,10 @@ class User < ActiveRecord::Base
     @connected ||= app_provider.present?
   end
 
+  def provider
+    @provider ||= app_provider.name.capitalize
+  end
+
   def self.create_invited_user(name)
     user = User.new
     user.name = name

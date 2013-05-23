@@ -10,7 +10,19 @@
         / = link_to "Sign in with Twitter", "/auth/twitter"
         / <a href => "/dashboard"><src => "https://dev.twitter.com/sites/default/files/images_documentation/sign-in-with-twitter-gray.png" alt="Sign in with Twitter" title="Sign in with Twitter"f"></a>
         = link_to image_tag("https://dev.twitter.com/sites/default/files/images_documentation/sign-in-with-twitter-gray.png"), '/auth/twitter'
-#landing-bottom-content
+#landing-bottom-container
   #landing-bottom-content.container
+    #lander-icon.pull-left
+      =image_tag "pin.png"
+      %h3
+        Plan Your Route
+    #lander-icon.pull-left
+      =image_tag "runners.png"
+      %h3
+        Invite Your Friends
+    #lander-icon.pull-left
+      =image_tag "connect.png"
+      %h3
+        Track Your Results
 
 

@@ -14,7 +14,6 @@
 //= require jquery_ujs
 //= require bootstrap
 //= requrie bootstrap_alert
-//= require feed-item-expander
 //= require serialize_object
 //= require jquery.form
 //= require google_map
