@@ -1,10 +1,10 @@
 module Dailymile
   class Activities
 
-    def for_user(username)
-      response = Net::HTTP.get('api.dailymile.com', "/people/#{username}/entries.json")
+    def for_user(user)
+      response = Net::HTTP.get('api.dailymile.com', "/people/#{user.username}/entries.json")
       activities = JSON.parse(response)
-      activities["entries"]
+      Populator.add_dm_activities(activities["entries"],user,"dailymile")
     end
 
   end

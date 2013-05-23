@@ -19,7 +19,7 @@ http_interactions:
       Server:
       - nginx/1.3.0
       Date:
-      - Wed, 22 May 2013 00:07:21 GMT
+      - Thu, 23 May 2013 00:12:27 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -29,7 +29,7 @@ http_interactions:
       Status:
       - 200 OK
       Etag:
-      - ! '"b644ea05efcb73880f2304c455c2fe6a"'
+      - ! '"3d13e3a466899f8d5c4294b867af6a66"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Ua-Compatible:
@@ -37,14 +37,14 @@ http_interactions:
       Set-Cookie:
       - citystate=false; path=/
       X-Runtime:
-      - '0.052738'
+      - '0.020702'
     body:
       encoding: US-ASCII
-      string: ! '{"entries":[{"id":22864972,"url":"http://www.dailymile.com/entries/22864972","at":"2013-05-22T00:05:40Z","comments":[],"likes":[],"geo":{"type":"Point","coordinates":["-104.9928832054","39.7338828628"]},"user":{"username":"justreem","display_name":"Kareem
-        G.","photo_url":"http://www.dailymile.com/images/defaults/user_avatar.jpg","url":"http://www.dailymile.com/people/justreem"},"workout":{"activity_type":"Running","distance":{"value":1.56,"units":"miles"},"title":"Galvanize
-        Poets Row and back again!"}},{"id":22856110,"url":"http://www.dailymile.com/entries/22856110","at":"2013-05-21T15:03:19Z","message":"Great!","comments":[],"likes":[],"user":{"username":"justreem","display_name":"Kareem
+      string: ! '{"entries":[{"id":22856110,"url":"http://www.dailymile.com/entries/22856110","at":"2013-05-21T15:03:19Z","message":"Great!","comments":[],"likes":[],"user":{"username":"justreem","display_name":"Kareem
         G.","photo_url":"http://www.dailymile.com/images/defaults/user_avatar.jpg","url":"http://www.dailymile.com/people/justreem"},"workout":{"activity_type":"Running","distance":{"value":2.69,"units":"miles"},"felt":"alright","duration":1153,"title":"Denver
-        running"}}]}'
+        running"}},{"id":22864972,"url":"http://www.dailymile.com/entries/22864972","at":"2013-05-09T06:00:00Z","comments":[],"likes":[],"user":{"username":"justreem","display_name":"Kareem
+        G.","photo_url":"http://www.dailymile.com/images/defaults/user_avatar.jpg","url":"http://www.dailymile.com/people/justreem"},"workout":{"activity_type":"Running","distance":{"value":1.56,"units":"miles"},"title":"Galvanize
+        Poets Row and back again!"}}]}'
     http_version: 
-  recorded_at: Wed, 22 May 2013 00:07:20 GMT
+  recorded_at: Thu, 23 May 2013 00:12:27 GMT
 recorded_with: VCR 2.5.0

@@ -21,7 +21,7 @@ class RegistrationsController < ApplicationController
                                user_id: current_user.id)
 
     if provider.save
-      Dailymile::Activities.new.for_user(current_user.username)
+      Dailymile::Activities.new.for_user(current_user)
       redirect_to new_run_path, notice: "Successfully registered."
     else
       flash[:error] = "There was an issue processing your request, please try again"
