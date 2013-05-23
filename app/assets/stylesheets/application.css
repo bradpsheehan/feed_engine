@@ -352,7 +352,7 @@ input[type="radio"] {
 #footer-content {
   margin-right: auto;
   margin-left: auto;
-  display; block;
+  display: block;
   width: 20%;
   text-align: center;
 }
