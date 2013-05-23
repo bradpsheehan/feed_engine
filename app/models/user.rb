@@ -68,7 +68,7 @@ class User < ActiveRecord::Base
     r.flatten
   end
 
-  def provider
+  def app_name
     @provider ||= app_provider.name.capitalize
   end
 

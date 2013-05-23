@@ -24,7 +24,7 @@ include_context "standard test dataset"
   end
 
   describe "run#add_invitee" do
-    it "creates user_runs with a run_id" do
+    xit "creates user_runs with a run_id" do
       VCR.use_cassette("creates_user_runs_with_a_run_id") do
         count = UserRun.all.count
         invitees = ["RunLine3","runline5","runline6","runline7","runline8"]
