@@ -251,6 +251,7 @@ nav#feed-lists li.feeds-run {
 }
 #landing-bottom-content {
   padding-top: 2%;
+  padding-left: 9%
 }
 #hero-content {
   text-align: right;
@@ -357,5 +358,5 @@ input[type="radio"] {
   text-align: center;
 }
 #lander-icon {
-  margin-right: 10%;
+  margin-right: 100px;
 }
