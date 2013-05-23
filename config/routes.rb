@@ -29,4 +29,6 @@ FeedEngine::Application.routes.draw do
 
   delete 'disconnect', to: 'registrations#destroy', as: 'disconnect'
 
+  get "/code" => redirect("https://github.com/bradpsheehan/feed_engine")
+
 end

@@ -68,6 +68,10 @@ class User < ActiveRecord::Base
     r.flatten
   end
 
+  def provider
+    @provider ||= app_provider.name.capitalize
+  end
+
   def self.create_invited_user(name)
     user = User.new
     user.name = name

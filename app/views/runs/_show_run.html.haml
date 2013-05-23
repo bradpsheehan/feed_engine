@@ -1,3 +1,4 @@
+=render 'messages'
 #run-header.span8
   - if @run.organizer_id == current_user.id
     = button_to "Cancel Run", {action: "update", cancel: true}, {class: "btn btn-warning pull-right", method: :put}

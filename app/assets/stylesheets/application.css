@@ -15,6 +15,7 @@
 body {
   background-color: lightgray !important;
   background-repeat: no-repeat;
+  min-height: 100%;
 }
 
 header h1 {
@@ -137,6 +138,9 @@ nav#feed-lists li.feeds-run {
   height: 80px;
   clear:both;
   background-color: #2980B9;
+  padding-top: 2%;
+  bottom: 0;
+  width: 100%
 }
 #wrap {
   min-height: 100%;
@@ -241,8 +245,12 @@ nav#feed-lists li.feeds-run {
   height: 450px;
   color: white;
 }
-#landing-bottom {
+#landing-bottom-container {
   height: 300px;
+  width: 100%;
+}
+#landing-bottom-content {
+  padding-top: 2%;
 }
 #hero-content {
   text-align: right;
@@ -272,7 +280,7 @@ nav#feed-lists li.feeds-run {
 }
 
 input#run_name {
-  width: 80%;
+  width: 100%;
 }
 
 textarea#run_details{
@@ -299,14 +307,6 @@ textarea#friends {
 #logo a:hover {
   color: #34495E;
 }
-
-/*.fixed {
-  width: 100%;
-  left: 0;
-  position: fixed;
-  top: 0;
-  z-index: 99;
-}*/
 
 .result ul li {
 	list-style: none;
@@ -348,4 +348,14 @@ label.route-select {
 input[type="radio"] {
 	margin: 5px;
 	vertical-align: middle;
+}
+#footer-content {
+  margin-right: auto;
+  margin-left: auto;
+  display; block;
+  width: 20%;
+  text-align: center;
+}
+#lander-icon {
+  margin-right: 10%;
 }

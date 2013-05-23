@@ -1,4 +1,3 @@
-#run-header.span8
-  %h1
-    #{@run.name} -
-    %span.cancelled CANCELLED
+=render 'messages'
+#inner-header.pull-right
+  %a#api-connect.btn.btn-large.btn-primary.pull-right{:href => "/runs/new"} new run

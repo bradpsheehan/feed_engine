@@ -34,9 +34,10 @@ class RunsController < ApplicationController
     @run = Run.find_by_id(params[:id])
     if params[:cancel] && @run.organizer_id == current_user.id
       @run.cancel
+      redirect_to @run, notice: "Run Cancelled"
+    else
+      redirect_to @run
     end
-
-    redirect_to @run
   end
 
 end
