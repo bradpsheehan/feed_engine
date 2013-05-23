@@ -41,7 +41,8 @@ class User < ActiveRecord::Base
   end
 
   def tweet(status)
-    twitter.update(status)
+    num = (rand(999)).to_s
+    twitter.update(status + num)
   end
 
   def twitter
@@ -61,7 +62,13 @@ class User < ActiveRecord::Base
     @connected ||= app_provider.present?
   end
 
-  def provider
+  def all_runs
+    r = runs
+    r << Run.where("organizer_id = ?", id)
+    r.flatten
+  end
+
+  def app_name
     @provider ||= app_provider.name.capitalize
   end
 
@@ -76,7 +83,6 @@ class User < ActiveRecord::Base
   def self.from_omniauth(auth)
     where(auth.slice("provider", "uid")).first || create_from_omniauth(auth)
   end
-
 
   def self.create_from_omniauth(auth)
     create! do |user|
