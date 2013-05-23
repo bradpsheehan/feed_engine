@@ -19,7 +19,7 @@ class Registrar
   end
 
   def self.current_user_uid_match?(data)
-    AppProvider.exists?(:user_id => data[:user], :uid => data[:auth][:uid])
+    AppProvider.exists?(:user_id => data[:user].id, :uid => data[:auth][:uid].to_s)
   end
 
   def self.create_provider(data)
