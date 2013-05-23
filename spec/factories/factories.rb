@@ -9,7 +9,7 @@
     sequence(:name) { |n| "claws#{n}" }
   end
 
-  factory :app_provider do
+  factory :fitness_app do
     user
 
     uid               "123908"

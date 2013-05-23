@@ -36,6 +36,7 @@ class RegistrationsController < ApplicationController
   end
 
   def get_runs
+    # to_do - put in background worker
     Client::API.get_runs(current_user)
   end
 end

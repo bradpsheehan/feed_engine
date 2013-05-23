@@ -15,6 +15,7 @@ class SessionsController < ApplicationController
   end
 
   def get_user_runs
+    #to_do add background worker
     Client::API.get_runs(current_user) if current_user.app_token
   end
 

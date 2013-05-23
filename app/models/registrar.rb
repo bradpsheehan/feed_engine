@@ -1,18 +1,30 @@
 class Registrar
 
   def self.register(data)
-    if uid_exists?(data[:auth])
-      if current_user_uid_match?(data)
-        true
-      else
-        false
-      end
-    else
+    return true if current_user_valid?(data)
+    return false if user_fitness_app_mismatch?(data)
+
+    # if uid_exists?(data[:auth])
+    #   if current_user_uid_match?(data)
+    #     true
+    #   else
+    #     false
+    #   end
+
+    # else
       create_provider(data)
-    end
+    # end
   end
 
   private
+
+  def self.current_user_valid?(data)
+    uid_exists?(data[:auth]) && current_user_uid_match?(data)
+  end
+
+  def self.user_fitness_app_mismatch?(data)
+    uid_exists?(data[:auth]) && !current_user_uid_match?(data)
+  end
 
   def self.uid_exists?(payload)
     uid_list(payload).include?(payload[:uid].to_s)
