@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require feed-item-expander
-//= require route-switcher
 //= require serialize_object
 //= require jquery.form
 //= require google_map

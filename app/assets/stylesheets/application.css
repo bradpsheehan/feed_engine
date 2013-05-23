@@ -270,17 +270,11 @@ nav#feed-lists li.feeds-run {
   height: 350px;
 }
 
-input#run_name {
-  width: 100%;
-}
-
 textarea#run_details{
-  width: 100%;
   height: 200px;
 }
 
 textarea#friends {
-  width: 100%;
   height: 100px;
 }
 /*.fixed {
@@ -295,4 +289,40 @@ textarea#friends {
 	list-style: none;
 	padding: 0;
 	margin: 0;
+}
+
+label {
+	display: inline;
+}
+
+label.error {
+	width: 50%;
+}
+
+input[type=text] {
+	width: 100%;
+}
+
+input#address{
+	width: 85%;
+}
+
+#map{
+	width: 100%;
+	margin: 15px 0;
+}
+
+label.error {
+	margin-bottom: 15px;
+
+}
+
+label.route-select {
+	display: inline-block;
+	margin-right: 25px;
+}
+
+input[type="radio"] {
+	margin: 5px;
+	vertical-align: middle;
 }

@@ -1,16 +1,14 @@
 #new-route
   %div
     = text_field_tag 'route[name]', nil, placeholder: "Enter Route Name", id: "new-route-tag"
-  %div
-    = text_field_tag 'location', nil, placeholder: "Enter a location, e.g 'Denver, Colorado'", id: "address"
-    = link_to "Go!", "#", id: "go-to-address"
-
   Click on the map and a path will be drawn that follows the streets.
   %br/
   Drag the markers and the path will be redrawn.
-  #map{:style => "width: 500px; height: 400px"}
-  #link{:style => "display:none"}
-    #distance
+  #map{:style => "height: 400px"}
+  %div.gecode
+    = text_field_tag 'location', nil, placeholder: "Enter a location, e.g 'Denver, Colorado'", id: "address"
+    = link_to "Go!", "#", id: "go-to-address", class: "btn"
+
   %noscript
     %b JavaScript must be enabled in order for you to use Google Maps.
     However, it seems JavaScript is either disabled or not supported by your browser.

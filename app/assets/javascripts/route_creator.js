@@ -50,14 +50,6 @@ if (GBrowserIsCompatible()) {
     }
   });
 
-  function calculateDistance() {
-    var dist = 0;
-    for (var i=0; i<gpolys.length; i++) {
-      dist+=gpolys[i].Distance();
-    }
-    document.getElementById("distance").innerHTML="Path length: "+(dist/1000).toFixed(2)+" km. "+(dist/1609.344).toFixed(2)+" miles.";
-  }
-
   // == when the load event completes, plot the point on the street ==
   GEvent.addListener(dirn1,"load", function() {
     // snap to last vertex in the polyline
@@ -83,7 +75,6 @@ if (GBrowserIsCompatible()) {
     if (!firstpoint) {
       map.addOverlay(dirn1.getPolyline());
       gpolys.push(dirn1.getPolyline());
-      calculateDistance();
     }
     firstpoint = false;
     if (gmarkers.length>1 && gmarkers.length<26) {
@@ -104,7 +95,6 @@ if (GBrowserIsCompatible()) {
     // add the new polyline
     map.addOverlay(dirn2.getPolyline());
     gpolys[lastIndex-1] = (dirn2.getPolyline());
-    calculateDistance();
   });
 
   // == move the polyline following this point ==
@@ -117,7 +107,6 @@ if (GBrowserIsCompatible()) {
     // add the new polyline
     map.addOverlay(dirn3.getPolyline());
     gpolys[lastIndex] = (dirn3.getPolyline());
-    calculateDistance();
   });
 
   GEvent.addListener(dirn1,"error", function() {

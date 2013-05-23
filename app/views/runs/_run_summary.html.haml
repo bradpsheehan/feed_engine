@@ -7,7 +7,7 @@
       .pull-right
         %h3 Start Time
         %p
-          =time_tag run.started_at, format: '%I:%M %p'
+          =better_time_tag run.started_at
         %h3 Date
         %p
-          =time_tag run.started_at, format: '%B %d, %Y'
+          =date_tag run.started_at
