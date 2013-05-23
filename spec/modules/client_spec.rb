@@ -9,8 +9,8 @@ describe Client::API do
 
     before do
       @user = create(:user)
-      @app_provider = create(:app_provider)
-      @token = @app_provider.access_token
+      @fitness_app = create(:fitness_app)
+      @token = @fitness_app.access_token
       @runs = OpenStruct.new("body" => {"source" => "runkeeper"})
       @rk_user = double('rk_user')
 
