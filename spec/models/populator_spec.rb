@@ -69,11 +69,6 @@ describe Populator do
       @activity1 = create(:activity, user_id: 1, provider: "runkeeper")
       @activity2 = create(:activity, user_id: 1, provider: "runkeeper")
     end
-
-    xit "should return the correct number of activities for the user" do
-      activities = Populator.get_user_activities(@user, "runkeeper")
-      expect(activities.length).to eq 2
-    end
   end
 
   describe "#create_dm_activities" do
