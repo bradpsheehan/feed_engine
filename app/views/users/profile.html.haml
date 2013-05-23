@@ -7,12 +7,15 @@
       #profile-details
         .api-integrators
           %h3.pull-left
-            Integrate with RunKeeper
 
           -if current_user.connected?
+            Disconnect from #{current_user.provider}
+
             #api-connect.btn.btn-danger.pull-right
               = link_to "disconnect", disconnect_path, method: :delete
           -else
+
+          Integrate with RunKeeper
           %a#api-connect.btn.btn-primary.pull-right{:href => "/auth/runkeeper"} connect
 
           Integrate with DailyMile
