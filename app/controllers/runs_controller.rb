@@ -18,7 +18,7 @@ class RunsController < ApplicationController
   end
 
   def index
-    @runs = current_user.runs
+    @runs = current_user.all_runs
   end
 
   def show
