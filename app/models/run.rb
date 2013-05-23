@@ -70,8 +70,12 @@ class Run < ActiveRecord::Base
   end
 
   def send_invite(invitee_name)
-    t = "@#{invitee_name} reply #yes to run with me on"
-    t += " #{started_at} via #runline"
-    organizer.tweet(t)
+    begin
+      t = "@#{invitee_name} reply #yes to run with me on"
+      t += " #{started_at} via #runline"
+      organizer.tweet(t)
+    rescue
+
+    end
   end
 end
