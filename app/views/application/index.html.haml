@@ -5,24 +5,23 @@
   -current_user.activities.each do |activity|
     #inner-content.span8
       - if activity.run_detail
+        %article.feed-item
+          %section.feed-summary
+            %section.feed-details.row
+            #activity-details
+              .run-info.pull-left
+                %h3
+                  Date/Time
+                = date_tag activity.activity_date
+                = better_time_tag activity.activity_date
+            #activity-details
+              .run-info.pull-left
+                %h3
+                  Distance
+                =meters_to_miles(activity.distance)
+            #activity-details
+              .run-info.pull-left
+                %h3
+                  Duration
+                =readable_duration activity.duration
         %a#api-connect.btn.btn-primary.pull-right{:href => "/activity/#{activity.id}"} view map
-      %article.feed-item
-        %section.feed-summary
-          %section.feed-details.row
-          #activity-details
-            .run-info.pull-left
-              %h3
-                Date/Time
-              = date_tag activity.activity_date
-              = better_time_tag activity.activity_date
-          #activity-details
-            .run-info.pull-left
-              %h3
-                Distance
-              =meters_to_miles(activity.distance)
-          #activity-details
-            .run-info.pull-left
-              %h3
-                Duration
-              =readable_duration activity.duration
-      %a#api-connect.btn.btn-primary.pull-right{:href => "/activity/#{activity.id}"} view map
