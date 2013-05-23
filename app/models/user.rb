@@ -64,7 +64,8 @@ class User < ActiveRecord::Base
 
   def all_runs
     r = runs
-    r << Run.where("organizer_id = ?", id)
+    r = Run.where("organizer_id = ?", id)
+    r << runs
     r.flatten
   end
 
