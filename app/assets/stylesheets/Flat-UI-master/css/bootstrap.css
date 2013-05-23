@@ -284,8 +284,8 @@ a:hover {
 [class*="span"] {
   float: left;
   min-height: 1px;
-  margin-left: 20px;
-}
+/*  margin-left: 20px;
+*/}
 
 .container,
 .navbar-static-top .container,
@@ -1008,7 +1008,7 @@ pre code {
 }
 
 form {
-  margin: 0 0 20px;
+  margin: 2%
 }
 
 fieldset {

@@ -165,7 +165,6 @@ include_context "standard test dataset"
 
   describe "over?" do
     context "current time is after started_at" do
-      run  
     end
     context "current time is before started_at" do
 

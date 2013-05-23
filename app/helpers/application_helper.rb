@@ -14,4 +14,9 @@ module ApplicationHelper
       "Unknown"
     end
   end
+
+  def meters_to_miles(distance)
+    miles = (distance.to_f / 1600).round(2)
+    "#{miles.to_s} miles"
+  end
 end

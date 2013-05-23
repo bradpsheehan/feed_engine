@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= requrie bootstrap_alert
 //= require feed-item-expander
 //= require route-switcher
 //= require serialize_object
