@@ -81,6 +81,8 @@ class User < ActiveRecord::Base
       user.name = auth["info"]["nickname"]
       user.oauth_token = auth["credentials"]["token"]
       user.oauth_secret = auth["credentials"]["secret"]
+      user.photo_url = auth["info"]["image"]
+      user.large_photo_url = auth["info"]["image"].gsub("_normal", "")
       user.status = "live"
     end
   end

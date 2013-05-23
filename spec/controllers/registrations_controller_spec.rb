@@ -4,8 +4,9 @@ describe RegistrationsController do
   describe "POST .create" do
 
     before do
-      @user = double('user', app_token: "token")
-      @data = {auth: {stuff: "stuff"}, user: @user}
+      user = double('user')
+      @data = {auth: {stuff: "stuff"}, user: user}
+      controller.should_receive(:get_runs)
     end
 
     it "should successfully call Registrar#register" do

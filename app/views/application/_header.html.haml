@@ -1,6 +1,11 @@
 %nav#nav-bar.navbar.navbar-inner
   #header-nav-content
-    %h1.span7 RunLine
+    -if current_user
+      %h1#logo.span7
+        %a{:href => "/dashboard"} RunLine
+    -else
+      %h1#logo.span7
+        =link_to "RunLine", root_path
     %ul#top-nav.nav.pull-right
       - if current_user
         %li
@@ -9,5 +14,5 @@
           =link_to "Logout", signout_path
       - else
         %li
-          =link_to "Login", "/auth/twitter"
+          =link_to "Sign In", "/auth/twitter"
 

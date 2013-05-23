@@ -24,10 +24,11 @@ header h1 {
 }
 
 #sidebar {
-  margin-right: 4%;
+  margin-right: 6%;
 }
 #sidebar img {
   border: 2px solid #95A5A6;
+  border-radius: 4px;
 }
 
 #sidebar .current-user {
@@ -117,19 +118,18 @@ nav#feed-lists li.feeds-run {
   display: inline;
 }
 #main-container {
-  padding: 0 50px;
-  height: 100%;
   background-color: whitesmoke;
   overflow:auto;
   padding-bottom: 180px;
   padding-top: 2%;
   padding-right: 1%;
-  padding-left: 1%;
+  padding-left: 2%;
   box-shadow: 0 0 20px lightslategray;
   margin-right: auto;
   margin-left: auto;
   display: block;
   width: 70%;
+  margin-top: 2%;
 }
 #footer {
   position: relative;
@@ -171,9 +171,7 @@ nav#feed-lists li.feeds-run {
 #inner-content {
   border: solid 2px #2980B9;
   border-radius: 6px;
-  padding-right: 2%;
-  padding-left: 2%;
-  padding-bottom: 2%;
+  padding: 2%;
   margin-bottom: 2%;
 }
 .circle {
@@ -227,12 +225,14 @@ nav#feed-lists li.feeds-run {
   color: white;
 }
 .api-integrator{
+  margin-left: auto;
+  margin-right: auto;
   display: inline;
 }
 #api-connect {
   margin-top: 1.5%;
 }
-#api-connect a:hover {
+#api-connect a {
   color: white !important;
 }
 #landing-hero {
@@ -252,12 +252,13 @@ nav#feed-lists li.feeds-run {
   border-radius: 6px;
   padding-right: 6%;
   margin-bottom: 2%;
+  padding-left: 3%;
 }
 #profile-details {
   color: #34495E;
 }
 #feed-lists > ul > li > a {
-  color: #34495E;
+  color: white;
   text-align: center;
   font-size: 22px;
 }
@@ -270,6 +271,10 @@ nav#feed-lists li.feeds-run {
   height: 350px;
 }
 
+input#run_name {
+  width: 80%;
+}
+
 textarea#run_details{
   height: 200px;
 }
@@ -277,6 +282,24 @@ textarea#run_details{
 textarea#friends {
   height: 100px;
 }
+#activity-details {
+  height: 10%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  width: 100%;
+}
+.run-info {
+  margin-right: 70px;
+  color: #34495E;
+}
+#logo a {
+  color: white;
+}
+#logo a:hover {
+  color: #34495E;
+}
+
 /*.fixed {
   width: 100%;
   left: 0;

@@ -1,13 +1,16 @@
 -if run.cancelled == false
   #inner-content.span8
-    #run-details
-      .run-header.pull-left
+    #activity-details
+      .run-info.pull-left
         %h1
           =link_to run.name, run_path(run.id)
-      .pull-right
+    #activity-details
+      .run-info.pull-left
         %h3 Start Time
         %p
-          =better_time_tag run.started_at
+          =time_tag run.started_at, format: '%I:%M %p'
+    #activity-details
+      .run-info.pull-left
         %h3 Date
         %p
           =date_tag run.started_at

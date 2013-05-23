@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130522184135) do
+ActiveRecord::Schema.define(:version => 20130522200417) do
 
   create_table "activities", :force => true do |t|
     t.string   "activity_type"
@@ -96,6 +96,8 @@ ActiveRecord::Schema.define(:version => 20130522184135) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "photo_url"
+    t.string   "large_photo_url"
   end
 
 end

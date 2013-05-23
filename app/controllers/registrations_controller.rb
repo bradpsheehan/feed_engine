@@ -2,7 +2,8 @@ class RegistrationsController < ApplicationController
 
   def create
     success = Registrar.register(auth: env['omniauth.auth'], user: current_user)
-    Client::API.get_runs(current_user)
+
+    get_runs
 
     if success
       redirect_to new_run_path, notice: "Successfully registered."
@@ -32,5 +33,9 @@ class RegistrationsController < ApplicationController
       flash[:error] = "There was an issue processing your request, please try again"
       render 'users/profile'
     end
+  end
+
+  def get_runs
+    Client::API.get_runs(current_user)
   end
 end

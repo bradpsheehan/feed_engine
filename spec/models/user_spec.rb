@@ -22,6 +22,7 @@ describe User do
       auth["credentials"] = {}
       auth["credentials"]["token"] = "token"
       auth["credentials"]["secret"] = "secret"
+      auth["info"]['image'] = "lkjadsfljfdsaflj"
       user_count = User.all.count
       User.create_from_omniauth(auth)
       expect(User.all.count).to be(user_count + 1)
@@ -38,6 +39,7 @@ describe User do
       auth["credentials"] = {}
       auth["credentials"]["token"] = "token"
       auth["credentials"]["secret"] = "secret"
+      auth["info"]['image'] = "lkjadsfljfdsaflj"
       user_count = User.all.count
       User.from_omniauth(auth)
       expect(User.all.count).to be(user_count + 1)
@@ -52,6 +54,7 @@ describe User do
       auth["credentials"] = {}
       auth["credentials"]["token"] = "token"
       auth["credentials"]["secret"] = "secret"
+      auth["info"]['image'] = "lkjadsfljfdsaflj"
       User.from_omniauth(auth)
       user_count = User.all.count
       User.from_omniauth(auth)

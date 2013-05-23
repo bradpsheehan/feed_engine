@@ -1,7 +1,7 @@
 #inner-container.span8
   #inner-header.span8
     %h1.pull-left
-      Your Groups
+      Group Runs
     %a#api-connect.btn.btn-large.btn-primary.pull-right{:href => "/runs/new"} new run
   =render partial: "run_summary", collection: @runs, as: :run
 

@@ -1,12 +1,10 @@
 %aside#sidebar.span3
-  .current-user.mini-profile
-    -# =image_tag current_user.photo(:original)
+  .current-user
+    =image_tag current_user.large_photo_url
     %a{:href => "/profile"} view profile
   %nav#feed-lists
     %ul.nav.nav-tabs.nav-stacked
       %li
-        %a{:href => "/dashboard"} Fit Feed
-      / %li
-      /   %a{:href => "#"} Your Activity
+        %a{:href => "/dashboard"} My Runs
       %li
-        %a{:href => "/runs"} Runs
+        %a{:href => "/runs"} Group Runs

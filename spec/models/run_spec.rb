@@ -165,25 +165,21 @@ include_context "standard test dataset"
 
   describe "over?" do
     context "current time is 5 hours after started_at" do
-
       it "is over" do
         start_time = Time.now - (5*60*60)
         run = Run.new(started_at: start_time)
         expect(run).to be_over
 
       end
-
     end
-    context "current time is before 5 hours after started_at" do
 
+    context "current time is before 5 hours after started_at" do
       it "is over" do
         start_time = Time.now - (5*60*60-1)
         run = Run.new(started_at: start_time)
         expect(run).to_not be_over
-
       end
     end
-
   end
 
   describe "invite_runners"
