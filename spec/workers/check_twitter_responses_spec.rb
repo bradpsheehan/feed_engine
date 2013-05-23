@@ -17,33 +17,6 @@ include_context "standard test dataset"
     UserRun.create(run_id: 1, user_id: invitee.id, status: "invited")
   end
 
-  describe "CheckTwitterResponses.perfom" do
-    xit "checks tweets, updates user runs and deletes old invites" do
-      VCR.use_cassette("check_the_entire_worker") do
-        tweets = CheckTwitterResponses.perform
-        expect(tweets.count).to eq 15
-        expect(OutstandingTwitterInvites.count).to eq 0
-        expect(UserRun.count).to eq 0
-
-        tweets.each do |tweet|
-          create_invitation_from_tweet(tweet)
-          create_user_run_from_tweet(tweet)
-        end
-
-        expect(UserRun.all[rand(0..14)].status).to eq "invited"
-        expect(UserRun.count).to eq 15
-        expect(OutstandingTwitterInvites.count).to eq 15
-
-        CheckTwitterResponses.stub!(:is_reply_to_invitation?).and_return(true)
-        CheckTwitterResponses.perform
-
-        expect(UserRun.all[rand(0..14)].status).to eq "confirmed"
-        expect(UserRun.count).to eq 15
-        expect(OutstandingTwitterInvites.count).to eq 0
-      end
-    end
-  end
-
   describe "CheckTwitterResponses.destroy_invitations" do
     it "destroys the correct invitations and not the wrong invitations" do
       invitor = current_user
