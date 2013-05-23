@@ -53,6 +53,10 @@ class Run < ActiveRecord::Base
     started_at+over_buffer < Time.now
   end
 
+  def can_edit?(user)
+    organizer_id == user.id
+  end
+
   private
 
   def self.fuzzy_find_buffer
