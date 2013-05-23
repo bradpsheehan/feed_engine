@@ -1,7 +1,13 @@
 class AppProvider < ActiveRecord::Base
   belongs_to :user
 
-  validates_presence_of :name, :user_id, :uid, :access_token
+  attr_accessible :name, :user_id, :username
+
+  validates_presence_of :name, :user_id
+  validates :uid, :access_token, :presence => true,
+                     :if => lambda { |app_provider| app_provider.name == 'runkeeper' }
+  validates :username, :presence => true,
+                     :if => lambda { |app_provider| app_provider.name == 'dailymile' }
   validates_uniqueness_of :user_id
 
   def self.create_from_omniauth(data)

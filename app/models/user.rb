@@ -53,6 +53,10 @@ class User < ActiveRecord::Base
     @token ||= app_provider.access_token
   end
 
+  def username
+    @username ||= app_provider.username
+  end
+
   def connected?
     @connected ||= app_provider.present?
   end

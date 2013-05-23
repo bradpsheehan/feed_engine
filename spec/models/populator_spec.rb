@@ -37,23 +37,20 @@ describe Populator do
   end
 
   describe "#add_activity_list" do
-    # help_needed!
 
     before do
-      ResqueSpec.reset!
       @user = create(:user)
       @activity1 = create(:activity)
       @activity2 = build(:activity)
       @data = RunkeeperData.items
     end
 
-    xit "Background worker is called" do
+    it "Background worker is called" do
       user_activities = [@activity1.activity_id]
       Resque.stub(:enqueue)
+      Resque.should_receive(:enqueue).exactly(45).times
       Populator.stub(:get_user_activities).and_return(user_activities)
       Populator.add_activity_list(@data, @user)
-      # FetchRunData.should have_queued(@activity2, @user.id).in(:fetch_runs)
-      FetchRunData.should have_queue_size_of(44)
     end
   end
 
@@ -69,13 +66,57 @@ describe Populator do
   describe "#get_user_activities" do
     before do
       @user = create(:user)
-      @activity1 = create(:activity, user_id: 1)
-      @activity2 = create(:activity, user_id: 1)
+      @activity1 = create(:activity, user_id: 1, provider: "runkeeper")
+      @activity2 = create(:activity, user_id: 1, provider: "runkeeper")
     end
 
-    it "should return the correct number of activities for the user" do
-      activities = Populator.get_user_activities(@user)
+    xit "should return the correct number of activities for the user" do
+      activities = Populator.get_user_activities(@user, "runkeeper")
       expect(activities.length).to eq 2
+    end
+  end
+
+  describe "#create_dm_activities" do
+
+    before do
+      @data = {"id" => "323453454",
+                      "at" => "2013-05-21T15:03:19Z",
+                      "workout" => {"activity_type" => "Running",
+                                    "distance" => {"value" => 2.69},
+                                    "duration" => 1153}}
+      @user = create(:user)
+      @provider = 'dailymile'
+    end
+
+    it "saves dailymile activity to the database" do
+      expect {
+        Populator.create_dm_activities(@data, @user, @provider)
+      }.to change(Activity, :count).by(1)
+    end
+
+  end
+
+  describe "#add_dm_activties" do
+    before do
+      @data = [{"id" => "323453454",
+                      "at" => "2013-05-21T15:03:19Z",
+                      "workout" => {"activity_type" => "Running",
+                                    "distance" => {"value" => 2.69},
+                                    "duration" => 1153}},
+               {"id" => "32389754",
+                      "at" => "2013-05-21T15:03:19Z",
+                      "workout" => {"activity_type" => "Running",
+                                    "distance" => {"value" => 2.69},
+                                    "duration" => 1153}}]
+
+      @user = create(:user)
+      @provider = 'dailymile'
+    end
+
+    it "should call #create_dm_activities the correct # of times" do
+      Populator.stub(:get_user_activities).and_return(["sfsfsd"])
+      Populator.should_receive(:create_dm_activities).exactly(2).times
+      Populator.add_dm_activities(@data, @user, @provider)
     end
   end
 end

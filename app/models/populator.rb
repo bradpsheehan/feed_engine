@@ -1,8 +1,6 @@
 class Populator
   def self.add_activity_list(data, user)
-    user_activities = get_user_activities(user)
-
-    # help_needed!
+    user_activities = get_user_activities(user, "runkeeper")
 
     data["items"].each do |activity|
       activity_id = self.get_activity_id(activity["uri"])
@@ -15,6 +13,7 @@ class Populator
   def self.get_activity_id(uri)
     uri.split("/")[-1]
   end
+
 
   def self.create_activity(data, user)
     run = Run.fuzzy_find({user: user,
@@ -32,10 +31,30 @@ class Populator
                      run_id: run_id)
   end
 
+  def self.add_dm_activities(data, user, provider)
+    user_activities = get_user_activities(user, "dailymile")
+
+    data.each do |activity|
+      next if user_activities.include?(activity["id"])
+      self.create_dm_activities(activity, user, provider)
+    end
+  end
+
+  def self.create_dm_activities(data, user, provider)
+    Activity.create!(activity_type: data["workout"]["activity_type"].downcase,
+                     duration: data["workout"]["duration"],
+                     distance: data["workout"]["distance"]["value"],
+                     activity_date: data["at"],
+                     activity_id: data["id"],
+                     provider: provider,
+                     user: user)
+  end
+
+
   private
 
-  def self.get_user_activities(user)
-    @activities ||= Activity.where(user_id: user).pluck(:activity_id)
+  def self.get_user_activities(user, provider)
+    @activities ||= Activity.where(user_id: user, provider: provider).pluck(:activity_id)
   end
 
 

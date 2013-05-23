@@ -15,12 +15,12 @@ describe AppProvider do
     end
 
     it "is not valid without a uid" do
-      app_provider = build(:app_provider, uid: nil)
+      app_provider = build(:app_provider, uid: nil, name: "runkeeper")
       expect(app_provider).to_not be_valid
     end
 
     it "is not valid without an access_token" do
-      app_provider = build(:app_provider, access_token: nil)
+      app_provider = build(:app_provider, access_token: nil, name: "runkeeper")
       expect(app_provider).to_not be_valid
     end
 
