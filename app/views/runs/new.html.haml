@@ -1,55 +1,60 @@
 #create-run.span8
   %h2 Create a Group Run
-  = form_for @run do |f|
-    .control-group
-      = f.text_field :name, placeholder:"Group Name"
-    .control-group
-      = text_field_tag "run_date", nil, id: "run_run_date", placeholder:"Date"
-    .control-group
-      = text_field_tag "start_time", nil, id: "run_run_start_time", placeholder:"Time"
+  = form_for @run, id: "new_run", class: "cmxform" do |f|
+    .row
+      .span8
+      = f.text_field :name, placeholder:"Group Name", class: "required"
+    .row
+      .span4
+        = text_field_tag "run_date", nil, id: "run_run_date", placeholder:"Date", class: "required pull-left run_date"
+      .span4
+        = text_field_tag "start_time", nil, id: "run_run_start_time", placeholder:"Time", class: "required pull-left run_date"
 
-    .control-group
-      %label.radio
-        %input#selectExisitingRoute{:checked => "", :name => "routeSelector", :type => "radio", :value => "selectExisitngRoute"}/
-        Select an exisiting route
+    .row
+      .pull-left
+        %input#selectExisitingRoute{:checked => "", :name => "routeSelector", :type => "radio", :value => "selectExisitngRoute"}
+        %label.route-select{for: "selectExistingRoute"} Select an exisiting route
 
-      %label.radio
-        %input#createNewRoute{:name => "routeSelector", :type => "radio", :value => "createNewRoute"}/
-        Create a new Route
+      .pull-left
+        %input#createNewRoute{:name => "routeSelector", :type => "radio", :value => "createNewRoute"}
+        %label.route-select{for: "createNewRoute"} Create a new Route
 
-      #route-selection
-        = f.select(:route_id, options_from_collection_for_select(@routes, :id, :name) )
-        = render partial: "new_run_map"
+    #route-selection.row
+      = f.select(:route_id, options_from_collection_for_select(@routes, :id, :name) )
+      = render partial: "new_run_map"
 
-      %label
-        Details:
-    .control-group
-      =f.text_area :details, {:placeholder => "details"}
+    .row
+      %label{for: "run_details"} Details:
+    .row
+      =f.text_area :details, {placeholder: "details", class: "span8"}
 
-    .control-group
-      = text_area_tag "friends", nil, placeholder: "Invite friends through twitter. Separate each with commas"
-    .control-group
+    .row
+      = text_area_tag "friends", nil, class: "span8", placeholder: "Invite friends through twitter. Separate each with commas"
+    .row
       = f.submit class:"btn"
 
 %script{:src => "http://code.jquery.com/ui/1.10.3/jquery-ui.js", type:"text/javascript"}
 %script{src: "/assets/jquery.timepicker.js", type:"text/javascript"}
 %script{src: "/assets/route_creator.js", type:"text/javascript"}
-%script{src: "/assets/validations/new_run.js", type:"text/javascript"}
+%script{src: "/assets/route-switcher.js", type:"text/javascript"}
+%script{src: "/assets/jquery.validate.js", type:"text/javascript"}
 
 = javascript_tag do
+
+
   createRoute();
 
-  $(function() {
   $('#run_run_date').datepicker();
-  });
 
   $('#run_run_start_time').timepicker({ 'timeFormat': 'h:i A' });
+  $('#new_run').validate();
 
   $('form').submit(function(event) {
 
-
   var radio_selection = $('input:radio[name=routeSelector]:checked').val();
   if(radio_selection == "createNewRoute") {
+
+  $('#new-route-tag').addClass('required');
 
   var points = JSON.stringify(getRoutePoints(gpolys));
   $(event.target).append("
@@ -57,6 +62,7 @@
   ");
   } else {
 
+  $('#new-route-tag').removeClass('required');
   var route_id = $('#run_route_id').find(":selected").val();
 
   var input = "
