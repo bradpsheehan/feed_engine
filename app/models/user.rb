@@ -62,6 +62,12 @@ class User < ActiveRecord::Base
     @connected ||= app_provider.present?
   end
 
+  def all_runs
+    r = runs
+    r << Run.where("organizer_id = ?", id)
+    r.flatten
+  end
+
   def self.create_invited_user(name)
     user = User.new
     user.name = name
@@ -73,7 +79,6 @@ class User < ActiveRecord::Base
   def self.from_omniauth(auth)
     where(auth.slice("provider", "uid")).first || create_from_omniauth(auth)
   end
-
 
   def self.create_from_omniauth(auth)
     create! do |user|
