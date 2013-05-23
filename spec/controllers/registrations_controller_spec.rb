@@ -6,6 +6,7 @@ describe RegistrationsController do
     before do
       user = double('user')
       @data = {auth: {stuff: "stuff"}, user: user}
+      controller.should_receive(:get_runs)
     end
 
     it "should successfully call Registrar#register" do
