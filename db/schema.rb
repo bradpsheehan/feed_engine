@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130522200417) do
+ActiveRecord::Schema.define(:version => 20130523075713) do
 
   create_table "activities", :force => true do |t|
     t.string   "activity_type"
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(:version => 20130522200417) do
 
   add_index "activities", ["run_id"], :name => "index_activities_on_run_id"
 
-  create_table "app_providers", :force => true do |t|
+  create_table "fitness_apps", :force => true do |t|
     t.string   "name"
     t.integer  "user_id"
     t.datetime "created_at",   :null => false
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(:version => 20130522200417) do
     t.string   "username"
   end
 
-  add_index "app_providers", ["user_id", "uid"], :name => "index_app_providers_on_user_id_and_uid", :unique => true
+  add_index "fitness_apps", ["user_id", "uid"], :name => "index_app_providers_on_user_id_and_uid", :unique => true
 
   create_table "outstanding_twitter_invites", :force => true do |t|
     t.integer  "invitor_id"

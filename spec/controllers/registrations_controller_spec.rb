@@ -49,7 +49,7 @@ describe RegistrationsController do
     end
 
     it "should redirect to new run page after successfully creating a provider" do
-      AppProvider.stub(:new).and_return(@provider)
+      FitnessApp.stub(:new).and_return(@provider)
       @provider.stub(:save).and_return(true)
       post :dm_connect
       expect(response).to redirect_to new_run_path

@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   has_many :user_runs
   has_many :runs, :through => :user_runs
   has_many :activities
-  has_one  :app_provider
+  has_one  :fitness_app
 
   validates :name, :uniqueness => true
 
@@ -50,15 +50,15 @@ class User < ActiveRecord::Base
   end
 
   def app_token
-    @token ||= app_provider.access_token
+    @token ||= fitness_app.access_token
   end
 
   def username
-    @username ||= app_provider.username
+    @username ||= fitness_app.username
   end
 
   def connected?
-    @connected ||= app_provider.present?
+    @connected ||= fitness_app.present?
   end
 
   def self.create_invited_user(name)

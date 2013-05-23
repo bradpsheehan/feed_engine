@@ -14,7 +14,7 @@ class RegistrationsController < ApplicationController
   end
 
   def destroy
-    current_user.app_provider.destroy
+    current_user.fitness_app.destroy
     redirect_to '/profile', notice: "App Successfully Disconnected"
   end
 
@@ -22,7 +22,7 @@ class RegistrationsController < ApplicationController
   end
 
   def dm_connect
-    provider = AppProvider.new(name: params[:provider],
+    provider = FitnessApp.new(name: params[:provider],
                                username: params[:dm_username],
                                user_id: current_user.id)
 

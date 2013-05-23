@@ -19,14 +19,14 @@ class Registrar
   end
 
   def self.current_user_uid_match?(data)
-    AppProvider.exists?(:user_id => data[:user], :uid => data[:auth][:uid])
+    FitnessApp.exists?(:user_id => data[:user], :uid => data[:auth][:uid])
   end
 
   def self.create_provider(data)
-    AppProvider.create_from_omniauth(data)
+    FitnessApp.create_from_omniauth(data)
   end
 
   def self.uid_list(auth)
-    @uids ||= AppProvider.where(name: auth[:provider]).pluck(:uid)
+    @uids ||= FitnessApp.where(name: auth[:provider]).pluck(:uid)
   end
 end
