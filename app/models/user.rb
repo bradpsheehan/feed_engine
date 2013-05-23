@@ -41,7 +41,7 @@ class User < ActiveRecord::Base
   end
 
   def tweet(status)
-    num = rand(0..999).to_s
+    num = (rand(999)).to_s
     twitter.update(status + num)
   end
 
