@@ -21,9 +21,7 @@ class User < ActiveRecord::Base
   end
 
   def photo(size=:normal)
-    if @photo.nil?
-      @photo = {}
-    end
+    @photo.nil? ||= {}
 
     begin
       @photo[size] ||= twitter.user(name).profile_image_url(size)

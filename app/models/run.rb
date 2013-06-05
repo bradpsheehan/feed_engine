@@ -55,11 +55,11 @@ class Run < ActiveRecord::Base
   private
 
   def self.fuzzy_find_buffer
-    15*60
+    15.minutes
   end
 
   def over_buffer
-    5*60*60
+    5.hours
   end
 
   def add_invitee(invitee_name)
